@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemberCollectionViewCell" id="gTV-IL-0wX" customClass="MemberCollectionViewCell" customModule="SportBuddy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xh1-NK-BCh">
+                        <rect key="frame" x="10" y="89" width="100" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default_User_Photo" translatesAutoresizingMaskIntoConstraints="NO" id="Vfd-C1-AOm">
+                        <rect key="frame" x="30" y="19" width="60" height="60"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="bnD-uo-h1g"/>
+                            <constraint firstAttribute="width" secondItem="Vfd-C1-AOm" secondAttribute="height" multiplier="1:1" id="eWh-IQ-BYu"/>
+                            <constraint firstAttribute="width" constant="60" id="p6E-DE-8ht"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="xh1-NK-BCh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Iff-8c-bXb"/>
+                <constraint firstAttribute="trailing" secondItem="xh1-NK-BCh" secondAttribute="trailing" constant="10" id="JK6-b3-dUm"/>
+                <constraint firstItem="Vfd-C1-AOm" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1:2" id="XU2-ez-CjQ"/>
+                <constraint firstItem="Vfd-C1-AOm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="b15-4L-GLb"/>
+                <constraint firstItem="xh1-NK-BCh" firstAttribute="top" secondItem="Vfd-C1-AOm" secondAttribute="bottom" constant="10" id="d1Q-1K-a3Y"/>
+                <constraint firstAttribute="bottom" secondItem="xh1-NK-BCh" secondAttribute="bottom" constant="10" id="kmO-hn-fpB"/>
+            </constraints>
+            <size key="customSize" width="214" height="175"/>
+            <connections>
+                <outlet property="userImage" destination="Vfd-C1-AOm" id="Wr8-KX-6kR"/>
+                <outlet property="userName" destination="xh1-NK-BCh" id="erS-io-gYt"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Default_User_Photo" width="240" height="240"/>
+    </resources>
+</document>

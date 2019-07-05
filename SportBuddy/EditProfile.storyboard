@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="0Yj-eV-UMe">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iqw-eI-C0u" customClass="EditProfileViewController" customModule="SportBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gWb-Aa-zW5"/>
+                        <viewControllerLayoutGuide type="bottom" id="sZm-Hz-plE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="14f-YZ-BvN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default_User_Photo" translatesAutoresizingMaskIntoConstraints="NO" id="B6N-XQ-5dT">
+                                <rect key="frame" x="88" y="30" width="200" height="200"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B6N-XQ-5dT" secondAttribute="height" multiplier="1:1" id="sr0-Ge-x1R"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEW-GR-bGI">
+                                <rect key="frame" x="220" y="614" width="85" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PEW-GR-bGI" secondAttribute="height" multiplier="85:33" id="gtA-TA-VTo"/>
+                                </constraints>
+                                <state key="normal" image="Button_Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveProfileInfo:" destination="iqw-eI-C0u" eventType="touchUpInside" id="JBC-Rw-KAM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpL-tH-EAe">
+                                <rect key="frame" x="70" y="614" width="85" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wpL-tH-EAe" secondAttribute="height" multiplier="85:33" id="RRK-1d-oq1"/>
+                                </constraints>
+                                <state key="normal" image="Button_Cancel"/>
+                                <connections>
+                                    <action selector="cancelEdit:" destination="iqw-eI-C0u" eventType="touchUpInside" id="yPq-jF-H20"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpE-fP-ZKT">
+                                <rect key="frame" x="30" y="310" width="100" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="l7I-OJ-tox"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeC-01-7ur">
+                                <rect key="frame" x="134" y="319" width="221" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LpE-fP-ZKT" firstAttribute="centerY" secondItem="14f-YZ-BvN" secondAttribute="centerY" id="4nw-kp-XDE"/>
+                            <constraint firstItem="wpL-tH-EAe" firstAttribute="centerY" secondItem="PEW-GR-bGI" secondAttribute="centerY" id="8Xn-F2-CPW"/>
+                            <constraint firstItem="XeC-01-7ur" firstAttribute="centerY" secondItem="LpE-fP-ZKT" secondAttribute="centerY" id="AJV-TB-7Cw"/>
+                            <constraint firstItem="PEW-GR-bGI" firstAttribute="width" secondItem="14f-YZ-BvN" secondAttribute="height" multiplier="85:667" id="QlK-y5-ZVe"/>
+                            <constraint firstItem="B6N-XQ-5dT" firstAttribute="width" secondItem="14f-YZ-BvN" secondAttribute="height" multiplier="200:667" id="VGc-hM-BQe"/>
+                            <constraint firstAttribute="trailing" secondItem="PEW-GR-bGI" secondAttribute="trailing" constant="70" id="XPU-6u-OMW"/>
+                            <constraint firstItem="XeC-01-7ur" firstAttribute="leading" secondItem="LpE-fP-ZKT" secondAttribute="trailing" constant="4" id="XuF-Ei-5bv"/>
+                            <constraint firstItem="B6N-XQ-5dT" firstAttribute="centerX" secondItem="14f-YZ-BvN" secondAttribute="centerX" id="Zk6-xN-raS"/>
+                            <constraint firstItem="B6N-XQ-5dT" firstAttribute="top" secondItem="14f-YZ-BvN" secondAttribute="top" constant="30" id="dCJ-U7-UNR"/>
+                            <constraint firstItem="LpE-fP-ZKT" firstAttribute="top" secondItem="B6N-XQ-5dT" secondAttribute="bottom" constant="80" id="efB-AT-3Zl"/>
+                            <constraint firstItem="wpL-tH-EAe" firstAttribute="leading" secondItem="14f-YZ-BvN" secondAttribute="leading" constant="70" id="hn2-fw-LjG"/>
+                            <constraint firstAttribute="trailing" secondItem="XeC-01-7ur" secondAttribute="trailing" constant="20" id="kW0-sE-ki2"/>
+                            <constraint firstItem="wpL-tH-EAe" firstAttribute="width" secondItem="14f-YZ-BvN" secondAttribute="height" multiplier="85:667" id="nsc-rC-7hu"/>
+                            <constraint firstItem="sZm-Hz-plE" firstAttribute="top" secondItem="PEW-GR-bGI" secondAttribute="bottom" constant="20" id="wz8-py-a6y"/>
+                            <constraint firstItem="LpE-fP-ZKT" firstAttribute="leading" secondItem="14f-YZ-BvN" secondAttribute="leadingMargin" constant="14" id="xvI-HF-uBA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="XeC-01-7ur" id="21c-jv-8mq"/>
+                        <outlet property="userImage" destination="B6N-XQ-5dT" id="4zc-ar-u6w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCk-bw-tCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="309"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Button_Cancel" width="170" height="66"/>
+        <image name="Button_Save" width="170" height="66"/>
+        <image name="Default_User_Photo" width="240" height="240"/>
+    </resources>
+</document>

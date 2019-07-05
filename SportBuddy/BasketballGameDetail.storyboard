@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Basketball Game Detail View Controller-->
+        <scene sceneID="AGo-aD-fRZ">
+            <objects>
+                <viewController storyboardIdentifier="BasketballGameDetailViewController" id="SIi-Og-w9L" customClass="BasketballGameDetailViewController" customModule="SportBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pB5-Dp-5dh"/>
+                        <viewControllerLayoutGuide type="bottom" id="fhd-ct-bvv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oqj-PR-hht">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LGY-c3-KXC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SIi-Og-w9L" id="Enl-Kt-5M1"/>
+                                    <outlet property="delegate" destination="SIi-Og-w9L" id="dOQ-Yh-Q0a"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fhd-ct-bvv" firstAttribute="top" secondItem="LGY-c3-KXC" secondAttribute="bottom" id="0wf-be-fTp"/>
+                            <constraint firstAttribute="trailing" secondItem="LGY-c3-KXC" secondAttribute="trailing" id="QvT-gs-qhF"/>
+                            <constraint firstItem="LGY-c3-KXC" firstAttribute="leading" secondItem="oqj-PR-hht" secondAttribute="leading" id="UeY-Ak-lkn"/>
+                            <constraint firstItem="LGY-c3-KXC" firstAttribute="top" secondItem="pB5-Dp-5dh" secondAttribute="bottom" id="w9W-eW-EP7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="LGY-c3-KXC" id="7XJ-WM-Ilg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POp-of-Rcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="21"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JoinOrLeaveTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="JoinOrLeaveTableViewCell" customModule="SportBuddy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98S-Yo-UsP">
+                        <rect key="frame" x="110" y="30" width="100" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="98S-Yo-UsP" secondAttribute="height" multiplier="100:39" id="0Wl-dE-Yye"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="Button_Joingame"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23D-Pf-EKv">
+                        <rect key="frame" x="110" y="30" width="100" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="23D-Pf-EKv" secondAttribute="height" multiplier="100:39" id="gQ3-2W-l4i"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="Button_Leavegame"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-cg-QtJ">
+                        <rect key="frame" x="110" y="30" width="100" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Seb-cg-QtJ" secondAttribute="height" multiplier="100:39" id="VqO-2o-E72"/>
+                        </constraints>
+                        <state key="normal" image="Button_CancelTheGame"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="98S-Yo-UsP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="58q-jv-a52"/>
+                    <constraint firstItem="98S-Yo-UsP" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="100:99" id="6tj-tu-ihz"/>
+                    <constraint firstItem="Seb-cg-QtJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UPE-Bo-jwX"/>
+                    <constraint firstItem="98S-Yo-UsP" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="cuX-fH-bop"/>
+                    <constraint firstItem="23D-Pf-EKv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ipV-2z-9NX"/>
+                    <constraint firstItem="23D-Pf-EKv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="mtK-jm-Q1G"/>
+                    <constraint firstItem="Seb-cg-QtJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qw2-wb-oJv"/>
+                    <constraint firstItem="23D-Pf-EKv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="100:99" id="uhf-au-xOI"/>
+                    <constraint firstItem="Seb-cg-QtJ" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="100:99" id="wmy-X6-Wx3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cancelGameButton" destination="Seb-cg-QtJ" id="ANn-PK-smi"/>
+                <outlet property="joinButton" destination="98S-Yo-UsP" id="sXT-My-SDR"/>
+                <outlet property="leaveButton" destination="23D-Pf-EKv" id="E0D-vv-j2I"/>
+            </connections>
+            <point key="canvasLocation" x="36" y="34"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Button_CancelTheGame" width="220" height="66"/>
+        <image name="Button_Joingame" width="170" height="66"/>
+        <image name="Button_Leavegame" width="170" height="66"/>
+    </resources>
+</document>
