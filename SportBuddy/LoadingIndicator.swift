@@ -21,10 +21,10 @@ class LoadingIndicator {
         if activityData == nil {
             activityData = ActivityData()
         }
-        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData!)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData!, nil)
     }
 
     func stop() {
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
     }
 }

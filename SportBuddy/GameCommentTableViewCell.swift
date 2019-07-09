@@ -53,7 +53,7 @@ class GameCommentTableViewCell: UITableViewCell {
     func getUser() {
 
         guard
-            let uid = FIRAuth.auth()?.currentUser?.uid
+            let uid = Auth.auth().currentUser?.uid
             else { return }
 
         currentUser = uid
@@ -89,9 +89,9 @@ class GameCommentTableViewCell: UITableViewCell {
         moveToLastComment()
     }
 
-    func handleTap(_ sender: UITapGestureRecognizer) {}
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {}
 
-    func sendMessage() {
+    @objc func sendMessage() {
 
         var gameID = ""
         var isUserInGame = false
@@ -120,7 +120,7 @@ class GameCommentTableViewCell: UITableViewCell {
 
     func saveComment(_ gameID: String) {
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseGameMessage.nodeName)
             .child(gameID)
             .childByAutoId()

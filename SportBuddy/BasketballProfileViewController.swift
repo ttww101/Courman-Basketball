@@ -54,7 +54,7 @@ class BasketballProfileViewController: BaseViewController {
     func setCurrentUID() {
 
         guard
-            let uid = FIRAuth.auth()?.currentUser?.uid
+            let uid = Auth.auth().currentUser?.uid
             else { return }
 
         self.currentUserUID = uid
@@ -90,7 +90,7 @@ class BasketballProfileViewController: BaseViewController {
                                                                  action: #selector(sendEmail))
     }
 
-    func sendEmail() {
+    @objc func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
 
             let mailController = MFMailComposeViewController()
@@ -102,7 +102,7 @@ class BasketballProfileViewController: BaseViewController {
             mailController.navigationController?.navigationBar.tintColor = .blue
 
             // todo: 改不了 navigationBar title的顏色
-            mailController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blue]
+            mailController.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.blue]
 
             present(mailController, animated: true)
 
@@ -129,7 +129,7 @@ class BasketballProfileViewController: BaseViewController {
         joinedGamesNum = 0
         lastGameDate = ""
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
                     .child(Constant.FirebaseUserGameList.nodeName)
                     .child(currentUserUID)
 
@@ -173,7 +173,7 @@ class BasketballProfileViewController: BaseViewController {
 
         let parser = BasketballGameParser()
 
-        let gameRef = FIRDatabase.database().reference()
+        let gameRef = Database.database().reference()
             .child(Constant.FirebaseGame.nodeName)
             .child(gameIDString)
 
@@ -265,7 +265,7 @@ class BasketballProfileViewController: BaseViewController {
 
     func updateFireBaseDB() {
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
                     .child(Constant.FirebaseUser.nodeName)
                     .child(currentUserUID)
 

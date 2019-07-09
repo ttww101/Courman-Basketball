@@ -63,14 +63,14 @@ class ChooseLevelViewController: BaseViewController {
         introductionButton.addTarget(self, action: #selector(showIntroduction), for: .touchUpInside)
     }
 
-    func hideIntroduction() {
+    @objc func hideIntroduction() {
 
         introductionView.isHidden = true
         introductionLabel.isHidden = true
         fakeButton.isHidden = true
     }
 
-    func showIntroduction() {
+    @objc func showIntroduction() {
 
         introductionView.isHidden = false
         introductionLabel.isHidden = false
@@ -80,7 +80,7 @@ class ChooseLevelViewController: BaseViewController {
     func saveLevel(level: String) {
 
         guard
-            let uid = FIRAuth.auth()?.currentUser?.uid
+            let uid = Auth.auth().currentUser?.uid
             else { return }
 
         let values = [Constant.FirebaseLevel.basketball: level]

@@ -20,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        FIRApp.configure()
+        FirebaseApp.configure()
 
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
 
         // Set Navigation Bar
         UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
         // Set status bar
         UIApplication.shared.statusBarStyle = .lightContent
@@ -40,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("User notifications are not allowed")
             }
         }
+//        let basketballStorybard = UIStoryboard(name: Constant.Storyboard.basketball, bundle: nil)
+//        let basketballTabbarViewController = basketballStorybard.instantiateViewController(withIdentifier: Constant.Controller.basketballTabbar) as? BasketballTabbarViewController
+//        self.window?.rootViewController = basketballTabbarViewController
+//        self.window?.makeKeyAndVisible()
 
         Fabric.with([Crashlytics.self])
 

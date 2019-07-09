@@ -23,6 +23,11 @@ class BasketballCourtsViewController: BaseViewController {
 
         setView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setCourts()
+    }
 
     func setView() {
 
@@ -30,7 +35,7 @@ class BasketballCourtsViewController: BaseViewController {
 
         setNavigationBar()
         setTableView()
-        setCourts()
+//        setCourts()
     }
 
     func setTableView() {
@@ -46,10 +51,13 @@ class BasketballCourtsViewController: BaseViewController {
 
     func setCourts() {
 
+//        Blah().rest()
         // MARK: Loading indicator
         loadingIndicator.start()
 
-        BasketballCourtsProvider.shared.getApiData(city: Constant.CurrentCity.cityName, gymType: Constant.GymType.basketball) { (basketballCourts, error) in
+//        BasketballCourtsProvider().getApiData(city: "高雄市", gymType: "籃球場") { (basketballCourts, error) in
+//
+        BasketballCourtsProvider().getApiData(city: Constant.CurrentCity.cityName, gymType: Constant.GymType.basketball) { (basketballCourts, error) in
 
             if error == nil {
 
@@ -80,7 +88,7 @@ extension BasketballCourtsViewController {
     }
 
     func setNavigationDropdownMenu() {
-        let menuView = BTNavigationDropdownMenu(title: items[Constant.CurrentCity.cityIndex], items: items as [AnyObject])
+        let menuView = BTNavigationDropdownMenu(title: items[Constant.CurrentCity.cityIndex], items: items as [Any] as! [String])
         self.navigationItem.titleView = menuView
 
         menuView.didSelectItemAtIndexHandler = { [weak self] (indexPath: Int) -> Void in

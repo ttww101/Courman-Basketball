@@ -39,7 +39,7 @@ class LoginViewController: BaseViewController {
     // todo: confirm use it or not.
     func isUsersignedin() {
 
-        FIRAuth.auth()?.addStateDidChangeListener { _, user in
+        Auth.auth().addStateDidChangeListener { _, user in
             if user != nil {
                 // User is signed in.
                 print("=== User is signed in ===")
@@ -89,7 +89,7 @@ class LoginViewController: BaseViewController {
         // MARK: Loading indicator
         loadingIndicator.start()
 
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (_, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (_, error) in
 
             if error != nil {
                 self.loadingIndicator.stop()
@@ -126,9 +126,9 @@ class LoginViewController: BaseViewController {
 
         } else {
 
-            let ref = FIRAuth.auth()
+            let ref = Auth.auth()
 
-            ref?.sendPasswordReset(withEmail: emailTexfield.text!, completion: { (error) in
+            ref.sendPasswordReset(withEmail: emailTexfield.text!, completion: { (error) in
 
                 if error != nil {
                     self.showAlert(myMsg: "這Email似乎還沒註冊\n請再次確認您所填寫的Email是否正確")
@@ -147,7 +147,7 @@ class LoginViewController: BaseViewController {
         // MARK: Loading indicator
         loadingIndicator.start()
 
-        FIRAuth.auth()?.signIn(withEmail: "steven@gmail.com", password: "aaaaaa", completion: { (_, error) in
+        Auth.auth().signIn(withEmail: "steven@gmail.com", password: "aaaaaa", completion: { (_, error) in
 
             if error != nil {
                 self.loadingIndicator.stop()

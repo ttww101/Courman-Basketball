@@ -1,60 +1,142 @@
 PODS:
-  - Alamofire (4.4.0)
-  - BTNavigationDropdownMenu (0.4.1)
-  - Crashlytics (3.8.4):
-    - Fabric (~> 1.6.3)
-  - DKImagePickerController (3.5.1):
-    - DKImagePickerController/Camera (= 3.5.1)
-    - DKImagePickerController/ImageManager (= 3.5.1)
-  - DKImagePickerController/Camera (3.5.1)
-  - DKImagePickerController/ImageManager (3.5.1)
-  - Fabric (1.6.11)
-  - Firebase/Auth (3.16.0):
-    - Firebase/Core
-    - FirebaseAuth (= 3.1.1)
-  - Firebase/Core (3.16.0):
-    - FirebaseAnalytics (= 3.8.0)
-    - FirebaseCore (= 3.6.0)
-  - Firebase/Database (3.16.0):
-    - Firebase/Core
-    - FirebaseDatabase (= 3.1.2)
-  - Firebase/Storage (3.16.0):
-    - Firebase/Core
-    - FirebaseStorage (= 1.1.0)
-  - FirebaseAnalytics (3.8.0):
-    - FirebaseCore (~> 3.6)
-    - FirebaseInstanceID (~> 1.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseAuth (3.1.1):
-    - FirebaseAnalytics (~> 3.7)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+  - Alamofire (4.8.1)
+  - BTNavigationDropdownMenu (0.5)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - DKCamera (1.6.4)
+  - DKImagePickerController (4.1.3):
+    - DKImagePickerController/Camera (= 4.1.3)
+    - DKImagePickerController/Core (= 4.1.3)
+    - DKImagePickerController/ImageDataManager (= 4.1.3)
+    - DKImagePickerController/InlineCamera (= 4.1.3)
+    - DKImagePickerController/PhotoEditor (= 4.1.3)
+    - DKImagePickerController/PhotoGallery (= 4.1.3)
+    - DKImagePickerController/Resource (= 4.1.3)
+  - DKImagePickerController/Camera (4.1.3):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/Core (4.1.3):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.1.3)
+  - DKImagePickerController/InlineCamera (4.1.3):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoEditor (4.1.3):
+    - DKImagePickerController/Core
+    - TOCropViewController (~> 2.4)
+  - DKImagePickerController/PhotoGallery (4.1.3):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.1.3)
+  - DKPhotoGallery (0.0.12):
+    - DKPhotoGallery/Core (= 0.0.12)
+    - DKPhotoGallery/Model (= 0.0.12)
+    - DKPhotoGallery/Preview (= 0.0.12)
+    - DKPhotoGallery/Resource (= 0.0.12)
+    - SDWebImage/GIF
+  - DKPhotoGallery/Core (0.0.12):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage/GIF
+  - DKPhotoGallery/Model (0.0.12):
+    - SDWebImage/GIF
+  - DKPhotoGallery/Preview (0.0.12):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage/GIF
+  - DKPhotoGallery/Resource (0.0.12):
+    - SDWebImage/GIF
+  - Fabric (1.9.0)
+  - Firebase/Auth (5.19.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (= 5.4.1)
+  - Firebase/Core (5.19.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.8.0)
+  - Firebase/CoreOnly (5.19.0):
+    - FirebaseCore (= 5.4.0)
+  - Firebase/Database (5.19.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (= 5.1.1)
+  - Firebase/Storage (5.19.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (= 3.1.1)
+  - FirebaseAnalytics (5.8.0):
+    - FirebaseCore (~> 5.4)
+    - FirebaseInstanceID (~> 3.8)
+    - GoogleAppMeasurement (= 5.8.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseAuth (5.4.1):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
+    - GoogleUtilities/Environment (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.6.0):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (3.1.2):
-    - FirebaseAnalytics (~> 3.7)
-  - FirebaseInstanceID (1.0.10):
-    - FirebaseCore (~> 3.6)
-  - FirebaseStorage (1.1.0):
-    - FirebaseAnalytics (~> 3.7)
+  - FirebaseAuthInterop (1.0.0)
+  - FirebaseCore (5.4.0):
+    - GoogleUtilities/Environment (~> 5.2)
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.1.1):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (3.8.0):
+    - FirebaseCore (~> 5.2)
+    - GoogleUtilities/Environment (~> 5.2)
+    - GoogleUtilities/UserDefaults (~> 5.2)
+  - FirebaseStorage (3.1.1):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
-    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMSessionFetcher/Core (1.1.9)
-  - IQKeyboardManagerSwift (4.0.9)
-  - NVActivityIndicatorView (3.6.1)
+  - FLAnimatedImage (1.0.12)
+  - GoogleAppMeasurement (5.8.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.5.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.5.0)
+  - GoogleUtilities/Logger (5.5.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.5.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.5.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.5.0)"
+  - GoogleUtilities/Reachability (5.5.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (5.5.0):
+    - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.1)
+  - IQKeyboardManagerSwift (6.2.0)
+  - leveldb-library (1.20)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
+  - NVActivityIndicatorView (4.6.1):
+    - NVActivityIndicatorView/Presenter (= 4.6.1)
+  - NVActivityIndicatorView/Presenter (4.6.1)
+  - SDWebImage/Core (4.4.6)
+  - SDWebImage/GIF (4.4.6):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+  - TOCropViewController (2.4.0)
 
 DEPENDENCIES:
   - Alamofire
-  - BTNavigationDropdownMenu (from `https://github.com/PhamBaTho/BTNavigationDropdownMenu.git`, branch `swift-3.0`)
+  - BTNavigationDropdownMenu
   - Crashlytics
   - DKImagePickerController
   - Fabric
@@ -65,34 +147,61 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
 
-EXTERNAL SOURCES:
-  BTNavigationDropdownMenu:
-    :branch: swift-3.0
-    :git: https://github.com/PhamBaTho/BTNavigationDropdownMenu.git
-
-CHECKOUT OPTIONS:
-  BTNavigationDropdownMenu:
-    :commit: 2c08c8579cf7a53ecb3dbf578e6e1034080a9859
-    :git: https://github.com/PhamBaTho/BTNavigationDropdownMenu.git
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - BTNavigationDropdownMenu
+    - Crashlytics
+    - DKCamera
+    - DKImagePickerController
+    - DKPhotoGallery
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseAuthInterop
+    - FirebaseCore
+    - FirebaseDatabase
+    - FirebaseInstanceID
+    - FirebaseStorage
+    - FLAnimatedImage
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - IQKeyboardManagerSwift
+    - leveldb-library
+    - nanopb
+    - NVActivityIndicatorView
+    - SDWebImage
+    - TOCropViewController
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
-  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
-  DKImagePickerController: 8db7e76a88a7a66a893ba30e935cc4c9bb7ed335
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
-  FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
-  FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
-  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
-  FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
-  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
-  FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
-  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
-  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  BTNavigationDropdownMenu: ba3a26fdb6a56c4721c31df8a0875106c259663a
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  DKCamera: 61fa47629a39354e5111bca1fe96695de020dcb9
+  DKImagePickerController: 7c8c788a17251dfbcf4920c5f042d55c3b900d68
+  DKPhotoGallery: 1b4d65d9a485dfdd2002f22daa5b955eafb350ea
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Firebase: c60d49e9c2630875a96207d15e2affb8364996d1
+  FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
+  FirebaseAuth: cbb892a66baed025efc179372598941252acf853
+  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
+  FirebaseCore: 22a79a961c3951ef2f77b67bfbc99e454247b319
+  FirebaseDatabase: 2c15b0ea6f2c6eb5e57413f9d6340f1e50b81ae3
+  FirebaseInstanceID: cf488df2f4b79782f0e430b04a0e17c0aa7979b2
+  FirebaseStorage: 6162ef4322502b818d9de0ec552f5226d283de43
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
+  GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  TOCropViewController: 368d8df3ea43b62c3dc5a61f11b9048274d240bd
 
-PODFILE CHECKSUM: 398cdb9a1032faa55845c52d6b03d9a6beeebc9d
+PODFILE CHECKSUM: a2bffcf400e3cd75ff96cbc058e5d811e6c78fb6
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3

@@ -28,7 +28,7 @@ class WeatherProvider {
         var townObject = townlist.filter { $0.key == town }
 
         if townObject.count != 0 {
-            let townID = townObject[0].value
+            let townID = townObject.first
             let urlString = "https://works.ioa.tw/weather/api/weathers/\(townID).json"
 
             Alamofire.request(urlString).responseJSON { response in

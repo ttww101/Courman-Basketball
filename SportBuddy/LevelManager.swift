@@ -20,7 +20,7 @@ class LevelManager {
         var level: Level?
         let newUser = "newUser"
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseLevel.nodeName)
             .child(currentUserUID)
 
@@ -56,7 +56,7 @@ class LevelManager {
 
     func updateUserLevel(currentUserUID: String, values: [String: String], completion: @escaping (Error?) -> Void) {
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseLevel.nodeName)
             .child(currentUserUID)
 
@@ -96,7 +96,7 @@ class LevelManager {
 
     func upgradeBasketballLevel(currentUserUID: String, userCorrentBasketballLevel: String, completion: @escaping (String?, Error?) -> Void) {
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseLevel.nodeName)
             .child(currentUserUID)
 

@@ -35,7 +35,7 @@ class EditProfileViewController: BaseViewController {
     // MARK: - Get User Info From Firebase
     func getUserInfo() {
 
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
 
         loadingIndicator.start()
 
@@ -92,7 +92,7 @@ class EditProfileViewController: BaseViewController {
     }
 
     // MARK: - Select Picture
-    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         guard
             let tappedImage = tapGestureRecognizer.view as? UIImageView
             else { return }
@@ -104,10 +104,10 @@ class EditProfileViewController: BaseViewController {
 
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             if assets.count != 0 {
-                assets[0].fetchOriginalImageWithCompleteBlock({ (image, _) in
-                    tappedImage.image = image
-                    self.isUpdated = true
-                })
+//                assets[0].fetchOriginalImageWithCompleteBlock({ (image, _) in
+//                    tappedImage.image = image
+//                    self.isUpdated = true
+//                })
             }
         }
 
@@ -121,9 +121,9 @@ class EditProfileViewController: BaseViewController {
 
             self.loadingIndicator.start()
 
-            guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+            guard let uid = Auth.auth().currentUser?.uid else { return }
 
-            let storageRef = FIRStorage.storage().reference()
+            let storageRef = Storage.storage().reference()
                 .child(Constant.FirebaseStorage.userPhoto)
                 .child(Constant.FirebaseStorage.userPhoto + "_" + uid)
 
@@ -146,21 +146,20 @@ class EditProfileViewController: BaseViewController {
         }
     }
 
-    func uploadImageToFirebase(_ uid: String, _ storageRef: FIRStorageReference) {
+    func uploadImageToFirebase(_ uid: String, _ storageRef: StorageReference) {
 
         guard
             let uploadData = UIImageJPEGRepresentation(self.userImage.image!, 0.3)
             else { return }
 
-        storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+        storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
 
             if error != nil {
                 print("=== Error in EditProfileViewController02: \(String(describing: error))")
                 return
             }
 
-            let userPhotoURL = metadata?.downloadURL()?.absoluteString
-
+            let userPhotoURL = metadata?.path
             self.updateValueToFirebase(uid: uid,
                                        name: self.nameTextField.text!,
                                        userPhotoURL: userPhotoURL!)
@@ -169,7 +168,7 @@ class EditProfileViewController: BaseViewController {
 
     func updateValueToFirebase(uid: String, name: String, userPhotoURL: String) {
 
-        let ref = FIRDatabase.database().reference().child(Constant.FirebaseUser.nodeName).child(uid)
+        let ref = Database.database().reference().child(Constant.FirebaseUser.nodeName).child(uid)
 
         let userUpdatedInfo = [Constant.FirebaseUser.name: name,
                                Constant.FirebaseUser.photoURL: userPhotoURL]

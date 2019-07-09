@@ -59,7 +59,7 @@ class SportItemsViewController: BaseViewController {
     }
 
     func checkIfUserIsLoggedIn() {
-        if FIRAuth.auth()?.currentUser?.uid == nil {
+        if Auth.auth().currentUser?.uid == nil {
             handleLogout()
         }
     }
@@ -67,7 +67,7 @@ class SportItemsViewController: BaseViewController {
     func handleLogout() {
 
         do {
-            try FIRAuth.auth()?.signOut()
+            try Auth.auth().signOut()
         } catch let logoutError {
             errorHandle(errString: nil, error: logoutError)
         }
@@ -99,12 +99,14 @@ class SportItemsViewController: BaseViewController {
 
     func setUserInfo() {
 
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
 
         loadingIndicator.start()
 
         UserManager.shared.getUserInfo(currentUserUID: uid) { (user, error) in
 
+            self.loadingIndicator.stop()
+            
             if user != nil {
                 self.userName.text = user!.name
                 self.loadImage(imageUrlString: user!.photoURL, imageView: self.userImage)
@@ -127,7 +129,7 @@ class SportItemsViewController: BaseViewController {
     // todo: add another item button action
     @IBAction func toBasketballGameList(_ sender: Any) {
 
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
 
         LevelManager.shared.getUserLevel(currentUserUID: uid) { (level, newUser, error) in
 
@@ -179,7 +181,7 @@ class SportItemsViewController: BaseViewController {
 
     @IBAction func logout(_ sender: Any) {
 
-        if FIRAuth.auth()?.currentUser?.uid != nil {
+        if Auth.auth().currentUser?.uid != nil {
             handleLogout()
         }
     }

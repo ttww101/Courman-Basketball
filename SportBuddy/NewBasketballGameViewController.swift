@@ -110,7 +110,7 @@ class NewBasketballGameViewController: BaseViewController {
         timeTextField.inputView = timePicker
     }
 
-    func selectedTime() {
+    @objc func selectedTime() {
 
         // format date
         let formatter = DateFormatter()
@@ -125,7 +125,7 @@ class NewBasketballGameViewController: BaseViewController {
         // MARK: Loading indicator
         loadingIndicator.start()
 
-        BasketballCourtsProvider.shared.getApiData(city: Constant.CurrentCity.cityName, gymType: Constant.GymType.basketball) { (basketballCourts, error) in
+        BasketballCourtsProvider().getApiData(city: Constant.CurrentCity.cityName, gymType: Constant.GymType.basketball) { (basketballCourts, error) in
 
             if error == nil {
 
@@ -150,8 +150,8 @@ class NewBasketballGameViewController: BaseViewController {
 
         if name != "" && court != "" && level != "" && time != "" {
 
-            guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-            let ref = FIRDatabase.database().reference().child(Constant.FirebaseGame.nodeName)
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let ref = Database.database().reference().child(Constant.FirebaseGame.nodeName)
 
             if selectedCourt != nil {
 
@@ -199,9 +199,9 @@ class NewBasketballGameViewController: BaseViewController {
 
     func setUserGameList(_ uid: String, _ gameID: String) {
 
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseUserGameList.nodeName)
             .child(uid)
 

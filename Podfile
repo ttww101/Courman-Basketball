@@ -7,16 +7,16 @@ target 'SportBuddy' do
 
   # Pods for SportBuddy
 
-	pod 'Alamofire'
-	pod 'Firebase/Core'
-	pod 'Firebase/Auth'
-	pod 'Firebase/Database'
-	pod 'Firebase/Storage'
-    pod 'IQKeyboardManagerSwift'
-    pod 'NVActivityIndicatorView'
-    pod 'DKImagePickerController'
-	pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
-    pod 'Fabric'
-    pod 'Crashlytics'
+  pod 'Alamofire'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'IQKeyboardManagerSwift'
+  pod 'NVActivityIndicatorView'
+  pod 'DKImagePickerController'
+  pod 'BTNavigationDropdownMenu'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end

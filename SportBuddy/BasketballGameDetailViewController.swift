@@ -51,7 +51,7 @@ class BasketballGameDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let uid = FIRAuth.auth()?.currentUser?.uid {
+        if let uid = Auth.auth().currentUser?.uid {
             currentUserUid = uid
         } else {
             print("=== Can't find this user in BasketballGameDetailViewController")
@@ -418,9 +418,9 @@ extension BasketballGameDetailViewController: UITableViewDelegate, UITableViewDa
 // MARK: - Set cell
 extension BasketballGameDetailViewController {
 
-    func getGameDBRef() -> FIRDatabaseReference {
+    func getGameDBRef() -> DatabaseReference {
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
                     .child(Constant.FirebaseGame.nodeName)
                     .child((game?.gameID)!)
 
@@ -429,7 +429,7 @@ extension BasketballGameDetailViewController {
 
     func setUserGameList(isJoined: Bool) {
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseUserGameList.nodeName)
             .child(currentUserUid)
 
@@ -624,7 +624,7 @@ extension BasketballGameDetailViewController {
         return cell
     }
 
-    func joinToGame() {
+    @objc func joinToGame() {
 
         guard game != nil else { return }
 
@@ -647,7 +647,7 @@ extension BasketballGameDetailViewController {
         }
     }
 
-    func leaveFromGame() {
+    @objc func leaveFromGame() {
 
         guard game != nil else { return }
 

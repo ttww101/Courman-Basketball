@@ -101,7 +101,7 @@ class SignUpViewController: BaseViewController {
     }
 
     // MARK: - Select Picture
-    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         guard
             let tappedImage = tapGestureRecognizer.view as? UIImageView
             else { return }
@@ -113,9 +113,9 @@ class SignUpViewController: BaseViewController {
 
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             if assets.count != 0 {
-                assets[0].fetchOriginalImageWithCompleteBlock({ (image, _) in
-                    tappedImage.image = image
-                })
+//                assets[0].fetchOriginalImageWithCompleteBlock({ (image, _) in
+//                    tappedImage.image = image
+//                })
             }
         }
 
@@ -154,7 +154,7 @@ class SignUpViewController: BaseViewController {
 
     // MARK: - Sign up
     @IBAction func signUp(_ sender: Any) {
-
+//        testsetvalue()
         // todo: 為了先上架，所以把Gender藏起來，之後再打開
         userGender = "Default"
 
@@ -169,7 +169,7 @@ class SignUpViewController: BaseViewController {
             loadingIndicator.start()
 
             // MARK: Save user info to firebase
-            FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
 
                 if error != nil {
                     self.loadingIndicator.stop()
@@ -177,9 +177,9 @@ class SignUpViewController: BaseViewController {
                     return
                 }
 
-                guard let uid = user?.uid else { return }
+                guard let uid = user?.user.providerID else { return }
 
-                let storageRef = FIRStorage.storage().reference()
+                let storageRef = Storage.storage().reference()
                     .child(Constant.FirebaseStorage.userPhoto)
                     .child(Constant.FirebaseStorage.userPhoto + "_" + uid)
 
@@ -187,7 +187,7 @@ class SignUpViewController: BaseViewController {
                     let uploadData = UIImageJPEGRepresentation(self.userImage.image!, 0.3)
                     else { return }
 
-                storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
 
                     if error != nil {
                         self.loadingIndicator.stop()
@@ -195,7 +195,7 @@ class SignUpViewController: BaseViewController {
                         return
                     }
 
-                    let userPhotoURL = metadata?.downloadURL()?.absoluteString
+                    let userPhotoURL = metadata?.path
 
                     let userInfo = User(email: email, name: name, gender: gender,
                                     photoURL: userPhotoURL ?? "", lastTimePlayedGame: "",
@@ -211,10 +211,28 @@ class SignUpViewController: BaseViewController {
         }
     }
 
+    func testsetvalue() {
+        let dbUrl = Constant.Firebase.dbUrl
+        
+//        let ref = Database.database().reference()
+        let ref = Database.database().reference(fromURL: dbUrl)
+        let usersReference = ref.child(Constant.FirebaseUser.nodeName)
+        ref.child("users").child("3TdFL5Dm4MTQOO0yvY34t2qZTq73").setValue(["username": "username"])
+        
+        usersReference.setValue(["username": "username"]) {
+            (error:Error?, ref:DatabaseReference) in
+            if let error = error {
+                print("Data could not be saved: \(error).")
+            } else {
+                print("Data saved successfully!")
+            }
+        }
+    }
+    
     func setValueToFirebase(uid: String, userInfo: User) {
 
         let dbUrl = Constant.Firebase.dbUrl
-        let ref = FIRDatabase.database().reference(fromURL: dbUrl)
+        let ref = Database.database().reference(fromURL: dbUrl)
         let usersReference = ref.child(Constant.FirebaseUser.nodeName).child(uid)
 
         let value: [String : Any] = [Constant.FirebaseUser.email: userInfo.email,

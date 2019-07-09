@@ -19,7 +19,7 @@ class GameCommentProvider {
 
         var comments: [GameComment] = []
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseGameMessage.nodeName)
             .child(gameID)
 
@@ -28,7 +28,7 @@ class GameCommentProvider {
             for childSnap in snapshot.children.allObjects {
 
                 guard
-                    let snap = childSnap as? FIRDataSnapshot
+                    let snap = childSnap as? DataSnapshot
                     else {
                         print("=== Can't get the comment in GameCommentProvider")
                         return

@@ -10,7 +10,7 @@ import Firebase
 
 class BasketballGameParser {
 
-    func parserGame(_ snap: FIRDataSnapshot) -> BasketballGame? {
+    func parserGame(_ snap: DataSnapshot) -> BasketballGame? {
 
         if let gameInfo = snap.value as? NSDictionary,
             let gameCourt = gameInfo[Constant.FirebaseGame.court] as? NSDictionary,

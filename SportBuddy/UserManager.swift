@@ -19,7 +19,7 @@ class UserManager {
 
         var user: User?
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseUser.nodeName)
             .child(currentUserUID)
 

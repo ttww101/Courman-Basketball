@@ -19,7 +19,7 @@ class MemebersProvider {
 
         var members: [String] = []
 
-        let ref = FIRDatabase.database().reference()
+        let ref = Database.database().reference()
             .child(Constant.FirebaseGame.nodeName)
             .child(gameID)
             .child(Constant.FirebaseGame.members)

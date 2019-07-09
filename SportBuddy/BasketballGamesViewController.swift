@@ -30,7 +30,7 @@ class BasketballGamesViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        getGames()
+//        getGames()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -83,7 +83,7 @@ class BasketballGamesViewController: BaseViewController {
 
     func setNavigationDropdownMenu() {
 
-        menuView = BTNavigationDropdownMenu(title: items[Constant.CurrentCity.cityIndex], items: items as [AnyObject])
+        menuView = BTNavigationDropdownMenu(title: items[Constant.CurrentCity.cityIndex], items: items as [Any] as! [String])
         self.navigationItem.titleView = menuView
 
         menuView?.didSelectItemAtIndexHandler = { [weak self] (indexPath: Int) -> Void in
@@ -107,7 +107,7 @@ class BasketballGamesViewController: BaseViewController {
 
         loadingIndicator.start()
 
-        let ref = FIRDatabase.database().reference().child(Constant.FirebaseGame.nodeName)
+        let ref = Database.database().reference().child(Constant.FirebaseGame.nodeName)
 
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
 
@@ -116,7 +116,7 @@ class BasketballGamesViewController: BaseViewController {
                 self.gamesList.removeAll()
 
                 // todo: 拉出來成一個game provider
-                if let snaps = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                if let snaps = snapshot.children.allObjects as? [DataSnapshot] {
                     for snap in snaps {
 
                         let gameParser = BasketballGameParser()
@@ -214,7 +214,7 @@ class BasketballGamesViewController: BaseViewController {
         return isOwnerInGame
     }
 
-    func createNewBasketballGameGame() {
+    @objc func createNewBasketballGameGame() {
         let storyBoard = UIStoryboard(name: Constant.Storyboard.newBasketballGame, bundle: nil)
         guard let newBasketballGameViewController = storyBoard.instantiateViewController(withIdentifier: Constant.Controller.newBasketballGame) as? NewBasketballGameViewController else { return }
 

@@ -63,16 +63,16 @@ struct Constant {
 
     struct Firebase {
 
-        static let dbUrl = "https://sportbuddy-710dd.firebaseio.com/"
+        static let dbUrl = "https://agt-basketball-courtman.firebaseio.com"
     }
 
     struct FirebaseUser {
 
-        static let nodeName = "Users"
-        static let photoURL = "PhotoURL"
+        static let nodeName = "Users/"
         static let email = "Email"
         static let name = "Name"
         static let gender = "Gender"
+        static let photoURL = "PhotoURL"
         static let playedGamesCount = "PlayedGamesCount"
         static let lastTimePlayedGame = "LastTimePlayedGame"
     }

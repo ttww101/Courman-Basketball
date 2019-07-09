@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		86B393D6D3C6D9E1CDF02680 /* Pods_SportBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */; };
+		94EE141022D46C1E007DD462 /* iPlay.cer in Resources */ = {isa = PBXBuildFile; fileRef = 94EE140F22D46BA9007DD462 /* iPlay.cer */; };
+		94EE141222D46D22007DD462 /* Blah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141122D46D22007DD462 /* Blah.swift */; };
+		94EE141622D46F7B007DD462 /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141422D46F7B007DD462 /* RequestToken.swift */; };
+		94EE141722D46F7B007DD462 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141522D46F7B007DD462 /* DataLoader.swift */; };
+		94EE141922D48A0E007DD462 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94EE141822D48A0E007DD462 /* GoogleService-Info.plist */; };
 		B0002A581E9E820700CD2241 /* BasketballGameDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0002A571E9E820700CD2241 /* BasketballGameDetail.storyboard */; };
-		B00708D91E94CC37005CFD0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B00708D81E94CC37005CFD0F /* GoogleService-Info.plist */; };
 		B0072D071E9F54660056BC49 /* BasketballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0072D061E9F54660056BC49 /* BasketballGame.swift */; };
 		B01437BA1EBAFCA400675239 /* GameCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01437B81EBAFCA400675239 /* GameCommentTableViewCell.swift */; };
 		B01437BB1EBAFCA400675239 /* GameCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01437B91EBAFCA400675239 /* GameCommentTableViewCell.xib */; };
@@ -89,8 +93,12 @@
 		35A3321B5699FCB2C74FFCC5 /* Pods-SportBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		6A1C3E8AC94014525C4957ED /* Pods-SportBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94EE140F22D46BA9007DD462 /* iPlay.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPlay.cer; sourceTree = "<group>"; };
+		94EE141122D46D22007DD462 /* Blah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blah.swift; sourceTree = "<group>"; };
+		94EE141422D46F7B007DD462 /* RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
+		94EE141522D46F7B007DD462 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		94EE141822D48A0E007DD462 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0002A571E9E820700CD2241 /* BasketballGameDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BasketballGameDetail.storyboard; sourceTree = "<group>"; };
-		B00708D81E94CC37005CFD0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0072D061E9F54660056BC49 /* BasketballGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballGame.swift; sourceTree = "<group>"; };
 		B01437B81EBAFCA400675239 /* GameCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCommentTableViewCell.swift; sourceTree = "<group>"; };
 		B01437B91EBAFCA400675239 /* GameCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameCommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -197,6 +205,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		94EE141322D46F7B007DD462 /* DataLoader */ = {
+			isa = PBXGroup;
+			children = (
+				94EE141422D46F7B007DD462 /* RequestToken.swift */,
+				94EE141522D46F7B007DD462 /* DataLoader.swift */,
+			);
+			path = DataLoader;
+			sourceTree = "<group>";
+		};
 		B0002A561E9E81DE00CD2241 /* BasketballGameDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +259,7 @@
 		B06DB2AE1E7FB28000DCF016 /* SportBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				94EE141322D46F7B007DD462 /* DataLoader */,
 				B0A8F4321E8115A3006CBA96 /* Base */,
 				B0CE8AF71E8B69D0003F0F12 /* Library */,
 				B0754D6D1E83A255006A5754 /* Tabbar */,
@@ -258,7 +276,9 @@
 				B06DB2AF1E7FB28000DCF016 /* AppDelegate.swift */,
 				B06DB2B61E7FB28000DCF016 /* Assets.xcassets */,
 				B06DB2BB1E7FB28000DCF016 /* Info.plist */,
-				B00708D81E94CC37005CFD0F /* GoogleService-Info.plist */,
+				94EE141122D46D22007DD462 /* Blah.swift */,
+				94EE140F22D46BA9007DD462 /* iPlay.cer */,
+				94EE141822D48A0E007DD462 /* GoogleService-Info.plist */,
 			);
 			path = SportBuddy;
 			sourceTree = "<group>";
@@ -509,10 +529,9 @@
 				B06DB2A81E7FB28000DCF016 /* Sources */,
 				B06DB2A91E7FB28000DCF016 /* Frameworks */,
 				B06DB2AA1E7FB28000DCF016 /* Resources */,
-				3A5BAADBBD60D4E6467CAE0B /* [CP] Embed Pods Frameworks */,
-				6F2FC18CA91EF9DE902D096F /* [CP] Copy Pods Resources */,
 				B08F5D1B1E7FB77100F470F2 /* Swiftlint */,
 				B058029F1EAEE5AB00EA682A /* Crashlytics */,
+				85919C246AB50A6B1AD37CF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -531,7 +550,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = stevenchou;
+				ORGANIZATIONNAME = AGT;
 				TargetAttributes = {
 					B06DB2AB1E7FB28000DCF016 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -545,6 +564,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -563,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94EE141022D46C1E007DD462 /* iPlay.cer in Resources */,
 				B0DC15B81EA747D500443F9D /* MemberCollectionViewCell.xib in Resources */,
 				B0D443CC1EA36EED008EF375 /* EditProfile.storyboard in Resources */,
 				B06DB2BA1E7FB28000DCF016 /* LaunchScreen.storyboard in Resources */,
@@ -579,47 +600,65 @@
 				B084BD321E7FD29F00DC48B2 /* SignUp.storyboard in Resources */,
 				B0002A581E9E820700CD2241 /* BasketballGameDetail.storyboard in Resources */,
 				B0DB35031EB5AC8800F505F0 /* GameDefaultTableViewCell.xib in Resources */,
+				94EE141922D48A0E007DD462 /* GoogleService-Info.plist in Resources */,
 				B037B2921E826905007FD483 /* SportItems.storyboard in Resources */,
 				B06DB2B71E7FB28000DCF016 /* Assets.xcassets in Resources */,
 				B0CE8AF21E8B640C003F0F12 /* CourtInfoTableViewCell.xib in Resources */,
 				B0C59FD91E9CC9D600214A1F /* GameTableViewCell.xib in Resources */,
 				B099C6A71E89634000C0B142 /* NewBasketballGame.storyboard in Resources */,
 				B0971BC61E850EB10037E26D /* CourtTableViewCell.xib in Resources */,
-				B00708D91E94CC37005CFD0F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A5BAADBBD60D4E6467CAE0B /* [CP] Embed Pods Frameworks */ = {
+		85919C246AB50A6B1AD37CF5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BTNavigationDropdownMenu/BTNavigationDropdownMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/DKCamera/DKCamera.framework",
+				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/DKPhotoGallery/DKPhotoGallery.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTNavigationDropdownMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKCamera.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKPhotoGallery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6F2FC18CA91EF9DE902D096F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B269522B8D2C868286712F7 /* [CP] Check Pods Manifest.lock */ = {
@@ -628,13 +667,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportBuddy-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B058029F1EAEE5AB00EA682A /* Crashlytics */ = {
@@ -672,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94EE141722D46F7B007DD462 /* DataLoader.swift in Sources */,
 				B06DB2C21E7FB36700DCF016 /* LoginViewController.swift in Sources */,
 				B0754D781E83C4F1006A5754 /* BasketballGamesNavigationController.swift in Sources */,
 				B0E8816F1E9FCAFE0093AA11 /* BasketballGamesViewController.swift in Sources */,
@@ -703,6 +746,7 @@
 				B07315031EB1D8F100BFB4CA /* UserManager.swift in Sources */,
 				B07131FC1EAA0C5A00874DEF /* BasketballGameParser.swift in Sources */,
 				B0AD470E1E8E241B00876498 /* WeatherProvider.swift in Sources */,
+				94EE141622D46F7B007DD462 /* RequestToken.swift in Sources */,
 				B08BD7221EB30BC5007385F1 /* ConvertImageToBW.swift in Sources */,
 				B07CF4A31E82D7C600E91F7E /* SportItemsViewController.swift in Sources */,
 				B0754D7A1E83C5AF006A5754 /* BasketballCourtsNavigationController.swift in Sources */,
@@ -719,6 +763,7 @@
 				B0CE8AF91E8B69F2003F0F12 /* Identifiable.swift in Sources */,
 				B0754D7C1E83C5C6006A5754 /* BasketballProfileNavigationController.swift in Sources */,
 				B0BF606F1EA46E4500E37C73 /* LoadingIndicator.swift in Sources */,
+				94EE141222D46D22007DD462 /* Blah.swift in Sources */,
 				B0DC15B71EA747D500443F9D /* MemberCollectionViewCell.swift in Sources */,
 				B07315051EB1E13C00BFB4CA /* LevelManager.swift in Sources */,
 				B08ABE481EBDB80F00266BEF /* UserWithPhotoURL.swift in Sources */,
@@ -845,9 +890,9 @@
 				INFOPLIST_FILE = SportBuddy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.steven.SportBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AGT.courtman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -861,9 +906,9 @@
 				INFOPLIST_FILE = SportBuddy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.steven.SportBuddy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AGT.courtman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
