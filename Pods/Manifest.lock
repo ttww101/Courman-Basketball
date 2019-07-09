@@ -132,6 +132,7 @@ PODS:
   - SDWebImage/GIF (4.4.6):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SnapKit (4.2.0)
   - TOCropViewController (2.4.0)
 
 DEPENDENCIES:
@@ -146,6 +147,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
+  - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -173,6 +175,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - SDWebImage
+    - SnapKit
     - TOCropViewController
 
 SPEC CHECKSUMS:
@@ -200,8 +203,9 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   TOCropViewController: 368d8df3ea43b62c3dc5a61f11b9048274d240bd
 
-PODFILE CHECKSUM: a2bffcf400e3cd75ff96cbc058e5d811e6c78fb6
+PODFILE CHECKSUM: 67a87a1afd6d6b53f5da20528da96a53b7ce2245
 
 COCOAPODS: 1.5.3

@@ -19,9 +19,8 @@ class GameDefaultTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         cellView.backgroundColor = .clear
-
         defaultStringLabel.textColor = .white
-        defaultStringLabel.text = "目前還沒有人開團打球\n就由你來創建第一個球局吧!"
+        defaultStringLabel.text = "您所在地區尚未有球團開啟\n來創建第一個球團!"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

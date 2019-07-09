@@ -8,15 +8,16 @@ target 'SportBuddy' do
   # Pods for SportBuddy
 
   pod 'Alamofire'
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
   pod 'IQKeyboardManagerSwift'
   pod 'NVActivityIndicatorView'
   pod 'DKImagePickerController'
   pod 'BTNavigationDropdownMenu'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'SnapKit'
 
 end

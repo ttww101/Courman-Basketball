@@ -177,8 +177,10 @@ class SignUpViewController: BaseViewController {
                     return
                 }
 
-                guard let uid = user?.user.providerID else { return }
+                guard let currentUser = Auth.auth().currentUser else { return }
 
+                let uid = currentUser.uid
+                
                 let storageRef = Storage.storage().reference()
                     .child(Constant.FirebaseStorage.userPhoto)
                     .child(Constant.FirebaseStorage.userPhoto + "_" + uid)
@@ -211,24 +213,6 @@ class SignUpViewController: BaseViewController {
         }
     }
 
-    func testsetvalue() {
-        let dbUrl = Constant.Firebase.dbUrl
-        
-//        let ref = Database.database().reference()
-        let ref = Database.database().reference(fromURL: dbUrl)
-        let usersReference = ref.child(Constant.FirebaseUser.nodeName)
-        ref.child("users").child("3TdFL5Dm4MTQOO0yvY34t2qZTq73").setValue(["username": "username"])
-        
-        usersReference.setValue(["username": "username"]) {
-            (error:Error?, ref:DatabaseReference) in
-            if let error = error {
-                print("Data could not be saved: \(error).")
-            } else {
-                print("Data saved successfully!")
-            }
-        }
-    }
-    
     func setValueToFirebase(uid: String, userInfo: User) {
 
         let dbUrl = Constant.Firebase.dbUrl

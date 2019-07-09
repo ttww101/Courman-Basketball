@@ -12,7 +12,7 @@ struct Constant {
 
     struct AppName {
 
-        static let appName = NSLocalizedString("SportBuddy", comment: "")
+        static let appName = NSLocalizedString("籃球人人樂", comment: "")
     }
 
     struct SportItem {
@@ -68,7 +68,7 @@ struct Constant {
 
     struct FirebaseUser {
 
-        static let nodeName = "Users/"
+        static let nodeName = "Users"
         static let email = "Email"
         static let name = "Name"
         static let gender = "Gender"
