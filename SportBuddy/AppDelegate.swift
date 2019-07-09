@@ -40,10 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("User notifications are not allowed")
             }
         }
-        let basketballStorybard = UIStoryboard(name: Constant.Storyboard.basketball, bundle: nil)
-        let basketballTabbarViewController = basketballStorybard.instantiateViewController(withIdentifier: Constant.Controller.basketballTabbar) as? BasketballTabbarViewController
-        self.window?.rootViewController = basketballTabbarViewController
-        self.window?.makeKeyAndVisible()
+        
+        if Auth.auth().currentUser != nil {
+            let sb = UIStoryboard(name: Constant.Storyboard.sportsMenu, bundle: nil)
+            let tabvc = sb.instantiateViewController(withIdentifier: Constant.Controller.sportsMenu) as? SportsMenuViewController
+            self.window?.rootViewController = tabvc
+            self.window?.makeKeyAndVisible()
+        } else {
+            //User Not logged in
+        }
+  
 
         Fabric.with([Crashlytics.self])
 

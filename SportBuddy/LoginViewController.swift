@@ -44,10 +44,10 @@ class LoginViewController: BaseViewController {
                 // User is signed in.
                 print("=== User is signed in ===")
                 if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                    let sportItemsStorybard = UIStoryboard(name: Constant.Storyboard.sportItems, bundle: nil)
-                    let sportItemsViewController = sportItemsStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportItems) as? SportItemsViewController
+                    let sportMenuStorybard = UIStoryboard(name: Constant.Storyboard.sportsMenu, bundle: nil)
+                    let vc = sportMenuStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportsMenu) as? SportsMenuViewController
 
-                    appDelegate.window?.rootViewController = sportItemsViewController
+                    appDelegate.window?.rootViewController = vc
                 }
             } else {
                 // No user is signed in.
@@ -100,10 +100,10 @@ class LoginViewController: BaseViewController {
             // successfully login
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
 
-                let sportItemsStorybard = UIStoryboard(name: Constant.Storyboard.sportItems, bundle: nil)
-                let sportItemsViewController = sportItemsStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportItems) as? SportItemsViewController
+                let sportMenuStorybard = UIStoryboard(name: Constant.Storyboard.sportsMenu, bundle: nil)
+                let vc = sportMenuStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportsMenu) as? SportsMenuViewController
 
-                appDelegate.window?.rootViewController = sportItemsViewController
+                appDelegate.window?.rootViewController = vc
             }
         })
     }
@@ -158,10 +158,10 @@ class LoginViewController: BaseViewController {
             // successfully login
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
 
-                let sportItemsStorybard = UIStoryboard(name: Constant.Storyboard.sportItems, bundle: nil)
-                let sportItemsViewController = sportItemsStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportItems) as? SportItemsViewController
+                let sportMenuStorybard = UIStoryboard(name: Constant.Storyboard.sportsMenu, bundle: nil)
+                let vc = sportMenuStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportsMenu) as? SportsMenuViewController
 
-                appDelegate.window?.rootViewController = sportItemsViewController
+                appDelegate.window?.rootViewController = vc
             }
         })
     }

@@ -65,7 +65,7 @@ class BasketballGamesViewController: BaseViewController {
 
         transparentizeNavigationBar(navigationController: self.navigationController)
 
-        let backButton = createBackButton(action: #selector(backToSportItemsView))
+        let backButton = createBackButton(action: #selector(backToSportMenuViewController))
         self.navigationItem.leftBarButtonItem = backButton
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Button_New"), style: .done, target: self, action: #selector(createNewBasketballGameGame))

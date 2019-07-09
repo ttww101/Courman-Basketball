@@ -1,5 +1,5 @@
 //
-//  SportItemsViewController.swift
+//  vc.swift
 //  SportBuddy
 //
 //  Created by steven.chou on 2017/3/23.
@@ -11,7 +11,7 @@ import Firebase
 import NVActivityIndicatorView
 import UserNotifications
 
-class SportItemsViewController: BaseViewController {
+class SportsMenuViewController: BaseViewController {
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -188,7 +188,7 @@ class SportItemsViewController: BaseViewController {
 }
 
 // MARK: - Load Image and Set to ImageView
-extension SportItemsViewController {
+extension SportsMenuViewController {
 
     func loadImage(imageUrlString: String, imageView: UIImageView) {
 
@@ -225,7 +225,7 @@ extension SportItemsViewController {
 }
 
 // MARK: - Error handle
-extension SportItemsViewController {
+extension SportsMenuViewController {
 
     func errorHandle(errString: String?, error: Error?) {
 

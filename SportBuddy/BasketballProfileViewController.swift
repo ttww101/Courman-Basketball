@@ -81,7 +81,7 @@ class BasketballProfileViewController: BaseViewController {
 
     func setNavigationBar() {
 
-        navigationItem.leftBarButtonItem = createBackButton(action: #selector(backToSportItemsView))
+        navigationItem.leftBarButtonItem = createBackButton(action: #selector(backToSportMenuViewController))
         transparentizeNavigationBar(navigationController: self.navigationController)
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Button_Mail"),

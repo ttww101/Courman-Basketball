@@ -235,10 +235,10 @@ class SignUpViewController: BaseViewController {
             }
 
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                let sportItemsStorybard = UIStoryboard(name: Constant.Storyboard.sportItems, bundle: nil)
-                let sportItemsViewController = sportItemsStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportItems) as? SportItemsViewController
+                let sportMenuStorybard = UIStoryboard(name: Constant.Storyboard.sportsMenu, bundle: nil)
+                let vc = sportMenuStorybard.instantiateViewController(withIdentifier: Constant.Controller.sportsMenu) as? SportsMenuViewController
 
-                appDelegate.window?.rootViewController = sportItemsViewController
+                appDelegate.window?.rootViewController = vc
             }
 
             self.loadingIndicator.stop()

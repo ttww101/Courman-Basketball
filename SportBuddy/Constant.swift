@@ -15,7 +15,7 @@ struct Constant {
         static let appName = NSLocalizedString("籃球人人樂", comment: "")
     }
 
-    struct SportItem {
+    struct Sports {
 
         static let basketball = "Basketball"
     }
@@ -24,7 +24,7 @@ struct Constant {
 
         static let login = "Login"
         static let signUp = "SignUp"
-        static let sportItems = "SportItems"
+        static let sportsMenu = "SportsMenu"
         static let editProfile = "EditProfile"
         static let chooseLevel = "ChooseLevel"
         static let basketball = "Basketball"
@@ -37,7 +37,7 @@ struct Constant {
 
         static let login = "LoginViewController"
         static let signUp = "SignUpViewController"
-        static let sportItems = "SportItemsViewController"
+        static let sportsMenu = "vc"
         static let editProfile = "EditProfileViewController"
         static let chooseLevel = "ChooseLevelViewController"
         static let basketballTabbar = "BasketballTabbarViewController"
@@ -95,7 +95,7 @@ struct Constant {
         static let nodeName = "Games"
         static let gameID = "GameID"
         static let owner = "Owner"
-        static let itme = "Item"
+        static let item = "Item"
         static let name = "Name"
         static let time = "Time"
         static let court = "Court"

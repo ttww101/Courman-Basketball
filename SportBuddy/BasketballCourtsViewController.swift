@@ -82,7 +82,7 @@ extension BasketballCourtsViewController {
 
         transparentizeNavigationBar(navigationController: self.navigationController)
 
-        navigationItem.leftBarButtonItem = createBackButton(action: #selector(backToSportItemsView))
+        navigationItem.leftBarButtonItem = createBackButton(action: #selector(backToSportMenuViewController))
         setNavigationDropdownMenu()
 
     }

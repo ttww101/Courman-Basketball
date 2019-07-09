@@ -172,7 +172,7 @@ class NewBasketballGameViewController: BaseViewController {
                 let game: [String : Any] = [
                     Constant.FirebaseGame.gameID: gameID,
                     Constant.FirebaseGame.owner: uid,
-                    Constant.FirebaseGame.itme: Constant.SportItem.basketball,
+                    Constant.FirebaseGame.item: Constant.Sports.basketball,
                     Constant.FirebaseGame.name: name!,
                     Constant.FirebaseGame.time: time!,
                     Constant.FirebaseGame.court: selectedCourtInfo,

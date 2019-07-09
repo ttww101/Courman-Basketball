@@ -15,7 +15,7 @@ class BasketballGameParser {
         if let gameInfo = snap.value as? NSDictionary,
             let gameCourt = gameInfo[Constant.FirebaseGame.court] as? NSDictionary,
             let gameID = gameInfo[Constant.FirebaseGame.gameID] as? String,
-            let gameItem = gameInfo[Constant.FirebaseGame.itme] as? String,
+            let gameItem = gameInfo[Constant.FirebaseGame.item] as? String,
             let gameLevel = gameInfo[Constant.FirebaseGame.level] as? String,
             let gameName = gameInfo[Constant.FirebaseGame.name] as? String,
             let gameOwner = gameInfo[Constant.FirebaseGame.owner] as? String,
