@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FSPagerView
 
 class ChooseLevelViewController: BaseViewController {
 
@@ -22,6 +23,16 @@ class ChooseLevelViewController: BaseViewController {
         super.viewDidLoad()
 
         setView()
+        
+//        let pagerView = FSPagerView(frame: frame1)
+//        pagerView.dataSource = self
+//        pagerView.delegate = self
+//        pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+//        self.view.addSubview(pagerView)
+//        // Create a page control
+//        let pageControl = FSPageControl(frame: frame2)
+//        self.view.addSubview(pageControl)
+        
     }
 
     @IBAction func selectLevelA(_ sender: Any) {

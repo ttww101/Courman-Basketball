@@ -238,8 +238,8 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
 
             let latDelta: CLLocationDegrees = 0.01
             let lonDelta: CLLocationDegrees = 0.01
-            let span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
-            let region: MKCoordinateRegion = MKCoordinateRegionMake(coordinate, span)
+            let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+            let region: MKCoordinateRegion = MKCoordinateRegion(center: coordinate, span: span)
 
             cell.mapView.setRegion(region, animated: true)
             cell.mapView.mapType = .standard

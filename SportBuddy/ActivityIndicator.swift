@@ -19,7 +19,7 @@ class ActivityIndicator {
 
     private func createIndicator() {
         activityIndicator = UIActivityIndicatorView()
-        activityIndicator?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityIndicator?.style = UIActivityIndicatorView.Style.gray
         activityIndicator?.hidesWhenStopped = true
         activityIndicator?.center = (self.view?.center)!
 

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import DKImagePickerController
+import YPImagePicker
 
 class EditProfileViewController: BaseViewController {
 
@@ -21,14 +22,16 @@ class EditProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getUserInfo()
+//        getUserInfo()
         setView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-
         setUserImageView()
     }
 
@@ -40,7 +43,9 @@ class EditProfileViewController: BaseViewController {
         loadingIndicator.start()
 
         UserManager.shared.getUserInfo(currentUserUID: uid) { (user, error) in
-
+            
+            self.loadingIndicator.stop()
+            
             if user != nil {
                 self.userOriginName = user!.name
                 self.nameTextField.text = user!.name
@@ -49,7 +54,6 @@ class EditProfileViewController: BaseViewController {
 
             if error != nil {
                 print("=== Error in EditProfileViewController: \(String(describing: error))")
-                self.loadingIndicator.stop()
             }
         }
     }
@@ -59,24 +63,25 @@ class EditProfileViewController: BaseViewController {
 
         DispatchQueue.global().async {
 
-            if let imageUrl = URL(string: userPhotoUrlString) {
-                do {
-                    let imageData = try Data(contentsOf: imageUrl)
-                    if let image = UIImage(data: imageData) {
-                        DispatchQueue.main.async {
-                            self.userImage.image = image
-                            self.loadingIndicator.stop()
-                        }
-                    }
-                } catch {
+            let storageRef = Storage.storage().reference()
+            
+            let islandRef = storageRef.child(userPhotoUrlString)
+            
+            islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
                     print("=== \(error)")
+                } else {
+                    let image = UIImage(data: data!)
+                    DispatchQueue.main.async {
+                        self.userImage.image = image
+                        self.loadingIndicator.stop()
+                    }
                 }
             }
         }
     }
 
     func setView() {
-
         setBackground(imageName: Constant.BackgroundName.basketball)
     }
 
@@ -93,26 +98,78 @@ class EditProfileViewController: BaseViewController {
 
     // MARK: - Select Picture
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        guard
-            let tappedImage = tapGestureRecognizer.view as? UIImageView
-            else { return }
-
-        let pickerController = DKImagePickerController()
-
-        pickerController.singleSelect = true
-        pickerController.assetType = .allPhotos
-
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            if assets.count != 0 {
-//                assets[0].fetchOriginalImageWithCompleteBlock({ (image, _) in
-//                    tappedImage.image = image
-//                    self.isUpdated = true
-//                })
-            }
-        }
-
-        self.present(pickerController, animated: true) {}
+        presentImagePicker()
     }
+    
+    func presentImagePicker() {
+        var config = YPImagePickerConfiguration()
+        config.wordings.libraryTitle = "Gallery"
+        config.wordings.cameraTitle = "Camera"
+        config.isScrollToChangeModesEnabled = true
+        config.onlySquareImagesFromCamera = true
+        config.usesFrontCamera = true
+        config.showsPhotoFilters = true
+        config.shouldSaveNewPicturesToAlbum = true
+        config.albumName = "CourtsMan"
+        config.startOnScreen = YPPickerScreen.photo
+        config.screens = [.photo,.library]
+        config.targetImageSize = YPImageSize.original
+        config.overlayView = UIView()
+        config.hidesStatusBar = true
+        config.hidesBottomBar = false
+        config.preferredStatusBarStyle = UIStatusBarStyle.default
+        config.bottomMenuItemSelectedColour = UIColor.hexColor(with: "dd7663")
+        config.bottomMenuItemUnSelectedColour = UIColor.hexColor(with: "454545")
+        
+        config.library.options = nil
+        config.library.onlySquare = false
+        config.library.minWidthForItem = nil
+        config.library.mediaType = YPlibraryMediaType.photo
+        config.library.maxNumberOfItems = 1
+        config.library.minNumberOfItems = 1
+        config.library.numberOfItemsInRow = 4
+        config.library.spacingBetweenItems = 1.0
+        config.library.skipSelectionsGallery = false
+        
+        //navigation bar
+        let attributes = [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .medium),
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attributes // Title fonts
+        
+        UINavigationBar.appearance().tintColor = .white // Left. bar buttons
+        config.colors.tintColor = .white // Right bar buttons (actions)
+        
+        //bar background
+        let coloredImage = UIColor.hexColor(with: "454545").image()
+        UINavigationBar.appearance().setBackgroundImage(coloredImage, for: UIBarMetrics.default)
+        
+        
+       let barButtonAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15, weight: .regular)]
+        UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributes, for: .normal) // Bar Button fonts
+        
+        UITabBar.appearance().backgroundColor = UIColor.hexColor(with: "454545")
+        
+        YPImagePickerConfiguration.shared = config
+        
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, _ in
+            
+            if let photo = items.singlePhoto {
+                self.userImage.image = photo.image
+                self.isUpdated = true
+
+            } else {
+
+            }
+
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+        present(picker, animated: true, completion: nil)
+    }
+    
 
     // MARK: - Save User Info to Firebase
     @IBAction func saveProfileInfo(_ sender: Any) {
@@ -149,13 +206,13 @@ class EditProfileViewController: BaseViewController {
     func uploadImageToFirebase(_ uid: String, _ storageRef: StorageReference) {
 
         guard
-            let uploadData = UIImageJPEGRepresentation(self.userImage.image!, 0.3)
+            let uploadData = self.userImage.image!.jpegData(compressionQuality: 0.3)
             else { return }
 
         storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
 
             if error != nil {
-                print("=== Error in EditProfileViewController02: \(String(describing: error))")
+                print("=== Firebase upload profile photo Error: \(String(describing: error))")
                 return
             }
 
@@ -180,7 +237,7 @@ class EditProfileViewController: BaseViewController {
             if error == nil {
                 self.dismiss(animated: true, completion: nil)
             } else {
-                print("=== Error in EditProfileViewController03: \(String(describing: error))")
+                print("Firebase update user name & photo url Error in EditProfileViewController03: \(String(describing: error))")
             }
         }
     }

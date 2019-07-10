@@ -25,7 +25,10 @@ class LevelManager {
             .child(currentUserUID)
 
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-
+            //test
+            completion(nil, newUser, nil)
+            return
+            //production
             if snapshot.exists() {
 
                 guard

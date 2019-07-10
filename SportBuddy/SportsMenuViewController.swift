@@ -86,7 +86,7 @@ class SportsMenuViewController: BaseViewController {
         let content = UNMutableNotificationContent()
         content.title = Constant.UserNotifacationContent.title
         content.body = Constant.UserNotifacationContent.body
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
 
         let secendsOfDay: Double = 60 * 60 * 24
         let days: Double = 10 * secendsOfDay
@@ -109,7 +109,12 @@ class SportsMenuViewController: BaseViewController {
             
             if user != nil {
                 self.userName.text = user!.name
-                self.loadImage(imageUrlString: user!.photoURL, imageView: self.userImage)
+                
+                UserManager.shared.getUserProfileImage(from: user!.photoURL, completion: { (image, error) in
+                    self.userImage.image = image
+                })
+                
+//                self.loadImage(imageUrlString: user!.photoURL, imageView: )
             }
 
             if error != nil {
@@ -123,7 +128,10 @@ class SportsMenuViewController: BaseViewController {
         let editProfileStorybard = UIStoryboard(name: Constant.Storyboard.editProfile, bundle: nil)
         let editProfileViewController = editProfileStorybard.instantiateViewController(withIdentifier: Constant.Controller.editProfile) as? EditProfileViewController
 
-        self.present(editProfileViewController!, animated: true, completion: nil)
+        self.present(editProfileViewController!, animated: true, completion: {
+            editProfileViewController?.userImage.image = self.userImage.image
+            editProfileViewController?.nameTextField.text = self.userName.text
+        })
     }
 
     // todo: add another item button action

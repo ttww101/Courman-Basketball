@@ -68,7 +68,7 @@ class GameCommentTableViewCell: UITableViewCell {
     func setView() {
 
         commentTableView.separatorStyle = .none
-        commentTableView.rowHeight = UITableViewAutomaticDimension
+        commentTableView.rowHeight = UITableView.automaticDimension
         commentTableView.estimatedRowHeight = 22
 
         commentTitleLabel.textColor = .white
@@ -159,7 +159,7 @@ class GameCommentTableViewCell: UITableViewCell {
 
             // Make the last row visible
             commentTableView.scrollToRow(at: pathToLastRow as IndexPath,
-                                         at: UITableViewScrollPosition.bottom,
+                                         at: UITableView.ScrollPosition.bottom,
                                          animated: true)
         }
     }

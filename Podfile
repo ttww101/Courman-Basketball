@@ -11,6 +11,7 @@ target 'SportBuddy' do
   pod 'IQKeyboardManagerSwift'
   pod 'NVActivityIndicatorView'
   pod 'DKImagePickerController'
+  pod 'YPImagePicker'
   pod 'BTNavigationDropdownMenu'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
@@ -19,5 +20,6 @@ target 'SportBuddy' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'SnapKit'
+  pod 'FSPagerView'
 
 end

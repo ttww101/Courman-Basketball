@@ -13,9 +13,11 @@ class UserManager {
 
     static let shared = UserManager()
 
-    typealias UserHadler = (User?, Error?) -> Void
+    typealias UserHandler = (User?, Error?) -> Void
+    
+    typealias ProfileImageHandler = (UIImage?, Error?) -> Void
 
-    func getUserInfo(currentUserUID: String, completion: @escaping UserHadler) {
+    func getUserInfo(currentUserUID: String, completion: @escaping UserHandler) {
 
         var user: User?
 
@@ -45,7 +47,7 @@ class UserManager {
                             playedGamesCount: playedGamesCount)
 
             } else {
-                print("=== Can't find this user")
+                print("=== Firebase Can't find this user")
             }
 
             completion(user, nil)
@@ -53,6 +55,26 @@ class UserManager {
         }) { (error) in
 
             completion(nil, error)
+        }
+    }
+    
+//    func getUserInfo(currentUserUID: String, completion: @escaping UserHandler) {
+    
+    func getUserProfileImage(from url: String, completion: @escaping ProfileImageHandler) {
+            
+        let storageRef = Storage.storage().reference()
+        
+        let islandRef = storageRef.child(url)
+        
+        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                let image = UIImage(data: data!)
+                DispatchQueue.main.async {
+                    completion(image, nil)
+                }
+            }
         }
     }
 }

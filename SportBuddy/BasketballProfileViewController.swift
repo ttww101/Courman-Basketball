@@ -102,7 +102,7 @@ class BasketballProfileViewController: BaseViewController {
             mailController.navigationController?.navigationBar.tintColor = .blue
 
             // todo: 改不了 navigationBar title的顏色
-            mailController.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.blue]
+            mailController.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blue]
 
             present(mailController, animated: true)
 
@@ -361,7 +361,7 @@ class BasketballProfileViewController: BaseViewController {
 //        let height = (originStarFrame?.height)! * 3
 
         UIView.animate(withDuration: 2.0, delay: 0.0, options:
-            UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.AnimationOptions.curveEaseOut, animations: {
 
                 self.starImage.frame = CGRect(x: 10, y: -200,
                                               width: self.starImage.frame.size.width * 3,
