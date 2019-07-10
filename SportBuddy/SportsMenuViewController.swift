@@ -10,13 +10,24 @@ import UIKit
 import Firebase
 import NVActivityIndicatorView
 import UserNotifications
+import FSPagerView
 
-class SportsMenuViewController: BaseViewController {
+class SportsMenuViewController: BaseViewController, FSPagerViewDelegate, FSPagerViewDataSource {
 
+    //Menu Pager
+    let menuImages:[UIImage?] = [UIImage(named: "Item_Basketball"),
+                                  UIImage(named: "Item_Baseball"),
+                                  UIImage(named: "Item_Jog")]
+    
+    let menuNames:[String] = ["籃球","棒球","足球"]
+    private let pagerCellIdentifier = "FSMenuCell"
+    @IBOutlet weak var pagerView: FSPagerView! {
+        didSet {
+            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: pagerCellIdentifier)
+        }
+    }
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var jogButton: UIButton!
-    @IBOutlet weak var baseballButton: UIButton!
 
     let loadingIndicator = LoadingIndicator()
 
@@ -43,19 +54,11 @@ class SportsMenuViewController: BaseViewController {
     }
 
     func setView() {
-
+        pagerView.transformer =  FSPagerViewTransformer(type: .overlap)
+        let screenSize = UIScreen.main.bounds.size
+        pagerView.itemSize = CGSize(width: screenSize.width*7/9, height: screenSize.height*7/9)
+        
         setBackground(imageName: Constant.BackgroundName.basketball)
-
-        // todo: 滑動選單
-
-        let converter = ConverImageToBW()
-        let jobImageBW = converter.convertImageToBW(image: #imageLiteral(resourceName: "Item_Jog"))
-        jogButton.setImage(jobImageBW, for: .normal)
-        jogButton.isEnabled = false
-
-        let baseballImageBW = converter.convertImageToBW(image: #imageLiteral(resourceName: "Item_Baseball"))
-        baseballButton.setImage(baseballImageBW, for: .normal)
-        baseballButton.isEnabled = false
     }
 
     func checkIfUserIsLoggedIn() {
@@ -134,8 +137,7 @@ class SportsMenuViewController: BaseViewController {
         })
     }
 
-    // todo: add another item button action
-    @IBAction func toBasketballGameList(_ sender: Any) {
+    func goBasketball() {
 
         guard let uid = Auth.auth().currentUser?.uid else { return }
 
@@ -246,5 +248,37 @@ extension SportsMenuViewController {
         }
 
         loadingIndicator.stop()
+    }
+}
+
+//MARK: Pager View Delegate
+extension SportsMenuViewController {
+    
+    public func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return menuImages.count
+    }
+    
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: pagerCellIdentifier, at: index)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.imageView?.image = self.menuImages[index]
+        cell.textLabel?.textAlignment = .center
+//        cell.textLabel?.text = self.menuNames[index]
+        cell.textLabel?.backgroundColor = .clear
+        return cell
+    }
+    
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        
+//        if targetIndex > 2 {
+//            self.pageControl.currentPage = targetIndex - 3
+//        } else {
+//            self.pageControl.currentPage = targetIndex + 2
+//        }
+    }
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        if (index == 0) {
+            goBasketball()
+        }
     }
 }

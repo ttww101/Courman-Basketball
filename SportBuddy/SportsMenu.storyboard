@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sports Menu View Controller-->
+        <!--Data Source-->
         <scene sceneID="bpE-u9-blg">
             <objects>
                 <viewController storyboardIdentifier="vc" id="uSd-Qx-17U" customClass="SportsMenuViewController" customModule="SportBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,9 +28,10 @@
                                     <constraint firstAttribute="width" secondItem="nDv-tt-dH8" secondAttribute="height" multiplier="1:1" id="29w-wW-dE9"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rI-cF-PEj">
-                                <rect key="frame" x="327" y="57" width="33" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rI-cF-PEj" userLabel="Edit Button">
+                                <rect key="frame" x="325" y="55" width="35" height="35"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="16O-xb-KQm"/>
                                     <constraint firstAttribute="width" secondItem="5rI-cF-PEj" secondAttribute="height" multiplier="1:1" id="skX-8F-jm0"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,85 +42,77 @@
                                     <action selector="toEditProfile:" destination="uSd-Qx-17U" eventType="touchUpInside" id="2Zj-ed-glw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rI-NI-8PT">
-                                <rect key="frame" x="-67.5" y="233.5" width="150" height="200"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-RS-rCK" userLabel="Log Out Button">
+                                <rect key="frame" x="310" y="30" width="49" height="19"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1rI-NI-8PT" secondAttribute="height" multiplier="3:4" id="TZY-xN-oge"/>
-                                </constraints>
-                                <state key="normal" title="Jogging" image="Item_Jog"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7po-n1-wfi">
-                                <rect key="frame" x="112.5" y="233.5" width="150" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="7po-n1-wfi" secondAttribute="height" multiplier="3:4" id="IyM-eX-9Dx"/>
-                                </constraints>
-                                <state key="normal" title="Basketball" image="Item_Basketball"/>
-                                <connections>
-                                    <action selector="toBasketballGameList:" destination="uSd-Qx-17U" eventType="touchUpInside" id="oRV-Zx-1Ly"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-RS-rCK">
-                                <rect key="frame" x="145" y="599" width="85" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="FfV-f3-SDS"/>
-                                    <constraint firstAttribute="height" constant="33" id="ZoJ-iw-kJD"/>
+                                    <constraint firstAttribute="width" secondItem="tZx-RS-rCK" secondAttribute="height" multiplier="85:33" id="H8j-aO-CBU"/>
                                 </constraints>
                                 <state key="normal" image="Button_Logout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logout:" destination="uSd-Qx-17U" eventType="touchUpInside" id="hvB-yA-Nlj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNM-XS-8in">
-                                <rect key="frame" x="292.5" y="233.5" width="150" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="SNM-XS-8in" secondAttribute="height" multiplier="3:4" id="U1d-H1-kEk"/>
-                                </constraints>
-                                <state key="normal" title="Baseball" image="Item_Baseball"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-YV-mfV">
-                                <rect key="frame" x="96" y="47" width="221" height="26"/>
+                                <rect key="frame" x="96" y="30" width="204" height="60"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-Kw-g2H">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-Kw-g2H" userLabel="Profile Seperator">
                                 <rect key="frame" x="20" y="98" width="335" height="2"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="B9g-C3-Kb5"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-Y4-aAa" customClass="FSPagerView" customModule="FSPagerView">
+                                <rect key="frame" x="0.0" y="116" width="375" height="535"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysBounceHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysBounceVertical" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isScrollEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bounces" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="itemSize">
+                                        <size key="value" width="350" height="800"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uSd-Qx-17U" id="R7L-dl-UN7"/>
+                                    <outlet property="delegate" destination="uSd-Qx-17U" id="6KS-Oo-QPE"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gzf-YV-mfV" firstAttribute="height" secondItem="nDv-tt-dH8" secondAttribute="height" id="28h-2X-fZ5"/>
                             <constraint firstItem="gzf-YV-mfV" firstAttribute="leading" secondItem="nDv-tt-dH8" secondAttribute="trailing" constant="16" id="2Y5-Sx-rED"/>
-                            <constraint firstItem="1rI-NI-8PT" firstAttribute="width" secondItem="fDH-Mx-lLD" secondAttribute="height" multiplier="150:667" id="3EU-j9-Kb2"/>
-                            <constraint firstItem="7po-n1-wfi" firstAttribute="centerY" secondItem="fDH-Mx-lLD" secondAttribute="centerY" id="Aac-2O-Zzu"/>
                             <constraint firstAttribute="trailing" secondItem="5rI-cF-PEj" secondAttribute="trailing" constant="15" id="Gth-gF-a7Y"/>
-                            <constraint firstItem="1rI-NI-8PT" firstAttribute="centerY" secondItem="7po-n1-wfi" secondAttribute="centerY" id="Niz-tQ-y2j"/>
-                            <constraint firstItem="7po-n1-wfi" firstAttribute="width" secondItem="fDH-Mx-lLD" secondAttribute="height" multiplier="150:667" id="P1U-Q8-FRH"/>
+                            <constraint firstAttribute="trailing" secondItem="EKa-Y4-aAa" secondAttribute="trailing" id="HLz-HK-Czb"/>
+                            <constraint firstItem="tZx-RS-rCK" firstAttribute="leading" secondItem="gzf-YV-mfV" secondAttribute="trailing" constant="10" id="Nq9-qw-fKk"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="top" secondItem="nDv-tt-dH8" secondAttribute="bottom" constant="8" id="QPZ-Dw-Mh4"/>
-                            <constraint firstItem="7po-n1-wfi" firstAttribute="centerX" secondItem="fDH-Mx-lLD" secondAttribute="centerX" id="Qdb-03-pAj"/>
-                            <constraint firstItem="7po-n1-wfi" firstAttribute="leading" secondItem="1rI-NI-8PT" secondAttribute="trailing" constant="30" id="Sgc-or-mS0"/>
-                            <constraint firstItem="SNM-XS-8in" firstAttribute="width" secondItem="fDH-Mx-lLD" secondAttribute="height" multiplier="150:667" id="XlV-MZ-CVW"/>
-                            <constraint firstItem="cJj-dc-5Jw" firstAttribute="top" secondItem="tZx-RS-rCK" secondAttribute="bottom" constant="35" id="Yp7-yz-2T3"/>
                             <constraint firstAttribute="trailing" secondItem="Mnf-Kw-g2H" secondAttribute="trailing" constant="20" id="ZEc-uU-scS"/>
-                            <constraint firstItem="5rI-cF-PEj" firstAttribute="leading" secondItem="gzf-YV-mfV" secondAttribute="trailing" constant="10" id="ZU5-Z9-xEe"/>
                             <constraint firstItem="gzf-YV-mfV" firstAttribute="centerY" secondItem="nDv-tt-dH8" secondAttribute="centerY" id="b9C-qy-N8F"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="top" secondItem="q60-ZR-LEs" secondAttribute="bottom" constant="10" id="bQw-MF-s1z"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="leading" secondItem="nDv-tt-dH8" secondAttribute="leading" id="h4D-eq-6rc"/>
-                            <constraint firstItem="5rI-cF-PEj" firstAttribute="width" secondItem="fDH-Mx-lLD" secondAttribute="height" multiplier="33:667" id="iOd-Sh-wPS"/>
-                            <constraint firstItem="tZx-RS-rCK" firstAttribute="centerX" secondItem="fDH-Mx-lLD" secondAttribute="centerX" id="j4J-Qb-UG1"/>
-                            <constraint firstItem="SNM-XS-8in" firstAttribute="leading" secondItem="7po-n1-wfi" secondAttribute="trailing" constant="30" id="kUz-se-fnA"/>
+                            <constraint firstItem="EKa-Y4-aAa" firstAttribute="leading" secondItem="fDH-Mx-lLD" secondAttribute="leading" id="ixv-2d-1jj"/>
+                            <constraint firstItem="cJj-dc-5Jw" firstAttribute="top" secondItem="EKa-Y4-aAa" secondAttribute="bottom" constant="16" id="jiL-gX-sg6"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="width" secondItem="fDH-Mx-lLD" secondAttribute="height" multiplier="60:667" id="lie-Bd-ZVx"/>
-                            <constraint firstItem="SNM-XS-8in" firstAttribute="centerY" secondItem="7po-n1-wfi" secondAttribute="centerY" id="muN-Bq-1Yk"/>
+                            <constraint firstAttribute="trailing" secondItem="tZx-RS-rCK" secondAttribute="trailing" constant="16" id="m12-9O-fC6"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="leading" secondItem="fDH-Mx-lLD" secondAttribute="leading" constant="20" id="neR-4u-joE"/>
+                            <constraint firstItem="5rI-cF-PEj" firstAttribute="top" secondItem="tZx-RS-rCK" secondAttribute="bottom" constant="6" id="qhO-4G-Nas"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="top" secondItem="5rI-cF-PEj" secondAttribute="bottom" constant="8" id="riD-ev-GRs"/>
+                            <constraint firstItem="tZx-RS-rCK" firstAttribute="top" secondItem="nDv-tt-dH8" secondAttribute="top" id="vXe-UN-Rda"/>
+                            <constraint firstItem="EKa-Y4-aAa" firstAttribute="top" secondItem="Mnf-Kw-g2H" secondAttribute="bottom" constant="16" id="xll-9i-bEw"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="baseballButton" destination="SNM-XS-8in" id="GOK-mk-Q0D"/>
-                        <outlet property="jogButton" destination="1rI-NI-8PT" id="zDy-oy-huS"/>
+                        <outlet property="pagerView" destination="EKa-Y4-aAa" id="tRJ-4i-XYA"/>
                         <outlet property="userImage" destination="nDv-tt-dH8" id="v5R-bH-ycM"/>
                         <outlet property="userName" destination="gzf-YV-mfV" id="dk6-Fk-0RY"/>
                     </connections>
@@ -132,8 +125,5 @@
     <resources>
         <image name="Button_Logout" width="170" height="66"/>
         <image name="Edit_Menu" width="48" height="48"/>
-        <image name="Item_Baseball" width="300" height="400"/>
-        <image name="Item_Basketball" width="300" height="400"/>
-        <image name="Item_Jog" width="300" height="400"/>
     </resources>
 </document>

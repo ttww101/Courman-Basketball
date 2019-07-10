@@ -10,82 +10,65 @@ import UIKit
 import Firebase
 import FSPagerView
 
-class ChooseLevelViewController: BaseViewController {
-
+class ChooseLevelViewController: BaseViewController, FSPagerViewDelegate, FSPagerViewDataSource {
+    @IBOutlet weak var pagerView: FSPagerView! {
+        didSet {
+            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "FSLevelCell")
+        }
+    }
+    @IBOutlet weak var pageControl:FSPageControl!
     @IBOutlet weak var introductionView: UIView!
     @IBOutlet weak var introductionLabel: UILabel!
     @IBOutlet weak var introductionButton: UIButton!
-    @IBOutlet weak var fakeButton: UIButton!
 
+    let levelImages:[UIImage?] = [UIImage(named: "Level_A"),
+                                 UIImage(named: "Level_B"),
+                                 UIImage(named: "Level_C"),
+                                 UIImage(named: "Level_D"),
+                                 UIImage(named: "Level_E"),]
+    
+    let levelNames:[String] = ["誰能攔得住我","精通各種招數","叫我球員","有玩","菜鳥"]
+    let levelModel:[String] = ["A","B","C","D","E"]
+    
     private var level = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setView()
-        
-//        let pagerView = FSPagerView(frame: frame1)
-//        pagerView.dataSource = self
-//        pagerView.delegate = self
-//        pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-//        self.view.addSubview(pagerView)
-//        // Create a page control
-//        let pageControl = FSPageControl(frame: frame2)
-//        self.view.addSubview(pageControl)
-        
     }
-
-    @IBAction func selectLevelA(_ sender: Any) {
-        saveLevel(level: "A")
-        toMainPage()
+    
+    public func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return levelImages.count
     }
-
-    @IBAction func selectLevelB(_ sender: Any) {
-        saveLevel(level: "B")
-        toMainPage()
-    }
-
-    @IBAction func selectLevelC(_ sender: Any) {
-        saveLevel(level: "C")
-        toMainPage()
-    }
-
-    @IBAction func selectLevelD(_ sender: Any) {
-        saveLevel(level: "D")
-        toMainPage()
-    }
-
-    @IBAction func selectLevelE(_ sender: Any) {
-        saveLevel(level: "E")
-        toMainPage()
+    
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "FSLevelCell", at: index)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.textLabel?.textAlignment = .center
+        cell.imageView?.image = self.levelImages[index]
+        cell.textLabel?.text = self.levelNames[index]
+        return cell
     }
 
     func setView() {
+        pagerView.transformer =  FSPagerViewTransformer(type: .overlap)
+        pageControl.numberOfPages = self.levelImages.count
+        pageControl.currentPage = 2
+        pageControl.contentHorizontalAlignment = .center
+        pageControl.setStrokeColor(.white, for: .normal)
+        pageControl.setStrokeColor(.yellow, for: .selected)
+        pageControl.setFillColor(.white, for: .normal)
+        pageControl.setFillColor(.red, for: .selected)
 
         setBackground(imageName: Constant.BackgroundName.basketball)
 
-        introductionLabel.text = "請選擇您在這項運動所自認的等級, 以便之後尋找差不多等級的球友\n\n範例: 球齡大概兩年, 但技巧還算拙劣, 那可以考慮選擇從D這等級起步"
+        introductionLabel.text = "請選擇您今日配對等級"
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideIntroduction))
         introductionView.addGestureRecognizer(tap)
-
-        fakeButton.addTarget(self, action: #selector(hideIntroduction), for: .touchUpInside)
-
         introductionButton.addTarget(self, action: #selector(showIntroduction), for: .touchUpInside)
-    }
-
-    @objc func hideIntroduction() {
-
-        introductionView.isHidden = true
-        introductionLabel.isHidden = true
-        fakeButton.isHidden = true
-    }
-
-    @objc func showIntroduction() {
-
-        introductionView.isHidden = false
-        introductionLabel.isHidden = false
-        fakeButton.isHidden = false
+        self.hideIntroduction()
     }
 
     func saveLevel(level: String) {
@@ -102,13 +85,41 @@ class ChooseLevelViewController: BaseViewController {
             }
         }
     }
+}
 
+//MARK: Pager View Delegate
+extension ChooseLevelViewController {
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        if targetIndex > 2 {
+            self.pageControl.currentPage = targetIndex - 3
+        } else {
+            self.pageControl.currentPage = targetIndex + 2
+        }
+    }
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        saveLevel(level: levelModel[index])
+        toMainPage()
+    }
+}
+
+//MARK: Private
+extension ChooseLevelViewController {
+    @objc func hideIntroduction() {
+        introductionView.isHidden = true
+        introductionLabel.isHidden = true
+    }
+    
+    @objc func showIntroduction() {
+        introductionView.isHidden = false
+        introductionLabel.isHidden = false
+    }
+    
     func toMainPage() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-
+            
             let basketballStorybard = UIStoryboard(name: Constant.Storyboard.basketball, bundle: nil)
             let basketballTabbarViewController = basketballStorybard.instantiateViewController(withIdentifier: Constant.Controller.basketballTabbar) as? BasketballTabbarViewController
-
+            
             appDelegate.window?.rootViewController = basketballTabbarViewController
         }
     }
