@@ -34,10 +34,10 @@ class BasketballGameDetailViewController: BaseViewController {
     let fullScreenSize = UIScreen.main.bounds.size
 
     var selectedWeatherIndex: IndexPath = IndexPath()
-    var isWeatherExpanded = false
+    var isWeatherExpanded = true
 
     var selectedMapIndex: IndexPath = IndexPath()
-    var isMapExpanded = false
+    var isMapExpanded = true
 
     var selectedMemberIndex: IndexPath = IndexPath()
     var isMemberExpanded = true
@@ -142,11 +142,8 @@ class BasketballGameDetailViewController: BaseViewController {
     func getWeather() {
 
         if game != nil {
-            let courtAddress = game!.court.address
-            let index = courtAddress.index(courtAddress.startIndex, offsetBy: 5)
-            let town = courtAddress.substring(to: index)
-
-            WeatherProvider.shared.getWeather(town: town, completion: { (weather, error) in
+            
+            WeatherProvider.shared.getWeather(city: items[Constant.CurrentCity.cityIndex], completion: { (weather, error) in
 
                 if error == nil {
                     self.weather = weather
@@ -203,9 +200,7 @@ class BasketballGameDetailViewController: BaseViewController {
         guard
             game != nil
             else { return }
-
-        var commentOwners = Set<String>()
-
+        
         GameCommentProvider.sharded.getComments(gameID: (game?.gameID)!) { (getComments) in
             
                 self.comments = getComments
@@ -376,37 +371,31 @@ extension BasketballGameDetailViewController {
         setCellBasicStyle(cell)
 
         if !isWeatherExpanded {
-            cell.weatherImage.isHidden = true
             cell.weatherLabel.isHidden = true
             cell.temperatureLabel.isHidden = true
-            cell.updateTimeLabel.isHidden = true
+            cell.rainRateLabel.isHidden = true
+            cell.feelLabel.isHidden = true
             cell.weatherCellTitle.text = "▶︎ 天氣資訊"
 
         } else {
-
-            cell.weatherImage.isHidden = false
             cell.weatherLabel.isHidden = false
             cell.temperatureLabel.isHidden = false
-            cell.updateTimeLabel.isHidden = false
+            cell.rainRateLabel.isHidden = false
+            cell.feelLabel.isHidden = false
             cell.weatherCellTitle.text = "▼ 天氣資訊"
         }
 
-        if let desc = weather?.desc,
-            let weatherPicName = weather?.weatherPicName,
-            let temperature = weather?.temperature,
-            let time = weather?.time {
+        if let weather = weather {
 
-            cell.weatherImage.image = UIImage(named: weatherPicName)
-            cell.weatherLabel.text = "\(desc)"
-            cell.temperatureLabel.text = "氣溫 : \(temperature) 度"
-            cell.updateTimeLabel.text = "更新時間 : \n\(time)"
+            cell.weatherLabel.text = "\(weather.description)"
+            cell.temperatureLabel.text = "氣溫 \(weather.temperature)°C"
+            cell.rainRateLabel.text = "降雨機率 \(weather.rainRate)%"
+            cell.feelLabel.text = "體感 \(weather.feel)"
 
         } else {
-
-            //cell.weatherImage.image = UIImage(named: Constant.ImageName.fixing)
             cell.weatherLabel.text = ""
-            cell.temperatureLabel.text = "天氣即時資訊更新維護中..."
-            cell.updateTimeLabel.text = ""
+            cell.temperatureLabel.text = "無法取得即時天氣資訊"
+            cell.rainRateLabel.text = ""
         }
 
         return cell
@@ -593,7 +582,6 @@ extension BasketballGameDetailViewController {
     }
 
     func setCellBasicStyle(_ cell: UITableViewCell) {
-
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
     }

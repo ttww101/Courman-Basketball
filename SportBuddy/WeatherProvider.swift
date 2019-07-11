@@ -22,44 +22,64 @@ class WeatherProvider {
 
     typealias GetWeather = (Weather?, Error?) -> Void
 
-    func getWeather(town: String, completion: @escaping GetWeather) {
+    func getWeather(city: String, completion: @escaping GetWeather) {
 
-        let townlist = Towns().list
-        var townObject = townlist.filter { $0.key == town }
-
-        if townObject.count != 0 {
-            let townID = townObject.first
-            let urlString = "https://works.ioa.tw/weather/api/weathers/\(townID).json"
-
-            Alamofire.request(urlString).responseJSON { response in
-
-                if response.result.isSuccess {
-                    if let result = response.value as? [String: AnyObject] {
-
-                        guard
-                            let desc = result["desc"] as? String,
-                            let temperature = result["temperature"] as? Int,
-                            let time = result["at"] as? String
-                            else { return }
-
-                        let weatherPicName = self.getWeatherPicName(weahterDesc: desc)
-
-                        let weatherInfo = Weather(desc: desc,
-                                                  weatherPicName: weatherPicName,
-                                                  temperature: temperature,
-                                                  time: time)
-
-                        completion(weatherInfo, nil)
-
-                    } else { completion(nil, GetWeatherError.invalidResponseData) }
-                } else { completion(nil, GetWeatherError.responseError) }
-            }
-
-        } else {
-            print("=== Error: Cannot Get Town")
-
-            completion(nil, GetWeatherError.cannotGetTown)
+        let startTime = "2019-07-11T18:00:00"
+        
+        let urlComponents = NSURLComponents(string: "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001/")!
+        
+        urlComponents.queryItems = [
+            NSURLQueryItem(name: "Authorization", value:"CWB-B1E81EE3-A140-4940-A4C5-0017D2F92079"),
+            NSURLQueryItem(name: "locationName", value:city),
+            NSURLQueryItem(name: "startTime", value:"2019-07-11T18:00:00")
+            ] as [URLQueryItem]
+        
+        guard let url = urlComponents.url else {
+            completion(nil, NetworkError.formURLFail)
             return
+        }
+        
+        Alamofire.request(url).responseJSON { response in
+
+            if response.result.isSuccess {
+                if let result = response.value as? [String: AnyObject] {
+
+                    var description1 = ""
+                    var temperature = ""
+                    var rainRate = ""
+                    var description2 = ""
+                    
+                    guard
+                        let records = result["records"] as? Dictionary<String, AnyObject>
+                        , let location = records["location"] as? Array<AnyObject>
+                        , let firstObject = location[0] as? Dictionary<String, AnyObject>
+                        , let weatherElements = firstObject["weatherElement"] as? Array<Dictionary<String, AnyObject>>
+                        else { return }
+                    
+                    for weatherElement in weatherElements {
+                        guard let type = weatherElement["elementName"] as? String else { return }
+                        if let timeData = weatherElement["time"]?.firstObject as? Dictionary<String, AnyObject>
+                            , let parameter = timeData["parameter"] as? Dictionary<String, AnyObject>
+                            , let targetString = parameter["parameterName"] as? String {
+                            if type == "Wx" {
+                                description1 = targetString
+                            } else if type == "CI" {
+                                description2 = targetString
+                            } else if type == "PoP" {
+                                rainRate = targetString
+                            } else if type == "MinT" {
+                                temperature = targetString
+                            }
+                        }
+                    }
+                   
+                    let weatherInfo = Weather(description: description1, temperature: temperature,
+                                              rainRate: rainRate, feel: description2)
+                    completion(weatherInfo, nil)
+
+                } else {
+                    completion(nil, GetWeatherError.invalidResponseData) }
+            } else { completion(nil, GetWeatherError.responseError) }
         }
 
     }

@@ -13,10 +13,10 @@ class WeatherTableViewCell: UITableViewCell, Identifiable {
     // MARK: Property
 
     @IBOutlet weak var weatherCellTitle: UILabel!
-    @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var updateTimeLabel: UILabel!
+    @IBOutlet weak var rainRateLabel: UILabel!
+    @IBOutlet weak var feelLabel: UILabel!
 
     class var identifier: String { return String(describing: self) }
 
@@ -26,18 +26,10 @@ class WeatherTableViewCell: UITableViewCell, Identifiable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-
         weatherCellTitle.textColor = .white
         weatherLabel.textColor = .white
         temperatureLabel.textColor = .white
-        updateTimeLabel.textColor = .white
+        rainRateLabel.textColor = .white
+        feelLabel.textColor = .white
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-//        weatherCellTitle.text = "▼ 天氣資訊"
-    }
-
 }

@@ -71,7 +71,7 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
             // MARK: Loading indicator
             loadingIndicator.start()
 
-            WeatherProvider.shared.getWeather(town: town, completion: { (weather, error) in
+            WeatherProvider.shared.getWeather(city: "台北市", completion: { (weather, error) in
 
                 if error == nil {
                     self.weather = weather
@@ -195,27 +195,21 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
 
-        if let desc = weather?.desc,
-            let weatherPicName = weather?.weatherPicName,
+        if let des = weather?.description,
             let temperature = weather?.temperature,
-            let time = weather?.time {
+            let time = weather?.rainRate {
 
-            cell.weatherImage.image = UIImage(named: weatherPicName)
-            cell.weatherLabel.text = "天氣 : \(desc)"
+            cell.weatherLabel.text = "天氣 : \(des)"
             cell.temperatureLabel.text = "氣溫 : \(temperature) 度"
-            cell.updateTimeLabel.text = "更新時間 : \n\(time)"
+            cell.rainRateLabel.text = "更新時間 : \n\(time)"
 
         } else {
-
-            cell.weatherImage.image = UIImage(named: Constant.ImageName.fixing)
             cell.weatherLabel.text = ""
             cell.temperatureLabel.text = "天氣即時資訊更新維護中..."
-            cell.updateTimeLabel.text = ""
+            cell.rainRateLabel.text = ""
         }
 
         cell.weatherCellTitle.isHidden = true
-        cell.weatherImage.topAnchor.constraint(equalTo: cell.topAnchor, constant: 10).isActive = true
-        cell.weatherImage.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -45).isActive = true
 
         return cell
     }

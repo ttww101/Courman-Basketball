@@ -34,6 +34,7 @@ class UserManager {
                     else { return }
 
                 guard
+                     let userID = userData[Constant.FirebaseUser.userID] as? String,
                     let name = userData[Constant.FirebaseUser.name] as? String,
                     let email = userData[Constant.FirebaseUser.email] as? String,
                     let gender = userData[Constant.FirebaseUser.gender] as? String,
@@ -42,7 +43,7 @@ class UserManager {
                     let playedGamesCount = userData[Constant.FirebaseUser.playedGamesCount] as? Int
                     else { return }
 
-                user = User(email: email, name: name, gender: gender,
+                user = User(userID:userID, email: email, name: name, gender: gender,
                             photoURL: photoURL, lastTimePlayedGame: lastTimePlayedGame,
                             playedGamesCount: playedGamesCount)
 

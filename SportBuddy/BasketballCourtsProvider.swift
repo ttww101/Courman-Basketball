@@ -41,7 +41,7 @@ class BasketballCourtsProvider {
     func getApiData(city: String, gymType: String, completion: @escaping GetCourtCompletion) {
         
         
-        var urlComponents = NSURLComponents(string: "https://iplay.sa.gov.tw/odata/GymSearch")!
+        let urlComponents = NSURLComponents(string: "https://iplay.sa.gov.tw/odata/GymSearch")!
         
         urlComponents.queryItems = [
             NSURLQueryItem(name: "City", value:city),

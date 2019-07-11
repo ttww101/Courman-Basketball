@@ -67,7 +67,7 @@ struct Constant {
     }
 
     struct FirebaseUser {
-
+        static let userID = "userID"
         static let nodeName = "Users"
         static let email = "Email"
         static let name = "Name"

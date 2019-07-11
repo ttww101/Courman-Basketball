@@ -223,11 +223,11 @@
 		B0002A561E9E81DE00CD2241 /* BasketballGameDetail */ = {
 			isa = PBXGroup;
 			children = (
+				B0E881741E9FE3820093AA11 /* BasketballGameDetailViewController.swift */,
+				B0002A571E9E820700CD2241 /* BasketballGameDetail.storyboard */,
 				B01437B71EBAFC3600675239 /* Comment */,
 				B0DC15B91EA75B7400443F9D /* JoinOrLeave */,
 				B0DC15AC1EA7432E00443F9D /* Members */,
-				B0E881741E9FE3820093AA11 /* BasketballGameDetailViewController.swift */,
-				B0002A571E9E820700CD2241 /* BasketballGameDetail.storyboard */,
 			);
 			name = BasketballGameDetail;
 			sourceTree = "<group>";

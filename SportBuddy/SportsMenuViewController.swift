@@ -54,11 +54,13 @@ class SportsMenuViewController: BaseViewController, FSPagerViewDelegate, FSPager
     }
 
     func setView() {
-        pagerView.transformer =  FSPagerViewTransformer(type: .overlap)
+        pagerView.transformer = FSPagerViewTransformer(type: .overlap)
         let screenSize = UIScreen.main.bounds.size
         pagerView.itemSize = CGSize(width: screenSize.width*7/9, height: screenSize.height*7/9)
         
         setBackground(imageName: "BG_Menu")
+        let tapGes = UITapGestureRecognizer(target: self, action: #selector(goToEditProfile))
+        self.userImage.addGestureRecognizer(tapGes)
     }
 
     func checkIfUserIsLoggedIn() {
@@ -127,10 +129,13 @@ class SportsMenuViewController: BaseViewController, FSPagerViewDelegate, FSPager
     }
 
     @IBAction func toEditProfile(_ sender: Any) {
-
+        goToEditProfile()
+    }
+    
+    @objc func goToEditProfile() {
         let editProfileStorybard = UIStoryboard(name: Constant.Storyboard.editProfile, bundle: nil)
         let editProfileViewController = editProfileStorybard.instantiateViewController(withIdentifier: Constant.Controller.editProfile) as? EditProfileViewController
-
+        
         self.present(editProfileViewController!, animated: true, completion: {
             editProfileViewController?.userImage.image = self.userImage.image
             editProfileViewController?.nameTextField.text = self.userName.text

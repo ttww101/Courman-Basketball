@@ -184,7 +184,14 @@ extension GameCommentTableViewCell: UITableViewDelegate, UITableViewDataSource {
             cell.comment.text = comments[indexPath.row].comment
 
             if members.count != 0 {
-                self.loadAndSetUserPhoto(cell.userImage, self.members[indexPath.row].photoURL)
+                
+                for member in members {
+                    if (comments[indexPath.row].commentOwner == member.userID) {
+                        self.loadAndSetUserPhoto(cell.userImage, member.photoURL)
+                        break
+                    }
+                    
+                }
             }
         }
 

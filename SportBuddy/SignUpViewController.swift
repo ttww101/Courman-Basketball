@@ -199,7 +199,7 @@ class SignUpViewController: BaseViewController {
 
                     let userPhotoURL = metadata?.path
 
-                    let userInfo = User(email: email, name: name, gender: gender,
+                    let userInfo = User(userID:uid, email: email, name: name, gender: gender,
                                     photoURL: userPhotoURL ?? "", lastTimePlayedGame: "",
                                     playedGamesCount: 0)
 
@@ -219,7 +219,9 @@ class SignUpViewController: BaseViewController {
         let ref = Database.database().reference(fromURL: dbUrl)
         let usersReference = ref.child(Constant.FirebaseUser.nodeName).child(uid)
 
-        let value: [String : Any] = [Constant.FirebaseUser.email: userInfo.email,
+        let value: [String : Any] = [
+            Constant.FirebaseUser.userID: userInfo.userID,
+            Constant.FirebaseUser.email: userInfo.email,
                      Constant.FirebaseUser.name: userInfo.name,
                      Constant.FirebaseUser.gender: userInfo.gender,
                      Constant.FirebaseUser.photoURL: userInfo.photoURL,

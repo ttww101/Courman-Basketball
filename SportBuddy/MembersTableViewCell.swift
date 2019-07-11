@@ -91,7 +91,14 @@ extension MembersTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         cell.userImage.layer.cornerRadius = cell.userImage.bounds.size.height / 2.0
         cell.userImage.layer.masksToBounds = true
 
-        if members.count != 0 {
+        if members.count > indexPath.row {
+//            for member in members {
+//                if (comments[indexPath.row].commentOwner == member.userID) {
+//                    self.loadAndSetUserPhoto(cell.userImage, member.photoURL)
+//                    break
+//                }
+//
+//            }
             cell.userName.text = members[indexPath.row].name
             loadAndSetUserPhoto(cell.userImage, (members[indexPath.row].photoURL))
         }

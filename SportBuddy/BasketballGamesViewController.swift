@@ -263,7 +263,7 @@ extension BasketballGamesViewController: UITableViewDelegate, UITableViewDataSou
             else { return }
 
         basketballGameDetailViewController.game = gamesList[indexPath.row]
-
+        
         self.navigationController?.pushViewController(basketballGameDetailViewController, animated: true)
     }
 

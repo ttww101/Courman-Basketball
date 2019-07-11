@@ -16,11 +16,13 @@ struct User {
     var photoURL: String
     var lastTimePlayedGame: String
     var playedGamesCount: Int
+    var userID: String
 
     // todo: 區分各運動項目的 lastTimePlayedGame & playedGamesCount
 
-    init(email: String, name: String, gender: String, photoURL: String, lastTimePlayedGame: String, playedGamesCount: Int) {
+    init(userID: String, email: String, name: String, gender: String, photoURL: String, lastTimePlayedGame: String, playedGamesCount: Int) {
 
+        self.userID = userID
         self.email = email
         self.name = name
         self.gender = gender
