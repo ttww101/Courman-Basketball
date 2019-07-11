@@ -21,14 +21,16 @@ class ChooseLevelViewController: BaseViewController, FSPagerViewDelegate, FSPage
     @IBOutlet weak var introductionLabel: UILabel!
     @IBOutlet weak var introductionButton: UIButton!
 
-    let levelImages:[UIImage?] = [UIImage(named: "Level_A"),
-                                 UIImage(named: "Level_B"),
-                                 UIImage(named: "Level_C"),
-                                 UIImage(named: "Level_D"),
-                                 UIImage(named: "Level_E"),]
+    let levelImages:[UIImage?] = [UIImage(named: "Level_S"),
+                                  UIImage(named: "Level_A"),
+                                  UIImage(named: "Level_B"),
+                                  UIImage(named: "Level_C"),
+                                  UIImage(named: "Level_D"),
+                                  UIImage(named: "Level_E"),
+                                  UIImage(named: "Level_F"),]
     
-    let levelNames:[String] = ["誰能攔得住我","精通各種招數","叫我球員","有玩","菜鳥"]
-    let levelModel:[String] = ["A","B","C","D","E"]
+    let levelNames:[String] = [ "''MVP''","誰能攔得住我","精通各種招數","叫我球員","有玩","菜鳥","我是來觀賽的"]
+    let levelModel:[String] = ["S","A","B","C","D","E","F"]
     
     private var level = ""
 

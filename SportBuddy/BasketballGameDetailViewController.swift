@@ -407,10 +407,10 @@ extension BasketballGameDetailViewController {
 
         if !isMapExpanded {
             cell.mapView.isHidden = true
-            cell.mapCellTitle.text = "▶︎ 球場位置"
+            cell.mapCellTitle.text = "▶︎ 位置"
         } else {
             cell.mapView.isHidden = false
-            cell.mapCellTitle.text = "▼ 球場位置"
+            cell.mapCellTitle.text = "▼ 位置"
         }
 
         if let latitudeString = game?.court.latitude,
@@ -442,10 +442,10 @@ extension BasketballGameDetailViewController {
 
         if !isMemberExpanded {
             cell.collectionView.isHidden = true
-            cell.memberCellTitle.text = "▶︎ 球賽成員"
+            cell.memberCellTitle.text = "▶︎ 成員"
         } else {
             cell.collectionView.isHidden = false
-            cell.memberCellTitle.text = "▼ 球賽成員"
+            cell.memberCellTitle.text = "▼ 成員"
         }
 
         cell.game = game

@@ -19,11 +19,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▶︎ 天氣資訊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1kF-Mm-bhL">
-                        <rect key="frame" x="20" y="10" width="104" height="20"/>
+                        <rect key="frame" x="20" y="10" width="335" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="QEs-XW-umg"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -53,6 +53,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="1kF-Mm-bhL" secondAttribute="trailing" constant="20" id="0KE-0T-kmf"/>
                     <constraint firstItem="9IX-rj-Gvh" firstAttribute="trailing" secondItem="hKh-lC-K9k" secondAttribute="trailing" id="2K1-Hs-dDd"/>
                     <constraint firstItem="1kF-Mm-bhL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BXO-vG-akp"/>
                     <constraint firstItem="9IX-rj-Gvh" firstAttribute="leading" secondItem="hKh-lC-K9k" secondAttribute="leading" id="J7w-nG-Q2k"/>
