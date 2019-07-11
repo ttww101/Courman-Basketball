@@ -222,7 +222,7 @@ class BasketballGamesViewController: BaseViewController {
 
 // MARK: TableView
 extension BasketballGamesViewController: UITableViewDelegate, UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if self.gamesList.count == 0 {
             let view = UIView()
@@ -286,7 +286,7 @@ extension BasketballGamesViewController {
 
         cell.location.text = game.court.name
         cell.name.text = game.name
-        cell.peopleNum.text = String(game.members.count)
+        cell.peopleNum.text = "人數 \(game.members.count)"
         cell.time.text = game.time
 
         switch game.level {

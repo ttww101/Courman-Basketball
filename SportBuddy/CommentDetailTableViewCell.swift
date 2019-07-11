@@ -21,6 +21,8 @@ class CommentDetailTableViewCell: UITableViewCell {
 
         comment.textColor = .white
         commaLabel.textColor = .white
+        userImage.layer.cornerRadius = userImage.bounds.size.height / 2.0
+        userImage.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

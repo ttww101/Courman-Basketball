@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-home-48-3.png",
+      "filename" : "ballapp_open.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-home-96-3.png",
+      "filename" : "ballapp_open-1.png",
       "scale" : "2x"
     },
     {

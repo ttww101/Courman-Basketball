@@ -15,9 +15,9 @@ import FSPagerView
 class SportsMenuViewController: BaseViewController, FSPagerViewDelegate, FSPagerViewDataSource {
 
     //Menu Pager
-    let menuImages:[UIImage?] = [UIImage(named: "Item_Basketball"),
-                                  UIImage(named: "Item_Baseball"),
-                                  UIImage(named: "Item_Jog")]
+    let menuImages:[UIImage?] = [UIImage(named: "Menu_Basketball"),
+                                  UIImage(named: "Menu_Baseball"),
+                                  UIImage(named: "Menu_Football")]
     
     let menuNames:[String] = ["籃球","棒球","足球"]
     private let pagerCellIdentifier = "FSMenuCell"
@@ -58,7 +58,7 @@ class SportsMenuViewController: BaseViewController, FSPagerViewDelegate, FSPager
         let screenSize = UIScreen.main.bounds.size
         pagerView.itemSize = CGSize(width: screenSize.width*7/9, height: screenSize.height*7/9)
         
-        setBackground(imageName: Constant.BackgroundName.basketball)
+        setBackground(imageName: "BG_Menu")
     }
 
     func checkIfUserIsLoggedIn() {
@@ -263,20 +263,21 @@ extension SportsMenuViewController {
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.image = self.menuImages[index]
         cell.textLabel?.textAlignment = .center
-//        cell.textLabel?.text = self.menuNames[index]
         cell.textLabel?.backgroundColor = .clear
+//        cell.textLabel?.superview?.isHidden = false
         return cell
     }
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-        
 //        if targetIndex > 2 {
 //            self.pageControl.currentPage = targetIndex - 3
 //        } else {
 //            self.pageControl.currentPage = targetIndex + 2
 //        }
     }
+    
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        pagerView.deselectItem(at: index, animated: true)
         if (index == 0) {
             goBasketball()
         }

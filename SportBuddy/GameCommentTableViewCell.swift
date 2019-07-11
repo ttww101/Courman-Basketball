@@ -176,38 +176,44 @@ extension GameCommentTableViewCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let identifier = CommentDetailTableViewCell.identifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CommentDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CommentDetailTableViewCell
 
-        cell?.selectionStyle = .none
-
-        cell?.userImage.image = #imageLiteral(resourceName: "Default_User_Photo")
-        cell?.userImage.layer.cornerRadius = (cell?.userImage.bounds.size.height)! / 2.0
-        cell?.userImage.layer.masksToBounds = true
+        cell.selectionStyle = .none
 
         if comments.count != 0 {
-            cell?.comment.text = comments[indexPath.row].comment
+            cell.comment.text = comments[indexPath.row].comment
 
-            let userPhoto = commentOwnersPhoto[(comments[indexPath.row].commentOwner)]
-            if userPhoto != nil {
-                cell?.userImage.image = userPhoto
+            if members.count != 0 {
+                self.loadAndSetUserPhoto(cell.userImage, self.members[indexPath.row].photoURL)
             }
         }
 
-        return cell!
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         // todo: 點擊後可看訊息詳細的時間
     }
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
-        guard
-            let commentCell = cell as? CommentDetailTableViewCell
-            else { return }
-
-        commentCell.userImage.layer.cornerRadius = commentCell.userImage.bounds.size.height / 2.0
-        commentCell.userImage.layer.masksToBounds = true
+    
+    func loadAndSetUserPhoto(_ userImage: UIImageView, _ userPhotoUrlString: String) {
+        
+        DispatchQueue.global().async {
+            
+            let storageRef = Storage.storage().reference()
+            
+            let islandRef = storageRef.child(userPhotoUrlString)
+            
+            islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
+                    print("=== \(error)")
+                } else {
+                    let image = UIImage(data: data!)
+                    DispatchQueue.main.async {
+                        userImage.image = image
+                    }
+                }
+            }
+        }
     }
 }

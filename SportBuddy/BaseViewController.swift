@@ -39,8 +39,6 @@ extension BaseViewController {
         let image = UIImage()
         navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = image
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = UIColor.clear
     }
 }
 

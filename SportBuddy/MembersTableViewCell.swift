@@ -47,24 +47,25 @@ class MembersTableViewCell: UITableViewCell, Identifiable {
         let memberNib = UINib(nibName: MemberCollectionViewCell.identifier, bundle: nil)
         collectionView.register(memberNib, forCellWithReuseIdentifier: MemberCollectionViewCell.identifier)
     }
-
-    // MARK: - Load User Picture From Firebase
+    
     func loadAndSetUserPhoto(_ userImage: UIImageView, _ userPhotoUrlString: String) {
 
         DispatchQueue.global().async {
-
-            if let imageUrl = URL(string: userPhotoUrlString) {
-                do {
-                    let imageData = try Data(contentsOf: imageUrl)
-                    if let image = UIImage(data: imageData) {
-                        DispatchQueue.main.async {
-                            userImage.layer.cornerRadius = userImage.bounds.size.height / 2.0
-                            userImage.layer.masksToBounds = true
-                            userImage.image = image
-                        }
-                    }
-                } catch {
+            
+            let storageRef = Storage.storage().reference()
+            
+            let islandRef = storageRef.child(userPhotoUrlString)
+            
+            islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
                     print("=== \(error)")
+                } else {
+                    let image = UIImage(data: data!)
+                    DispatchQueue.main.async {
+                        userImage.layer.cornerRadius = userImage.bounds.size.height / 2.0
+                        userImage.layer.masksToBounds = true
+                        userImage.image = image
+                    }
                 }
             }
         }

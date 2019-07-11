@@ -59,15 +59,15 @@ class BasketballGameDetailViewController: BaseViewController {
 
         setView()
         getWeather()
-        getMembersInfo()
+        getMembersInfo({
+            print("member ok tableiview reload")
+            self.tableView.reloadData()
+        })
         getGameComments()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        // MARK: Loading indicator
-        self.loadingIndicator.start()
 
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -160,36 +160,38 @@ class BasketballGameDetailViewController: BaseViewController {
         }
     }
 
-    func getMembersInfo() {
+    func getMembersInfo(_ completion:(() -> ())? = nil) {
 
         guard
             game != nil,
             game?.members.count != 0
             else { return }
 
+        self.loadingIndicator.start()
+        
         MemebersProvider.sharded.getMembers(gameID: (game?.gameID)!) { (members) in
+            
+            self.loadingIndicator.stop()
 
+            print("got \(members.count) members")
+            
             for member in members {
 
                 UserManager.shared.getUserInfo(currentUserUID: member, completion: { (user, error) in
-
+                    
+                    if error != nil {
+                        print("=== Error: \(String(describing: error))")
+                    }
+                    
                     if user != nil {
                         self.members.append(user!)
                     }
-
                     if member == members[members.count-1] {
-                        self.isFinishLoadMembers = true
-
-                        if self.isFinishLoadMembers && self.isFinishLoadComments {
-                            self.tableView.reloadData()
-                            self.loadingIndicator.stop()
+                        if let completion = completion {
+                            completion()
                         }
                     }
 
-                    if error != nil {
-                        print("=== Error: \(String(describing: error))")
-                        self.loadingIndicator.stop()
-                    }
                 })
             }
         }
@@ -203,92 +205,10 @@ class BasketballGameDetailViewController: BaseViewController {
             else { return }
 
         var commentOwners = Set<String>()
-        var totalCommentOwners = 0
 
-        GameCommentProvider.sharded.getComments(gameID: (game?.gameID)!) { (gameComments) in
-
-            if gameComments.count == 0 {
-
-                UserManager.shared.getUserInfo(currentUserUID: self.currentUserUid, completion: { (user, error) in
-                    DispatchQueue.global().async {
-                        if let imageUrl = URL(string: (user?.photoURL)!) {
-                            do {
-                                let imageData = try Data(contentsOf: imageUrl)
-                                if let image = UIImage(data: imageData) {
-                                    self.commentOwnersPhoto.updateValue(image, forKey: self.currentUserUid)
-
-                                    if totalCommentOwners == commentOwners.count {
-
-                                        self.isFinishLoadComments = true
-
-                                        if self.isFinishLoadMembers && self.isFinishLoadComments {
-
-                                            DispatchQueue.main.async {
-
-                                                self.tableView.reloadData()
-                                                self.loadingIndicator.stop()
-                                            }
-                                        }
-                                    }
-                                }
-                            } catch {
-                                print("=== Error: \(error)")
-                                self.loadingIndicator.stop()
-                            }
-                        }
-                    }
-                })
-            } else {
-
-                self.comments = gameComments
-
-                for comment in self.comments {
-                    commentOwners.insert(comment.commentOwner)
-                }
-
-                for commentOwner in commentOwners {
-                    UserManager.shared.getUserInfo(currentUserUID: commentOwner, completion: { (user, error) in
-
-                        if user != nil {
-                            DispatchQueue.global().async {
-                                if let imageUrl = URL(string: (user?.photoURL)!) {
-                                    do {
-                                        let imageData = try Data(contentsOf: imageUrl)
-                                        if let image = UIImage(data: imageData) {
-                                            totalCommentOwners += 1
-                                            self.commentOwnersPhoto.updateValue(image, forKey: commentOwner)
-
-                                            if totalCommentOwners == commentOwners.count {
-
-                                                self.isFinishLoadComments = true
-
-                                                if self.isFinishLoadMembers && self.isFinishLoadComments {
-
-                                                    DispatchQueue.main.async {
-
-                                                        self.tableView.reloadData()
-                                                        self.loadingIndicator.stop()
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    } catch {
-                                        print("=== Error: \(error)")
-                                        self.loadingIndicator.stop()
-                                    }
-                                }
-                            }
-                        }
-
-                        if error != nil {
-                            print("=== Error: \(String(describing: error))")
-                            self.loadingIndicator.stop()
-                        }
-                    })
-                }
-
-            }
-
+        GameCommentProvider.sharded.getComments(gameID: (game?.gameID)!) { (getComments) in
+            
+                self.comments = getComments
         }
     }
 }
@@ -351,8 +271,6 @@ extension BasketballGameDetailViewController: UITableViewDelegate, UITableViewDa
 
             return setJoinOrLeaveTableViewCell(cell)
         }
-
-        // swiftlint:enable force_cast
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -638,7 +556,7 @@ extension BasketballGameDetailViewController {
         getGameDBRef().updateChildValues(value) { (error, _) in
 
             if error == nil {
-                self.getMembersInfo()
+                self.getMembersInfo(nil)
                 self.setUserGameList(isJoined: true)
                 self.navigationController?.popViewController(animated: true)
             } else {
@@ -665,7 +583,7 @@ extension BasketballGameDetailViewController {
         getGameDBRef().updateChildValues(value) { (error, _) in
 
             if error == nil {
-                self.getMembersInfo()
+                self.getMembersInfo(nil)
                 self.setUserGameList(isJoined: false)
                 self.navigationController?.popViewController(animated: true)
             } else {

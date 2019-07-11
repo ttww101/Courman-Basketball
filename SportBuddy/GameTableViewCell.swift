@@ -10,20 +10,17 @@ import UIKit
 
 class GameTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var levelImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var peopleNum: UILabel!
     @IBOutlet weak var time: UILabel!
 
-    static let height: CGFloat = 135.0
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 
-        cellView.backgroundColor = .clear
+        self.contentView.backgroundColor = .clear
 
         levelImage.layer.cornerRadius = levelImage.bounds.size.height / 2.0
         levelImage.layer.masksToBounds = true

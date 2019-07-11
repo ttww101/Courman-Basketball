@@ -27,7 +27,7 @@ open class FSPagerViewCell: UICollectionViewCell {
         view.addSubview(textLabel)
         
         textLabel.addObserver(self, forKeyPath: "font", options: [.old,.new], context: kvoContext)
-        
+        view.isHidden = true
         _textLabel = textLabel
         return textLabel
     }

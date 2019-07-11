@@ -48,6 +48,7 @@ class ChooseLevelViewController: BaseViewController, FSPagerViewDelegate, FSPage
         cell.textLabel?.textAlignment = .center
         cell.imageView?.image = self.levelImages[index]
         cell.textLabel?.text = self.levelNames[index]
+        cell.textLabel?.superview?.isHidden = false
         return cell
     }
 
