@@ -101,7 +101,12 @@ extension ChooseLevelViewController {
     }
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         saveLevel(level: levelModel[index])
-        toMainPage()
+        toBasketballTabbarViewController()
+    }
+    
+    @IBAction func okButtonDidTouchUpInside() {
+        saveLevel(level: levelModel[self.pagerView.currentIndex])
+        toBasketballTabbarViewController()
     }
 }
 
@@ -117,7 +122,7 @@ extension ChooseLevelViewController {
         introductionLabel.isHidden = false
     }
     
-    func toMainPage() {
+    func toBasketballTabbarViewController() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             
             let basketballStorybard = UIStoryboard(name: Constant.Storyboard.basketball, bundle: nil)

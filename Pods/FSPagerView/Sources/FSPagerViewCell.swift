@@ -18,7 +18,7 @@ open class FSPagerViewCell: UICollectionViewCell {
         }
         let view = UIView(frame: .zero)
         view.isUserInteractionEnabled = false
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.darkGray.withAlphaComponent(0.4)
         
         let textLabel = UILabel(frame: .zero)
         textLabel.textColor = .white

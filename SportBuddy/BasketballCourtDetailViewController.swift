@@ -64,15 +64,12 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
     func getWeather() {
 
         if basketballCourt != nil {
-            let courtAddress = basketballCourt!.address
-            let index = courtAddress.index(courtAddress.startIndex, offsetBy: 5)
-            let town = courtAddress.substring(to: index)
-
-            // MARK: Loading indicator
+            
             loadingIndicator.start()
-
-            WeatherProvider.shared.getWeather(city: "台北市", completion: { (weather, error) in
-
+            WeatherProvider.shared.getWeather(city:items[Constant.CurrentCity.cityIndex], completion: { (weather, error) in
+                
+                self.loadingIndicator.stop()
+                
                 if error == nil {
                     self.weather = weather
                     self.tableView.reloadData()
@@ -80,10 +77,9 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
                     print("=== Error in BasketballCourtDetailViewController - Get weather")
                 }
 
-                self.loadingIndicator.stop()
             })
+            
         } else {
-            self.loadingIndicator.stop()
             print("=== Error in BasketballCourtDetailViewController getWeather()")
         }
     }
@@ -195,21 +191,18 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
 
-        if let des = weather?.description,
-            let temperature = weather?.temperature,
-            let time = weather?.rainRate {
+        if let weather = weather {
 
-            cell.weatherLabel.text = "天氣 : \(des)"
-            cell.temperatureLabel.text = "氣溫 : \(temperature) 度"
-            cell.rainRateLabel.text = "更新時間 : \n\(time)"
-
+            cell.weatherLabel.text = "\(weather.description)"
+            cell.temperatureLabel.text = "氣溫 \(weather.temperature)°C"
+            cell.rainRateLabel.text = "降雨機率 \(weather.rainRate)%"
+            cell.feelLabel.text = "體感 \(weather.feel)"
+            
         } else {
             cell.weatherLabel.text = ""
-            cell.temperatureLabel.text = "天氣即時資訊更新維護中..."
+            cell.temperatureLabel.text = "無法取得即時天氣資訊"
             cell.rainRateLabel.text = ""
         }
-
-        cell.weatherCellTitle.isHidden = true
 
         return cell
     }

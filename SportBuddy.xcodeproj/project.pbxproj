@@ -10,6 +10,8 @@
 		86B393D6D3C6D9E1CDF02680 /* Pods_SportBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */; };
 		940824D622D6F7190088BB07 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940824D522D6F7190088BB07 /* GameTableViewCell.xib */; };
 		9432473C22D5B9EF0082E52F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432473B22D5B9ED0082E52F /* UIColor+Hex.swift */; };
+		946D952022D8BB4D00C9C93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946D951F22D8BB4C00C9C93A /* Assets.xcassets */; };
+		947343C622D8C36D00D21E64 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947343C522D8C36D00D21E64 /* Login.storyboard */; };
 		94EE141022D46C1E007DD462 /* iPlay.cer in Resources */ = {isa = PBXBuildFile; fileRef = 94EE140F22D46BA9007DD462 /* iPlay.cer */; };
 		94EE141222D46D22007DD462 /* Blah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141122D46D22007DD462 /* Blah.swift */; };
 		94EE141622D46F7B007DD462 /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141422D46F7B007DD462 /* RequestToken.swift */; };
@@ -25,7 +27,6 @@
 		B0301DE01EBC1D8D00A7001A /* GameCommentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0301DDF1EBC1D8D00A7001A /* GameCommentProvider.swift */; };
 		B037B2921E826905007FD483 /* SportsMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B037B2911E826905007FD483 /* SportsMenu.storyboard */; };
 		B06DB2B01E7FB28000DCF016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DB2AF1E7FB28000DCF016 /* AppDelegate.swift */; };
-		B06DB2B71E7FB28000DCF016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06DB2B61E7FB28000DCF016 /* Assets.xcassets */; };
 		B06DB2BA1E7FB28000DCF016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06DB2B81E7FB28000DCF016 /* LaunchScreen.storyboard */; };
 		B06DB2C21E7FB36700DCF016 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DB2C11E7FB36700DCF016 /* LoginViewController.swift */; };
 		B07131FC1EAA0C5A00874DEF /* BasketballGameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07131FB1EAA0C5A00874DEF /* BasketballGameParser.swift */; };
@@ -45,7 +46,6 @@
 		B076C5601E89F5CF00F06390 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076C55F1E89F5CF00F06390 /* User.swift */; };
 		B07CF4A31E82D7C600E91F7E /* SportsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CF4A21E82D7C600E91F7E /* SportsMenuViewController.swift */; };
 		B084BD2E1E7FCE7900DC48B2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B084BD2D1E7FCE7900DC48B2 /* Constant.swift */; };
-		B084BD301E7FCF8200DC48B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B084BD2F1E7FCF8200DC48B2 /* Login.storyboard */; };
 		B084BD321E7FD29F00DC48B2 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B084BD311E7FD29F00DC48B2 /* SignUp.storyboard */; };
 		B084BD341E7FDD3900DC48B2 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B084BD331E7FDD3900DC48B2 /* Palette.swift */; };
 		B08ABE481EBDB80F00266BEF /* UserWithPhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08ABE471EBDB80F00266BEF /* UserWithPhotoURL.swift */; };
@@ -94,6 +94,8 @@
 		88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		940824D522D6F7190088BB07 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		9432473B22D5B9ED0082E52F /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		946D951F22D8BB4C00C9C93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		947343C522D8C36D00D21E64 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		94EE140F22D46BA9007DD462 /* iPlay.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPlay.cer; sourceTree = "<group>"; };
 		94EE141122D46D22007DD462 /* Blah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blah.swift; sourceTree = "<group>"; };
 		94EE141422D46F7B007DD462 /* RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
@@ -110,7 +112,6 @@
 		B037B2911E826905007FD483 /* SportsMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportsMenu.storyboard; sourceTree = "<group>"; };
 		B06DB2AC1E7FB28000DCF016 /* SportBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06DB2AF1E7FB28000DCF016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B06DB2B61E7FB28000DCF016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06DB2B91E7FB28000DCF016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06DB2BB1E7FB28000DCF016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06DB2C11E7FB36700DCF016 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		B076C55F1E89F5CF00F06390 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B07CF4A21E82D7C600E91F7E /* SportsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsMenuViewController.swift; sourceTree = "<group>"; };
 		B084BD2D1E7FCE7900DC48B2 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		B084BD2F1E7FCF8200DC48B2 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B084BD311E7FD29F00DC48B2 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		B084BD331E7FDD3900DC48B2 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		B08ABE471EBDB80F00266BEF /* UserWithPhotoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWithPhotoURL.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 				B0754D521E836196006A5754 /* Component */,
 				B084BD2C1E7FCE4600DC48B2 /* Utilities */,
 				B06DB2AF1E7FB28000DCF016 /* AppDelegate.swift */,
-				B06DB2B61E7FB28000DCF016 /* Assets.xcassets */,
+				946D951F22D8BB4C00C9C93A /* Assets.xcassets */,
 				B06DB2BB1E7FB28000DCF016 /* Info.plist */,
 				94EE141122D46D22007DD462 /* Blah.swift */,
 				94EE140F22D46BA9007DD462 /* iPlay.cer */,
@@ -363,7 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				B06DB2B81E7FB28000DCF016 /* LaunchScreen.storyboard */,
-				B084BD2F1E7FCF8200DC48B2 /* Login.storyboard */,
+				947343C522D8C36D00D21E64 /* Login.storyboard */,
 				B084BD311E7FD29F00DC48B2 /* SignUp.storyboard */,
 				B037B2911E826905007FD483 /* SportsMenu.storyboard */,
 				B0754D601E839284006A5754 /* ChooseLevel.storyboard */,
@@ -592,9 +592,9 @@
 				B0DC15B81EA747D500443F9D /* MemberCollectionViewCell.xib in Resources */,
 				B0D443CC1EA36EED008EF375 /* EditProfile.storyboard in Resources */,
 				B06DB2BA1E7FB28000DCF016 /* LaunchScreen.storyboard in Resources */,
+				946D952022D8BB4D00C9C93A /* Assets.xcassets in Resources */,
 				B01437BB1EBAFCA400675239 /* GameCommentTableViewCell.xib in Resources */,
 				B0754D631E83995A006A5754 /* Basketball.storyboard in Resources */,
-				B084BD301E7FCF8200DC48B2 /* Login.storyboard in Resources */,
 				B0754D611E839284006A5754 /* ChooseLevel.storyboard in Resources */,
 				B01437C11EBB334A00675239 /* CommentDetailTableViewCell.xib in Resources */,
 				B0DC15BD1EA75BA600443F9D /* JoinOrLeaveTableViewCell.xib in Resources */,
@@ -606,10 +606,10 @@
 				B0002A581E9E820700CD2241 /* BasketballGameDetail.storyboard in Resources */,
 				94EE141922D48A0E007DD462 /* GoogleService-Info.plist in Resources */,
 				B037B2921E826905007FD483 /* SportsMenu.storyboard in Resources */,
-				B06DB2B71E7FB28000DCF016 /* Assets.xcassets in Resources */,
 				B0CE8AF21E8B640C003F0F12 /* CourtInfoTableViewCell.xib in Resources */,
 				B099C6A71E89634000C0B142 /* NewBasketballGame.storyboard in Resources */,
 				940824D622D6F7190088BB07 /* GameTableViewCell.xib in Resources */,
+				947343C622D8C36D00D21E64 /* Login.storyboard in Resources */,
 				B0971BC61E850EB10037E26D /* CourtTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,10 +637,13 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
+				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
@@ -662,10 +665,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",

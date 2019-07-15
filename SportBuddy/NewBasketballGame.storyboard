@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Basketball Game View Controller-->
+        <!--Delegate-->
         <scene sceneID="2js-KU-DvO">
             <objects>
                 <viewController storyboardIdentifier="NewBasketballGameViewController" id="Hk7-CK-Dsi" customClass="NewBasketballGameViewController" customModule="SportBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,14 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzC-Wm-CmV">
-                                <rect key="frame" x="35" y="182" width="82" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iO-tK-Ggn">
-                                <rect key="frame" x="145" y="604" width="85" height="33"/>
+                                <rect key="frame" x="125" y="449.5" width="125" height="48.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0iO-tK-Ggn" secondAttribute="height" multiplier="85:33" id="mun-sL-nUO"/>
                                 </constraints>
@@ -40,89 +33,142 @@
                                     <action selector="createGame:" destination="Hk7-CK-Dsi" eventType="touchUpInside" id="wvR-Yr-OvO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="創建球局" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-qN-dFq">
-                                <rect key="frame" x="38.5" y="75" width="298" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zf9-qN-dFq" secondAttribute="height" multiplier="149:21" id="y1S-nu-Cbb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-qN-dFq" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="16" y="95.5" width="343" height="41"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="morphingDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Hk7-CK-Dsi" id="NFt-jj-pTw"/>
+                                </connections>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKa-Mk-K48">
-                                <rect key="frame" x="147" y="179" width="193" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKa-Mk-K48" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="35" y="176.5" width="305" height="43.5"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="light" returnKeyType="done" smartInsertDeleteType="yes"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="請輸入球局名稱"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="名稱"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnG-6v-S3t">
-                                <rect key="frame" x="35" y="374" width="82" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成員等級" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruo-1O-dfi">
-                                <rect key="frame" x="35" y="310" width="82" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="球場" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt1-J9-nTa">
-                                <rect key="frame" x="35" y="246" width="82" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wN3-Nd-H12">
-                                <rect key="frame" x="147" y="243" width="193" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wN3-Nd-H12" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="35" y="248" width="305" height="43.5"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="light" returnKeyType="done" smartInsertDeleteType="yes"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="請選擇球場"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="球場"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEh-Qq-N1Q">
-                                <rect key="frame" x="147" y="307" width="193" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEh-Qq-N1Q" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="35" y="312" width="305" height="43.5"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="light" returnKeyType="done" smartInsertDeleteType="yes"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="選擇球局等級"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="球局等級"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RYT-PK-Reo">
-                                <rect key="frame" x="147" y="371" width="193" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RYT-PK-Reo" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="35" y="376" width="305" height="43.5"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="light" returnKeyType="done" smartInsertDeleteType="yes"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="選擇預計時間"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="時間"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                        <color key="value" red="0.71372549019999998" green="0.86274509799999999" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ruo-1O-dfi" firstAttribute="top" secondItem="gt1-J9-nTa" secondAttribute="bottom" constant="40" id="0Za-Mv-pXw"/>
                             <constraint firstAttribute="trailing" secondItem="lKa-Mk-K48" secondAttribute="trailing" constant="35" id="2OJ-V8-hQo"/>
                             <constraint firstItem="wN3-Nd-H12" firstAttribute="trailing" secondItem="lKa-Mk-K48" secondAttribute="trailing" id="2qx-Ax-cYH"/>
                             <constraint firstItem="0iO-tK-Ggn" firstAttribute="centerX" secondItem="K14-zJ-neN" secondAttribute="centerX" id="2xr-wp-ChL"/>
-                            <constraint firstItem="lKa-Mk-K48" firstAttribute="leading" secondItem="UzC-Wm-CmV" secondAttribute="trailing" constant="30" id="Cua-0z-228"/>
-                            <constraint firstItem="0iO-tK-Ggn" firstAttribute="width" secondItem="K14-zJ-neN" secondAttribute="height" multiplier="85:667" id="Iik-W1-s7O"/>
+                            <constraint firstItem="lKa-Mk-K48" firstAttribute="centerX" secondItem="zf9-qN-dFq" secondAttribute="centerX" id="5TF-oY-Tx0"/>
+                            <constraint firstAttribute="trailing" secondItem="zf9-qN-dFq" secondAttribute="trailing" constant="16" id="AFc-Fn-wcJ"/>
+                            <constraint firstItem="RYT-PK-Reo" firstAttribute="top" secondItem="lEh-Qq-N1Q" secondAttribute="bottom" constant="20.5" id="D6r-LR-tCQ"/>
+                            <constraint firstItem="lEh-Qq-N1Q" firstAttribute="centerY" secondItem="K14-zJ-neN" secondAttribute="centerY" id="Dd7-pZ-WPy"/>
                             <constraint firstItem="RYT-PK-Reo" firstAttribute="trailing" secondItem="lEh-Qq-N1Q" secondAttribute="trailing" id="MVI-km-KvI"/>
-                            <constraint firstItem="RYT-PK-Reo" firstAttribute="centerY" secondItem="NnG-6v-S3t" secondAttribute="centerY" id="OqL-HA-A0Q"/>
-                            <constraint firstItem="UzC-Wm-CmV" firstAttribute="leading" secondItem="K14-zJ-neN" secondAttribute="leading" constant="35" id="TOp-YS-mvU"/>
-                            <constraint firstItem="gt1-J9-nTa" firstAttribute="leading" secondItem="UzC-Wm-CmV" secondAttribute="leading" id="WEX-Ru-tdf"/>
-                            <constraint firstItem="NnG-6v-S3t" firstAttribute="top" secondItem="ruo-1O-dfi" secondAttribute="bottom" constant="40" id="YXh-UL-jKC"/>
-                            <constraint firstItem="ruo-1O-dfi" firstAttribute="trailing" secondItem="gt1-J9-nTa" secondAttribute="trailing" id="Z1q-S0-XxQ"/>
-                            <constraint firstItem="wN3-Nd-H12" firstAttribute="centerY" secondItem="gt1-J9-nTa" secondAttribute="centerY" id="ayr-Jk-he8"/>
-                            <constraint firstItem="ruo-1O-dfi" firstAttribute="leading" secondItem="gt1-J9-nTa" secondAttribute="leading" id="c7m-jh-vnL"/>
+                            <constraint firstItem="zf9-qN-dFq" firstAttribute="leading" secondItem="K14-zJ-neN" secondAttribute="leading" constant="16" id="WQy-rp-Tdc"/>
+                            <constraint firstItem="lEh-Qq-N1Q" firstAttribute="top" secondItem="wN3-Nd-H12" secondAttribute="bottom" constant="20.5" id="cQp-eb-Ib5"/>
+                            <constraint firstItem="lKa-Mk-K48" firstAttribute="top" secondItem="zf9-qN-dFq" secondAttribute="bottom" constant="40" id="clL-7j-9Dc"/>
                             <constraint firstItem="lEh-Qq-N1Q" firstAttribute="leading" secondItem="wN3-Nd-H12" secondAttribute="leading" id="dc7-Oy-QOI"/>
-                            <constraint firstItem="lEh-Qq-N1Q" firstAttribute="centerY" secondItem="ruo-1O-dfi" secondAttribute="centerY" id="eKU-C4-cW0"/>
-                            <constraint firstItem="zf9-qN-dFq" firstAttribute="width" secondItem="K14-zJ-neN" secondAttribute="height" multiplier="298:667" id="h0U-he-eQb"/>
-                            <constraint firstItem="itK-oO-PAA" firstAttribute="top" secondItem="0iO-tK-Ggn" secondAttribute="bottom" constant="30" id="hVR-ur-4pr"/>
-                            <constraint firstItem="UzC-Wm-CmV" firstAttribute="top" secondItem="zf9-qN-dFq" secondAttribute="bottom" constant="65" id="hi6-9w-Y3M"/>
+                            <constraint firstItem="0iO-tK-Ggn" firstAttribute="width" secondItem="K14-zJ-neN" secondAttribute="width" multiplier="1:3" id="hAx-rn-ayb"/>
                             <constraint firstItem="RYT-PK-Reo" firstAttribute="leading" secondItem="lEh-Qq-N1Q" secondAttribute="leading" id="lMV-QT-NKs"/>
                             <constraint firstItem="zf9-qN-dFq" firstAttribute="centerX" secondItem="K14-zJ-neN" secondAttribute="centerX" id="mnn-wo-kip"/>
-                            <constraint firstItem="zf9-qN-dFq" firstAttribute="top" secondItem="T7h-wp-XmI" secondAttribute="bottom" constant="55" id="mo1-OS-giu"/>
                             <constraint firstItem="lEh-Qq-N1Q" firstAttribute="trailing" secondItem="wN3-Nd-H12" secondAttribute="trailing" id="nHh-Ot-Klb"/>
-                            <constraint firstItem="NnG-6v-S3t" firstAttribute="leading" secondItem="ruo-1O-dfi" secondAttribute="leading" id="q8P-hq-PeP"/>
                             <constraint firstItem="wN3-Nd-H12" firstAttribute="leading" secondItem="lKa-Mk-K48" secondAttribute="leading" id="sW5-GP-9pJ"/>
-                            <constraint firstItem="gt1-J9-nTa" firstAttribute="top" secondItem="UzC-Wm-CmV" secondAttribute="bottom" constant="40" id="tDt-CZ-cg5"/>
-                            <constraint firstItem="NnG-6v-S3t" firstAttribute="trailing" secondItem="ruo-1O-dfi" secondAttribute="trailing" id="uGj-7a-4Pd"/>
-                            <constraint firstItem="gt1-J9-nTa" firstAttribute="trailing" secondItem="UzC-Wm-CmV" secondAttribute="trailing" id="uja-hL-Tx4"/>
-                            <constraint firstItem="lKa-Mk-K48" firstAttribute="centerY" secondItem="UzC-Wm-CmV" secondAttribute="centerY" id="wPI-cf-w7a"/>
+                            <constraint firstItem="0iO-tK-Ggn" firstAttribute="top" secondItem="RYT-PK-Reo" secondAttribute="bottom" constant="30" id="vGi-yw-yhU"/>
+                            <constraint firstItem="wN3-Nd-H12" firstAttribute="top" secondItem="lKa-Mk-K48" secondAttribute="bottom" constant="28" id="xfy-Sw-zE5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -130,6 +176,7 @@
                         <outlet property="levelTextField" destination="lEh-Qq-N1Q" id="gGq-WO-0mw"/>
                         <outlet property="nameTextField" destination="lKa-Mk-K48" id="eoy-ZX-jhC"/>
                         <outlet property="timeTextField" destination="RYT-PK-Reo" id="n8g-fL-LHQ"/>
+                        <outlet property="titleLTLabel" destination="zf9-qN-dFq" id="YKX-gd-FDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nB4-dy-NJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>

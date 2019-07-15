@@ -21,5 +21,8 @@ target 'SportBuddy' do
   pod 'Crashlytics'
   pod 'SnapKit'
   pod 'FSPagerView'
+  pod 'LTMorphingLabel'
+  pod 'LGButton'
+  pod 'SkyFloatingLabelTextField'
 
 end

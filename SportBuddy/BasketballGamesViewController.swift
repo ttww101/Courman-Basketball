@@ -95,10 +95,11 @@ class BasketballGamesViewController: BaseViewController {
         }
 
         menuView?.menuTitleColor = .white
+        menuView?.selectedCellTextLabelColor = .gray
         menuView?.cellTextLabelColor = .white
-        menuView?.cellSelectionColor = .white
+        menuView?.cellSelectionColor = .gray
         menuView?.cellSeparatorColor = .white
-        menuView?.cellBackgroundColor = .black
+        menuView?.cellBackgroundColor = .darkGray
     }
 
     func getGames() {
@@ -290,7 +291,8 @@ extension BasketballGamesViewController {
         cell.time.text = game.time
 
         switch game.level {
-
+        case "S":
+            cell.levelImage.image = #imageLiteral(resourceName: "Level_S")
         case "A":
             cell.levelImage.image = #imageLiteral(resourceName: "Level_A")
         case "B":
@@ -301,7 +303,8 @@ extension BasketballGamesViewController {
             cell.levelImage.image = #imageLiteral(resourceName: "Level_D")
         case "E":
             cell.levelImage.image = #imageLiteral(resourceName: "Level_E")
-
+        case "F":
+            cell.levelImage.image = #imageLiteral(resourceName: "Level_F")
         default:
             cell.levelImage.image = #imageLiteral(resourceName: "Level_C")
         }

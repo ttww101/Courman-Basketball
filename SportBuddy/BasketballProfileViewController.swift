@@ -14,9 +14,9 @@ class BasketballProfileViewController: BaseViewController {
 
     @IBOutlet weak var joinedGamesCount: UILabel!
     @IBOutlet weak var lastGameTime: UILabel!
+    @IBOutlet weak var levelImage: UIImageView!
     @IBOutlet weak var upgradeButton: UIButton!
     @IBOutlet weak var starImage: UIImageView!
-    @IBOutlet weak var levelImage: UIImageView!
 
     var currentUserUID = ""
     var userInfo: User?

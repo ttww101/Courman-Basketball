@@ -9,17 +9,20 @@
 import UIKit
 import Firebase
 import NVActivityIndicatorView
+import LTMorphingLabel
+import SkyFloatingLabelTextField
 
-class NewBasketballGameViewController: BaseViewController {
+class NewBasketballGameViewController: BaseViewController, LTMorphingLabelDelegate {
 
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var courtTextField: UITextField!
-    @IBOutlet weak var levelTextField: UITextField!
-    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet fileprivate var titleLTLabel: LTMorphingLabel!
+    @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var courtTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var levelTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var timeTextField: SkyFloatingLabelTextField!
 
     let loadingIndicator = LoadingIndicator()
 
-    let levelArray = ["A", "B", "C", "D", "E"]
+    let levelArray = ["S","A", "B", "C", "D", "E","F"]
     var basketballCourts: [BasketballCourt] = []
     var selectedCourt: BasketballCourt?
 
@@ -31,10 +34,28 @@ class NewBasketballGameViewController: BaseViewController {
         super.viewDidLoad()
 
         self.hideKeyboardWhenTappedAround()
-
+        
+        self.titleLTLabel.delegate = self
+        self.titleLTLabel.morphingEffect = .anvil
+        if let font = UIFont(name: "Menlo-Bold", size: 17) {
+            self.nameTextField.titleFont = font
+            self.courtTextField.titleFont = font
+            self.levelTextField.titleFont = font
+            self.timeTextField.titleFont = font
+        }
+        
         setView()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.titleLTLabel.updateProgress(progress: 0)
+        self.titleLTLabel.text = "建立一場球局"
+//        self.titleLTLabel.updateProgress(progress: 1.0)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -50,7 +71,7 @@ class NewBasketballGameViewController: BaseViewController {
     }
 
     func setView() {
-
+        
         setBackground(imageName: Constant.BackgroundName.basketball)
 
         nameTextField.autocorrectionType = .no

@@ -128,6 +128,8 @@ PODS:
   - GTMSessionFetcher/Core (1.2.2)
   - IQKeyboardManagerSwift (6.4.0)
   - leveldb-library (1.20)
+  - LGButton (1.1.6)
+  - LTMorphingLabel (0.7.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -143,6 +145,7 @@ PODS:
   - SDWebImageFLPlugin (0.3.0):
     - FLAnimatedImage (>= 1.0.11)
     - SDWebImage/Core (~> 5.0)
+  - SkyFloatingLabelTextField (3.7.0)
   - SnapKit (5.0.0)
   - SteviaLayout (4.4.4)
   - YPImagePicker (4.0.0):
@@ -161,7 +164,10 @@ DEPENDENCIES:
   - Firebase/Storage
   - FSPagerView
   - IQKeyboardManagerSwift
+  - LGButton
+  - LTMorphingLabel
   - NVActivityIndicatorView
+  - SkyFloatingLabelTextField
   - SnapKit
   - YPImagePicker
 
@@ -190,11 +196,14 @@ SPEC REPOS:
     - GTMSessionFetcher
     - IQKeyboardManagerSwift
     - leveldb-library
+    - LGButton
+    - LTMorphingLabel
     - nanopb
     - NVActivityIndicatorView
     - PryntTrimmerView
     - SDWebImage
     - SDWebImageFLPlugin
+    - SkyFloatingLabelTextField
     - SnapKit
     - SteviaLayout
     - YPImagePicker
@@ -223,15 +232,18 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  LGButton: 9f0a7f9d3030e3f504108342f6b66d64a429371b
+  LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SDWebImageFLPlugin: cf3f4ae49f249dd785129346fd61bbc8433a88cf
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 4d94be7ee1119e89da98d42f5352039e8605a14e
+PODFILE CHECKSUM: 756d0cfdd61be79c5bb251af0c27e5138df88bff
 
 COCOAPODS: 1.5.3

@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import DKImagePickerController
 import YPImagePicker
 
 class EditProfileViewController: BaseViewController {
@@ -20,6 +19,16 @@ class EditProfileViewController: BaseViewController {
     var userOriginName = ""
     var isUpdated  = false
 
+    @IBAction func levelSetupDidTouchUpSide() {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            
+            let chooseLevelStorybard = UIStoryboard(name: Constant.Storyboard.chooseLevel, bundle: nil)
+            let chooseLevelViewController = chooseLevelStorybard.instantiateViewController(withIdentifier: Constant.Controller.chooseLevel) as? ChooseLevelViewController
+            
+            appDelegate.window?.rootViewController = chooseLevelViewController
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        getUserInfo()

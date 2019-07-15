@@ -10,12 +10,12 @@ import UIKit
 import Firebase
 import NVActivityIndicatorView
 import Crashlytics
+import SkyFloatingLabelTextField
 
 class LoginViewController: BaseViewController {
 
-    @IBOutlet weak var emailTexfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var testButton: UIButton!
+    @IBOutlet weak var emailTexfield: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextfield: SkyFloatingLabelTextField!
 
     let loadingIndicator = LoadingIndicator()
 
@@ -23,9 +23,6 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
 
         self.hideKeyboardWhenTappedAround()
-
-//        setCrashlyticsButton()
-        testButton.isHidden = true
 
         setView()
     }
@@ -69,16 +66,7 @@ class LoginViewController: BaseViewController {
     }
 
     func setView() {
-
         setBackground(imageName: Constant.BackgroundName.login)
-
-        emailTexfield.placeholder = "Emall address"
-        emailTexfield.autocorrectionType = .no
-        emailTexfield.keyboardType = .emailAddress
-
-        passwordTextfield.placeholder = "Password"
-        passwordTextfield.clearButtonMode = .whileEditing
-
     }
 
     @IBAction func login(_ sender: Any) {

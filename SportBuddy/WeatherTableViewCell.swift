@@ -22,7 +22,7 @@ class WeatherTableViewCell: UITableViewCell, Identifiable {
 
     static let gameDefaultHeight: CGFloat = 40.0
     static let gameCellHeight: CGFloat = 180.0
-    static let courtCellHeight: CGFloat = 150.0
+    static let courtCellHeight: CGFloat = 200.0
 
     override func awakeFromNib() {
         super.awakeFromNib()

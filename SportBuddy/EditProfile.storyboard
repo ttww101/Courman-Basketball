@@ -28,28 +28,6 @@
                                     <constraint firstAttribute="width" secondItem="B6N-XQ-5dT" secondAttribute="height" multiplier="1:1" id="sr0-Ge-x1R"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEW-GR-bGI">
-                                <rect key="frame" x="220" y="614" width="85" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PEW-GR-bGI" secondAttribute="height" multiplier="85:33" id="gtA-TA-VTo"/>
-                                </constraints>
-                                <state key="normal" image="Button_Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveProfileInfo:" destination="iqw-eI-C0u" eventType="touchUpInside" id="JBC-Rw-KAM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpL-tH-EAe">
-                                <rect key="frame" x="70" y="614" width="85" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wpL-tH-EAe" secondAttribute="height" multiplier="85:33" id="RRK-1d-oq1"/>
-                                </constraints>
-                                <state key="normal" image="Button_Cancel"/>
-                                <connections>
-                                    <action selector="cancelEdit:" destination="iqw-eI-C0u" eventType="touchUpInside" id="yPq-jF-H20"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeC-01-7ur">
                                 <rect key="frame" x="37.5" y="351" width="300" height="36"/>
                                 <constraints>
@@ -59,21 +37,101 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="Dp7-4f-M8Q" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="238.5" y="406.5" width="99" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dp7-4f-M8Q" secondAttribute="height" multiplier="3:1" id="iiM-UO-1u3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" red="0.97255096360000004" green="0.94991290859999999" blue="0.86901929359999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" red="1" green="0.82387825540000004" blue="0.32623456280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.76062178940000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Setup"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="levelSetupDidTouchUpSide" destination="iqw-eI-C0u" eventType="touchUpInside" id="Hpt-jG-iUZ"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omv-Z8-DhK">
+                                <rect key="frame" x="37.5" y="411" width="193" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-O5-6Ln" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="53.5" y="595.5" width="118" height="39.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QyY-O5-6Ln" secondAttribute="height" multiplier="6:2" id="4Og-tT-chm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.51252788940585159" green="0.51618228285388112" blue="0.52714546319796951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Cancel"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleFontName" value="Menlo"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelEdit:" destination="iqw-eI-C0u" eventType="touchUpInside" id="MrU-d4-44h"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzN-iL-Q1q" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="203.5" y="595.5" width="118" height="39.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NzN-iL-Q1q" secondAttribute="height" multiplier="6:2" id="8j0-cr-yPW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.51252788940000005" green="0.51618228290000001" blue="0.5271454632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Save"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleFontName" value="Menlo"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveProfileInfo:" destination="iqw-eI-C0u" eventType="touchUpInside" id="SAM-QI-0cd"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wpL-tH-EAe" firstAttribute="centerY" secondItem="PEW-GR-bGI" secondAttribute="centerY" id="8Xn-F2-CPW"/>
                             <constraint firstItem="XeC-01-7ur" firstAttribute="top" secondItem="B6N-XQ-5dT" secondAttribute="bottom" constant="30" id="Abr-YI-inX"/>
                             <constraint firstItem="B6N-XQ-5dT" firstAttribute="centerY" secondItem="14f-YZ-BvN" secondAttribute="centerY" constant="-100" id="BsD-7r-zWN"/>
-                            <constraint firstItem="PEW-GR-bGI" firstAttribute="width" secondItem="14f-YZ-BvN" secondAttribute="height" multiplier="85:667" id="QlK-y5-ZVe"/>
+                            <constraint firstItem="Dp7-4f-M8Q" firstAttribute="centerY" secondItem="omv-Z8-DhK" secondAttribute="centerY" id="Eyx-98-d4w"/>
+                            <constraint firstItem="NzN-iL-Q1q" firstAttribute="trailing" secondItem="XeC-01-7ur" secondAttribute="trailing" constant="-16" id="IWA-bT-xpe"/>
+                            <constraint firstItem="sZm-Hz-plE" firstAttribute="top" secondItem="QyY-O5-6Ln" secondAttribute="bottom" constant="32" id="L7y-6E-7t7"/>
+                            <constraint firstItem="Dp7-4f-M8Q" firstAttribute="leading" secondItem="omv-Z8-DhK" secondAttribute="trailing" constant="8" id="PJN-JN-5qv"/>
+                            <constraint firstItem="omv-Z8-DhK" firstAttribute="top" secondItem="XeC-01-7ur" secondAttribute="bottom" constant="24" id="Pgx-C2-1QC"/>
                             <constraint firstItem="XeC-01-7ur" firstAttribute="centerX" secondItem="B6N-XQ-5dT" secondAttribute="centerX" id="RCR-ZI-G34"/>
                             <constraint firstItem="B6N-XQ-5dT" firstAttribute="width" secondItem="14f-YZ-BvN" secondAttribute="height" multiplier="175:667" id="VGc-hM-BQe"/>
-                            <constraint firstAttribute="trailing" secondItem="PEW-GR-bGI" secondAttribute="trailing" constant="70" id="XPU-6u-OMW"/>
+                            <constraint firstItem="NzN-iL-Q1q" firstAttribute="centerY" secondItem="QyY-O5-6Ln" secondAttribute="centerY" id="VwK-lT-Ooc"/>
+                            <constraint firstItem="NzN-iL-Q1q" firstAttribute="leading" secondItem="14f-YZ-BvN" secondAttribute="centerX" constant="16" id="ZRQ-8J-1Dv"/>
                             <constraint firstItem="B6N-XQ-5dT" firstAttribute="centerX" secondItem="14f-YZ-BvN" secondAttribute="centerX" id="Zk6-xN-raS"/>
-                            <constraint firstItem="PEW-GR-bGI" firstAttribute="top" secondItem="XeC-01-7ur" secondAttribute="bottom" constant="227" id="hb9-jw-wpu"/>
-                            <constraint firstItem="wpL-tH-EAe" firstAttribute="leading" secondItem="14f-YZ-BvN" secondAttribute="leading" constant="70" id="hn2-fw-LjG"/>
-                            <constraint firstItem="wpL-tH-EAe" firstAttribute="width" secondItem="14f-YZ-BvN" secondAttribute="height" multiplier="85:667" id="nsc-rC-7hu"/>
+                            <constraint firstItem="QyY-O5-6Ln" firstAttribute="leading" secondItem="omv-Z8-DhK" secondAttribute="leading" constant="16" id="cvV-BY-JVZ"/>
+                            <constraint firstItem="Dp7-4f-M8Q" firstAttribute="trailing" secondItem="XeC-01-7ur" secondAttribute="trailing" id="hpO-tI-AAG"/>
                             <constraint firstItem="XeC-01-7ur" firstAttribute="width" secondItem="14f-YZ-BvN" secondAttribute="width" multiplier="8:10" id="wWh-oq-Ia3"/>
+                            <constraint firstAttribute="centerX" secondItem="QyY-O5-6Ln" secondAttribute="trailing" constant="16" id="wme-qU-AP3"/>
+                            <constraint firstItem="omv-Z8-DhK" firstAttribute="leading" secondItem="XeC-01-7ur" secondAttribute="leading" id="x5D-9x-V04"/>
                         </constraints>
                     </view>
                     <connections>
@@ -87,8 +145,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button_Cancel" width="170" height="66"/>
-        <image name="Button_Save" width="170" height="66"/>
         <image name="Default_User_Photo" width="240" height="240"/>
     </resources>
 </document>

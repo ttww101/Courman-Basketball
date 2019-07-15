@@ -27,6 +27,7 @@ class BaseViewController: UIViewController {
     func setBackground(imageName: String) {
         let backgroundImage = UIImageView(frame: self.view.bounds)
         backgroundImage.image = UIImage(named: imageName)
+        backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
 }

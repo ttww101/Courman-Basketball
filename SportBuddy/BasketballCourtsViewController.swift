@@ -102,16 +102,35 @@ extension BasketballCourtsViewController {
         }
 
         menuView.menuTitleColor = .white
+        menuView.selectedCellTextLabelColor = .gray
         menuView.cellTextLabelColor = .white
-        menuView.cellSelectionColor = .white
+        menuView.cellSelectionColor = .gray
         menuView.cellSeparatorColor = .white
-        menuView.cellBackgroundColor = .black
+        menuView.cellBackgroundColor = .darkGray
     }
 }
 
 // MARK: TableView
 extension BasketballCourtsViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if self.basketballCourts.count == 0 {
+            let view = UIView()
+            let label = UILabel()
+            label.textAlignment = .center
+            label.numberOfLines = 0
+            label.text = "此地區尚無任何場地"
+            label.textColor = .white
+            view.addSubview(label)
+            label.snp.makeConstraints {
+                $0.edges.equalToSuperview().inset(10)
+            }
+            return view
+        } else {
+            return UIView()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         guard basketballCourts.count != 0 else { return 0 }

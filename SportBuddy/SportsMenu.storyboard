@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Data Source-->
+        <!--Sports Menu View Controller-->
         <scene sceneID="bpE-u9-blg">
             <objects>
                 <viewController storyboardIdentifier="vc" id="uSd-Qx-17U" customClass="SportsMenuViewController" customModule="SportBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,11 +39,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="toEditProfile:" destination="uSd-Qx-17U" eventType="touchUpInside" id="2Zj-ed-glw"/>
+                                    <action selector="editButtonDidTouchupInside:" destination="uSd-Qx-17U" eventType="touchUpInside" id="fwa-7V-mjN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-RS-rCK" userLabel="Log Out Button">
-                                <rect key="frame" x="281.5" y="30" width="77.5" height="30"/>
+                                <rect key="frame" x="256" y="30" width="103" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tZx-RS-rCK" secondAttribute="height" multiplier="85:33" id="H8j-aO-CBU"/>
                                 </constraints>
@@ -57,8 +57,8 @@
                                     <action selector="logout:" destination="uSd-Qx-17U" eventType="touchUpInside" id="hvB-yA-Nlj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-YV-mfV">
-                                <rect key="frame" x="96" y="30" width="177.5" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-YV-mfV">
+                                <rect key="frame" x="96" y="30" width="152" height="60"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -70,21 +70,163 @@
                                     <constraint firstAttribute="height" constant="2" id="B9g-C3-Kb5"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-Y4-aAa" customClass="FSPagerView" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="116" width="375" height="535"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpZ-h9-U4B" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="20" y="579" width="335" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fpZ-h9-U4B" secondAttribute="height" multiplier="6:1" id="VOd-hr-UiW"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysBounceHorizontal" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alwaysBounceVertical" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isScrollEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bounces" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="itemSize">
-                                        <size key="value" width="350" height="800"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" red="0.7322731598984773" green="0.3241096504867626" blue="0.19946617429855387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="36"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Play"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.76062178940000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleFontName" value="Menlo"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleNumOfLines">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.18232471450000001" green="0.18232471450000001" blue="0.18232471450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="dataSource" destination="uSd-Qx-17U" id="R7L-dl-UN7"/>
-                                    <outlet property="delegate" destination="uSd-Qx-17U" id="6KS-Oo-QPE"/>
+                                    <action selector="playButtonDidTouchupInside:" destination="uSd-Qx-17U" eventType="touchUpInside" id="qyb-Sf-HPA"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="參與賽事次數" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns3-5O-GrY" customClass="LTMorphingLabel">
+                                <rect key="frame" x="20" y="230" width="316" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待參與球賽數" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyX-Va-FVo" customClass="LTMorphingLabel">
+                                <rect key="frame" x="20" y="313" width="316" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上次球賽時間" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCQ-of-Yph" customClass="LTMorphingLabel">
+                                <rect key="frame" x="20" y="271.5" width="305" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="be2-7z-fnI">
+                                <rect key="frame" x="152.5" y="124" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="be2-7z-fnI" secondAttribute="height" multiplier="1:1" id="7yB-bm-OQW"/>
+                                    <constraint firstAttribute="height" constant="70" id="Um8-Bm-voe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等級" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDh-uf-8SB" customClass="LTMorphingLabel">
+                                <rect key="frame" x="100" y="146.5" width="36.5" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="55F-Rb-UHC" customClass="LTMorphingLabel">
+                                <rect key="frame" x="344" y="230" width="11" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-fF-ocC" customClass="LTMorphingLabel">
+                                <rect key="frame" x="333" y="271.5" width="22" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="SSj-ze-6Ax" customClass="LTMorphingLabel">
+                                <rect key="frame" x="344" y="313" width="11" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下次球賽時間" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPX-Ob-bw5" customClass="LTMorphingLabel">
+                                <rect key="frame" x="20" y="354.5" width="316" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="cJE-Lz-eOa" customClass="LTMorphingLabel">
+                                <rect key="frame" x="344" y="354.5" width="11" height="25.5"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Medium" family="PingFang TC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-Ve-es3" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="238.5" y="160.5" width="100" height="33.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Jlb-vR-ds5"/>
+                                    <constraint firstAttribute="width" secondItem="cAu-Ve-es3" secondAttribute="height" multiplier="3:1" id="p0e-Jy-Htu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="1" green="0.99368926125874379" blue="0.80782257562550808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" red="0.97255096360000004" green="0.94991290859999999" blue="0.86901929359999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" red="1" green="0.82387825535532855" blue="0.32623456283651497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Level Up"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleFontName" value="Menlo"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.94720426660000001" green="1" blue="0.98081630990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.76062178940000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="upgradeDidTouchUpInside:" destination="uSd-Qx-17U" eventType="touchUpInside" id="aT0-9Z-G3g"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -92,27 +234,57 @@
                         <constraints>
                             <constraint firstItem="gzf-YV-mfV" firstAttribute="height" secondItem="nDv-tt-dH8" secondAttribute="height" id="28h-2X-fZ5"/>
                             <constraint firstItem="gzf-YV-mfV" firstAttribute="leading" secondItem="nDv-tt-dH8" secondAttribute="trailing" constant="16" id="2Y5-Sx-rED"/>
+                            <constraint firstItem="qCQ-of-Yph" firstAttribute="top" secondItem="Ns3-5O-GrY" secondAttribute="bottom" constant="16" id="4p2-Tb-sAp"/>
                             <constraint firstItem="5rI-cF-PEj" firstAttribute="trailing" secondItem="nDv-tt-dH8" secondAttribute="trailing" id="7uz-lV-hK9"/>
-                            <constraint firstAttribute="trailing" secondItem="EKa-Y4-aAa" secondAttribute="trailing" id="HLz-HK-Czb"/>
+                            <constraint firstAttribute="trailing" secondItem="fpZ-h9-U4B" secondAttribute="trailing" constant="20" id="B5M-v7-CX7"/>
+                            <constraint firstItem="Jxr-fF-ocC" firstAttribute="leading" secondItem="qCQ-of-Yph" secondAttribute="trailing" constant="8" id="BM9-aQ-OO4"/>
+                            <constraint firstItem="cJE-Lz-eOa" firstAttribute="trailing" secondItem="SSj-ze-6Ax" secondAttribute="trailing" id="Bta-nV-DBt"/>
+                            <constraint firstItem="fpZ-h9-U4B" firstAttribute="leading" secondItem="fDH-Mx-lLD" secondAttribute="leading" constant="20" id="DYy-7U-6uf"/>
+                            <constraint firstItem="be2-7z-fnI" firstAttribute="leading" secondItem="GDh-uf-8SB" secondAttribute="trailing" constant="16" id="HMQ-Ng-GSE"/>
+                            <constraint firstItem="nPX-Ob-bw5" firstAttribute="top" secondItem="QyX-Va-FVo" secondAttribute="bottom" constant="16" id="Ib3-jO-mcr"/>
+                            <constraint firstItem="Jxr-fF-ocC" firstAttribute="centerY" secondItem="qCQ-of-Yph" secondAttribute="centerY" id="IhM-qc-Z6z"/>
+                            <constraint firstItem="cJj-dc-5Jw" firstAttribute="top" secondItem="fpZ-h9-U4B" secondAttribute="bottom" constant="32" id="NQc-Sa-6gW"/>
                             <constraint firstItem="tZx-RS-rCK" firstAttribute="leading" secondItem="gzf-YV-mfV" secondAttribute="trailing" constant="8" id="Nq9-qw-fKk"/>
+                            <constraint firstItem="SSj-ze-6Ax" firstAttribute="leading" secondItem="QyX-Va-FVo" secondAttribute="trailing" constant="8" id="Q20-R0-jDm"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="top" secondItem="nDv-tt-dH8" secondAttribute="bottom" constant="8" id="QPZ-Dw-Mh4"/>
+                            <constraint firstItem="qCQ-of-Yph" firstAttribute="leading" secondItem="Ns3-5O-GrY" secondAttribute="leading" id="Qyv-gh-phM"/>
+                            <constraint firstItem="Ns3-5O-GrY" firstAttribute="top" secondItem="be2-7z-fnI" secondAttribute="bottom" constant="36" id="S4c-Fr-PzX"/>
+                            <constraint firstItem="55F-Rb-UHC" firstAttribute="centerY" secondItem="Ns3-5O-GrY" secondAttribute="centerY" id="SaI-oB-eK0"/>
                             <constraint firstItem="5rI-cF-PEj" firstAttribute="bottom" secondItem="nDv-tt-dH8" secondAttribute="bottom" id="ToM-yZ-FkB"/>
+                            <constraint firstItem="Jxr-fF-ocC" firstAttribute="trailing" secondItem="55F-Rb-UHC" secondAttribute="trailing" id="UHT-7Y-dY2"/>
+                            <constraint firstItem="SSj-ze-6Ax" firstAttribute="centerY" secondItem="QyX-Va-FVo" secondAttribute="centerY" id="UYm-Hy-duc"/>
+                            <constraint firstItem="QyX-Va-FVo" firstAttribute="leading" secondItem="qCQ-of-Yph" secondAttribute="leading" id="Wym-P0-eBg"/>
+                            <constraint firstItem="Ns3-5O-GrY" firstAttribute="leading" secondItem="Mnf-Kw-g2H" secondAttribute="leading" id="XpE-Cb-AAl"/>
                             <constraint firstAttribute="trailing" secondItem="Mnf-Kw-g2H" secondAttribute="trailing" constant="20" id="ZEc-uU-scS"/>
+                            <constraint firstItem="nPX-Ob-bw5" firstAttribute="leading" secondItem="QyX-Va-FVo" secondAttribute="leading" id="Zq1-QZ-gzY"/>
+                            <constraint firstItem="QyX-Va-FVo" firstAttribute="top" secondItem="qCQ-of-Yph" secondAttribute="bottom" constant="16" id="aGR-Mu-j4b"/>
                             <constraint firstItem="gzf-YV-mfV" firstAttribute="centerY" secondItem="nDv-tt-dH8" secondAttribute="centerY" id="b9C-qy-N8F"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="top" secondItem="q60-ZR-LEs" secondAttribute="bottom" constant="10" id="bQw-MF-s1z"/>
+                            <constraint firstItem="cAu-Ve-es3" firstAttribute="bottom" secondItem="be2-7z-fnI" secondAttribute="bottom" id="dL1-7K-XES"/>
+                            <constraint firstItem="be2-7z-fnI" firstAttribute="top" secondItem="Mnf-Kw-g2H" secondAttribute="bottom" constant="24" id="daZ-QC-RSF"/>
+                            <constraint firstItem="SSj-ze-6Ax" firstAttribute="trailing" secondItem="Jxr-fF-ocC" secondAttribute="trailing" id="fTW-sS-6MT"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="leading" secondItem="nDv-tt-dH8" secondAttribute="leading" id="h4D-eq-6rc"/>
-                            <constraint firstItem="EKa-Y4-aAa" firstAttribute="leading" secondItem="fDH-Mx-lLD" secondAttribute="leading" id="ixv-2d-1jj"/>
-                            <constraint firstItem="cJj-dc-5Jw" firstAttribute="top" secondItem="EKa-Y4-aAa" secondAttribute="bottom" constant="16" id="jiL-gX-sg6"/>
+                            <constraint firstItem="GDh-uf-8SB" firstAttribute="centerY" secondItem="be2-7z-fnI" secondAttribute="centerY" id="hDe-1w-jWe"/>
+                            <constraint firstItem="cAu-Ve-es3" firstAttribute="leading" secondItem="be2-7z-fnI" secondAttribute="trailing" constant="16" id="iPa-Bi-UOy"/>
+                            <constraint firstItem="Mnf-Kw-g2H" firstAttribute="trailing" secondItem="55F-Rb-UHC" secondAttribute="trailing" id="l8F-6v-b1t"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="width" secondItem="fDH-Mx-lLD" secondAttribute="height" multiplier="60:667" id="lie-Bd-ZVx"/>
                             <constraint firstAttribute="trailing" secondItem="tZx-RS-rCK" secondAttribute="trailing" constant="16" id="m12-9O-fC6"/>
+                            <constraint firstItem="cJE-Lz-eOa" firstAttribute="leading" secondItem="nPX-Ob-bw5" secondAttribute="trailing" constant="8" id="nJF-6S-drd"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="leading" secondItem="fDH-Mx-lLD" secondAttribute="leading" constant="20" id="neR-4u-joE"/>
-                            <constraint firstItem="tZx-RS-rCK" firstAttribute="height" secondItem="nDv-tt-dH8" secondAttribute="height" multiplier="1:2" id="t9w-IO-4r4"/>
+                            <constraint firstItem="be2-7z-fnI" firstAttribute="centerX" secondItem="Mnf-Kw-g2H" secondAttribute="centerX" id="so1-BL-qJS"/>
+                            <constraint firstItem="tZx-RS-rCK" firstAttribute="height" secondItem="nDv-tt-dH8" secondAttribute="height" multiplier="2:3" id="t9w-IO-4r4"/>
+                            <constraint firstItem="cJE-Lz-eOa" firstAttribute="centerY" secondItem="nPX-Ob-bw5" secondAttribute="centerY" id="toG-vm-64m"/>
+                            <constraint firstItem="55F-Rb-UHC" firstAttribute="leading" secondItem="Ns3-5O-GrY" secondAttribute="trailing" constant="8" id="uEn-Y7-zOl"/>
                             <constraint firstItem="tZx-RS-rCK" firstAttribute="top" secondItem="nDv-tt-dH8" secondAttribute="top" id="vXe-UN-Rda"/>
-                            <constraint firstItem="EKa-Y4-aAa" firstAttribute="top" secondItem="Mnf-Kw-g2H" secondAttribute="bottom" constant="16" id="xll-9i-bEw"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pagerView" destination="EKa-Y4-aAa" id="tRJ-4i-XYA"/>
+                        <outlet property="joinedGamesCountLabel" destination="55F-Rb-UHC" id="Ozb-3y-l5s"/>
+                        <outlet property="lastGameTime" destination="Jxr-fF-ocC" id="8ci-Ni-tEp"/>
+                        <outlet property="levelImage" destination="be2-7z-fnI" id="Rv6-Vr-Mnr"/>
+                        <outlet property="nextGameTimeLabel" destination="cJE-Lz-eOa" id="ODc-F9-FXl"/>
+                        <outlet property="pendingGamesCountLabel" destination="SSj-ze-6Ax" id="odn-Vi-1cB"/>
+                        <outlet property="upgradeButton" destination="cAu-Ve-es3" id="J8B-FA-Hbm"/>
                         <outlet property="userImage" destination="nDv-tt-dH8" id="v5R-bH-ycM"/>
                         <outlet property="userName" destination="gzf-YV-mfV" id="dk6-Fk-0RY"/>
                     </connections>

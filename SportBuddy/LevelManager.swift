@@ -25,9 +25,9 @@ class LevelManager {
             .child(currentUserUID)
 
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            //test
-            completion(nil, newUser, nil)
-            return
+//            //test
+//            completion(nil, newUser, nil)
+//            return
             //production
             if snapshot.exists() {
 
@@ -78,11 +78,13 @@ class LevelManager {
 
                 var isEnoughToUpgrade: Bool {
                     switch level!.basketball {
-                        case "A": return playedGamesCount >= 999
-                        case "B": return playedGamesCount >= 40
-                        case "C": return playedGamesCount >= 30
-                        case "D": return playedGamesCount >= 20
-                        case "E": return playedGamesCount >= 10
+                        case "S": return playedGamesCount >= 300
+                        case "A": return playedGamesCount >= 150
+                        case "B": return playedGamesCount >= 100
+                        case "C": return playedGamesCount >= 80
+                        case "D": return playedGamesCount >= 60
+                        case "E": return playedGamesCount >= 40
+                        case "F": return playedGamesCount >= 10
                         default:
                             return playedGamesCount >= 10
                     }
@@ -105,13 +107,15 @@ class LevelManager {
 
         var nextLevel: String {
             switch userCorrentBasketballLevel {
-            case "A": return "A"
+            case "S": return "SS"
+            case "A": return "S"
             case "B": return "A"
             case "C": return "B"
             case "D": return "C"
             case "E": return "D"
+            case "F": return "E"
             default:
-                return "D"
+                return "F"
             }
         }
 

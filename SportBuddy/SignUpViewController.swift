@@ -8,8 +8,8 @@
 
 import UIKit
 import Firebase
-import DKImagePickerController
 import NVActivityIndicatorView
+import YPImagePicker
 
 class SignUpViewController: BaseViewController {
 
@@ -17,13 +17,6 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var genderLabel: UILabel!
-
-    @IBOutlet weak var maleButton: UIButton!
-    @IBOutlet weak var femaleButton: UIButton!
-
-    private var maleRadioButton = LTHRadioButton()
-    private var femaleRadioButton = LTHRadioButton()
 
     let loadingIndicator = LoadingIndicator()
 
@@ -49,51 +42,18 @@ class SignUpViewController: BaseViewController {
 
         setBackground(imageName: Constant.BackgroundName.login)
 
-        emailTextField.placeholder = "Emall address"
         emailTextField.clearButtonMode = .whileEditing
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocorrectionType = .no
         emailTextField.delegate = self
 
-        passwordTextField.placeholder = "Password"
         passwordTextField.clearButtonMode = .whileEditing
+        passwordTextField.autocorrectionType = .no
         passwordTextField.delegate = self
-
-        nameTextField.placeholder = "It will be displaied in app"
+        
         nameTextField.clearButtonMode = .whileEditing
         nameTextField.autocorrectionType = .no
         nameTextField.delegate = self
-
-        // Male Radio Button
-        maleRadioButton = LTHRadioButton(selectedColor: .blue)
-        view.addSubview(maleRadioButton)
-        maleRadioButton.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            maleRadioButton.centerYAnchor.constraint(equalTo: maleButton.centerYAnchor),
-            maleRadioButton.trailingAnchor.constraint(equalTo: maleButton.leadingAnchor, constant: -10),
-            maleRadioButton.heightAnchor.constraint(equalToConstant: maleRadioButton.frame.height),
-            maleRadioButton.widthAnchor.constraint(equalToConstant: maleRadioButton.frame.width)])
-
-        // todo: 為了先上架，所以把Gender藏起來，之後再打開
-        maleRadioButton.isHidden = true
-        maleButton.isHidden = true
-
-        // Female Radio Button
-        femaleRadioButton = LTHRadioButton(selectedColor: .blue)
-        view.addSubview(femaleRadioButton)
-        femaleRadioButton.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            femaleRadioButton.centerYAnchor.constraint(equalTo: femaleButton.centerYAnchor),
-            femaleRadioButton.trailingAnchor.constraint(equalTo: femaleButton.leadingAnchor, constant: -10),
-            femaleRadioButton.heightAnchor.constraint(equalToConstant: femaleRadioButton.frame.height),
-            femaleRadioButton.widthAnchor.constraint(equalToConstant: femaleRadioButton.frame.width)])
-
-        // todo: 為了先上架，所以把Gender藏起來，之後再打開
-        femaleRadioButton.isHidden = true
-        femaleButton.isHidden = true
-        genderLabel.isHidden = true
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         userImage.isUserInteractionEnabled = true
@@ -102,54 +62,7 @@ class SignUpViewController: BaseViewController {
 
     // MARK: - Select Picture
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        guard
-            let tappedImage = tapGestureRecognizer.view as? UIImageView
-            else { return }
-
-        let pickerController = DKImagePickerController()
-
-        pickerController.singleSelect = true
-        pickerController.assetType = .allPhotos
-
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            if assets.count != 0 {
-//                assets[0].fetchOriginalImageWithCompleteBlock({ (image, _) in
-//                    tappedImage.image = image
-//                })
-            }
-        }
-
-        self.present(pickerController, animated: true) {}
-    }
-
-    // MARK: - Select Gender
-    @IBAction func clickMaleButton(_ sender: Any) {
-
-        selectGender(select: maleRadioButton,
-                     deselect: femaleRadioButton,
-                     isMale: true)
-    }
-
-    @IBAction func clickFemaleButton(_ sender: Any) {
-
-        selectGender(select: femaleRadioButton,
-                     deselect: maleRadioButton,
-                     isMale: false)
-    }
-
-    func selectGender(select selectGenderButton: LTHRadioButton,
-                      deselect deselectGenderButton: LTHRadioButton,
-                      isMale: Bool) {
-
-        selectGenderButton.select()
-        deselectGenderButton.deselect(animated: false)
-
-        if isMale {
-            userGender = Constant.Gender.male
-
-        } else {
-            userGender = Constant.Gender.female
-        }
+        self.presentImagePicker()
     }
 
     // MARK: - Sign up
@@ -270,4 +183,72 @@ extension SignUpViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
+}
+
+extension SignUpViewController {
+    
+    func presentImagePicker() {
+        var config = YPImagePickerConfiguration()
+        config.wordings.libraryTitle = "Gallery"
+        config.wordings.cameraTitle = "Camera"
+        config.isScrollToChangeModesEnabled = true
+        config.onlySquareImagesFromCamera = true
+        config.usesFrontCamera = true
+        config.showsPhotoFilters = true
+        config.shouldSaveNewPicturesToAlbum = true
+        config.albumName = "CourtsMan"
+        config.startOnScreen = YPPickerScreen.photo
+        config.screens = [.photo,.library]
+        config.targetImageSize = YPImageSize.original
+        config.overlayView = UIView()
+        config.hidesStatusBar = true
+        config.hidesBottomBar = false
+        config.preferredStatusBarStyle = UIStatusBarStyle.default
+        config.bottomMenuItemSelectedColour = UIColor.hexColor(with: "dd7663")
+        config.bottomMenuItemUnSelectedColour = UIColor.hexColor(with: "454545")
+        
+        config.library.options = nil
+        config.library.onlySquare = false
+        config.library.minWidthForItem = nil
+        config.library.mediaType = YPlibraryMediaType.photo
+        config.library.maxNumberOfItems = 1
+        config.library.minNumberOfItems = 1
+        config.library.numberOfItemsInRow = 4
+        config.library.spacingBetweenItems = 1.0
+        config.library.skipSelectionsGallery = false
+        
+        //navigation bar
+        let attributes = [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 22, weight: .medium),
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attributes // Title fonts
+        
+        UINavigationBar.appearance().tintColor = .white // Left. bar buttons
+        config.colors.tintColor = .white // Right bar buttons (actions)
+        
+        //bar background
+        let coloredImage = UIColor.hexColor(with: "454545").image()
+        UINavigationBar.appearance().setBackgroundImage(coloredImage, for: UIBarMetrics.default)
+        
+        
+        let barButtonAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15, weight: .regular)]
+        UIBarButtonItem.appearance().setTitleTextAttributes(barButtonAttributes, for: .normal) // Bar Button fonts
+        
+        UITabBar.appearance().backgroundColor = UIColor.hexColor(with: "454545")
+        
+        YPImagePickerConfiguration.shared = config
+        
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, _ in
+            
+            if let photo = items.singlePhoto {
+                self.userImage.image = photo.image
+            }
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+        present(picker, animated: true, completion: nil)
+    }
+    
 }
