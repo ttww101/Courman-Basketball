@@ -24,14 +24,51 @@ class WeatherProvider {
 
     func getWeather(city: String, completion: @escaping GetWeather) {
 
-        let startTime = "2019-07-11T18:00:00"
+        var apiTime = ""
+        let today = Date()
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter1.locale = Locale.current
+        let currentDateString = formatter1.string(from: today)
+        
+        let getformatter = DateFormatter()
+        getformatter.dateFormat = "yyyy"
+        let year = getformatter.string(from: today)
+        getformatter.dateFormat = "MM"
+        let month = getformatter.string(from: today)
+        getformatter.dateFormat = "dd"
+        let day = getformatter.string(from: today)
+        
+        let formatter2 = DateFormatter()
+        formatter2.timeZone = NSTimeZone.default
+        formatter2.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        guard
+            let morningDate = formatter2.date(from: "\(year)-\(month)-\(day) 06:00:00")
+        else {
+            completion(nil, NetworkError.other)
+            return }
+        
+        let morninDateString = formatter2.string(from: morningDate)
+        
+        if (currentDateString <= morninDateString) {
+            apiTime = morninDateString.replacingOccurrences(of: " ", with: "T")
+        } else {
+            guard
+                let eveningDateString = formatter2.date(from: "\(year)-\(month)-\(day) 18:00:00")
+                else {
+                    completion(nil, NetworkError.other)
+                    return }
+            apiTime = formatter2.string(from: eveningDateString)
+            apiTime = apiTime.replacingOccurrences(of: " ", with: "T")
+        }
         
         let urlComponents = NSURLComponents(string: "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001/")!
         
         urlComponents.queryItems = [
             NSURLQueryItem(name: "Authorization", value:"CWB-B1E81EE3-A140-4940-A4C5-0017D2F92079"),
             NSURLQueryItem(name: "locationName", value:city),
-            NSURLQueryItem(name: "startTime", value:"2019-07-11T18:00:00")
+            NSURLQueryItem(name: "startTime", value:apiTime)
             ] as [URLQueryItem]
         
         guard let url = urlComponents.url else {

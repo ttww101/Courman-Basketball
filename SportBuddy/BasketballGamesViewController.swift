@@ -14,7 +14,7 @@ import SnapKit
 class BasketballGamesViewController: BaseViewController {
 
     @IBOutlet weak var gamesTableView: UITableView!
-
+    
     let loadingIndicator = LoadingIndicator()
     var menuView: BTNavigationDropdownMenu?
 
@@ -48,15 +48,11 @@ class BasketballGamesViewController: BaseViewController {
     }
 
     func setTableView() {
-
-        self.automaticallyAdjustsScrollViewInsets = false
-
         let gameNib = UINib(nibName: Constant.Cell.game, bundle: nil)
         gamesTableView.register(gameNib, forCellReuseIdentifier: Constant.Cell.game)
 
         let gameDefaultNib = UINib(nibName: Constant.Cell.gameDefault, bundle: nil)
         gamesTableView.register(gameDefaultNib, forCellReuseIdentifier: Constant.Cell.gameDefault)
-        self.gamesTableView.estimatedRowHeight = 77
         // Separator
         gamesTableView.separatorStyle = .none
     }
@@ -128,14 +124,16 @@ class BasketballGamesViewController: BaseViewController {
                             }
 
                         let isOverTime = self.checkGameTime(game)
-                        let isNotRepetition = self.checkGameRepeted(game)
+                        let isNotRepeat = self.checkGameRepeated(game)
                         let isInCurrentCity = self.checkGameInCurrentCity(game)
                         let isOwnerInGame = self.checkOwnerInGame(game)
+                        let isGameLevelLower = self.checkGameLevelLower(game)
 
                         if isOverTime &&
-                            isNotRepetition &&
+                            isNotRepeat &&
                             isInCurrentCity &&
-                            isOwnerInGame {
+                            isOwnerInGame &&
+                            isGameLevelLower {
 
                             self.gamesList.append(game)
                         }
@@ -169,12 +167,12 @@ class BasketballGamesViewController: BaseViewController {
 
         return game.time > currectTime
     }
-
+    
     // MARK: - Filter court by Having same item or not
-    func checkGameRepeted(_ game: BasketballGame) -> Bool {
-
+    func checkGameRepeated(_ game: BasketballGame) -> Bool {
+        
         var isNotRepetition = true
-
+        
         for gameData in self.gamesList {
             if gameData.court.name == game.court.name &&
                 gameData.name == game.name &&
@@ -183,8 +181,18 @@ class BasketballGamesViewController: BaseViewController {
                 isNotRepetition = false
             }
         }
-
+        
         return isNotRepetition
+    }
+
+    // MARK: - Filter court by level
+    func checkGameLevelLower(_ game: BasketballGame) -> Bool {
+
+        let gameLevel = GameSetup.switchGameStringToInt(game.level)
+        
+        let chooseLevel = GameSetup.switchGameStringToInt(GameSetup.chooseLevel)
+
+        return chooseLevel <= gameLevel
     }
 
     // MARK: - Filter court by city

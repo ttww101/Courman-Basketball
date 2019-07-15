@@ -8,6 +8,8 @@ enum NetworkError: Error {
     case parseError
     
     case formURLFail
+    
+    case other
 
 }
 

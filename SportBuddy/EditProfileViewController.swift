@@ -20,13 +20,15 @@ class EditProfileViewController: BaseViewController {
     var isUpdated  = false
 
     @IBAction func levelSetupDidTouchUpSide() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            
+//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//
             let chooseLevelStorybard = UIStoryboard(name: Constant.Storyboard.chooseLevel, bundle: nil)
-            let chooseLevelViewController = chooseLevelStorybard.instantiateViewController(withIdentifier: Constant.Controller.chooseLevel) as? ChooseLevelViewController
-            
-            appDelegate.window?.rootViewController = chooseLevelViewController
-        }
+            let vc = chooseLevelStorybard.instantiateViewController(withIdentifier: Constant.Controller.chooseLevel) as? ChooseLevelViewController
+            vc?.type = .setup
+            if let vc = vc {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+//        }
     }
     
     override func viewDidLoad() {
@@ -37,6 +39,7 @@ class EditProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.transparentizeNavigationBar(navigationController: self.navigationController)
     }
 
     override func viewWillLayoutSubviews() {

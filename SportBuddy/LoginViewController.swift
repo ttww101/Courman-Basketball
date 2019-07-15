@@ -16,6 +16,7 @@ class LoginViewController: BaseViewController {
 
     @IBOutlet weak var emailTexfield: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextfield: SkyFloatingLabelTextField!
+    @IBOutlet weak var logoImageView: UIImageView!
 
     let loadingIndicator = LoadingIndicator()
 
@@ -25,12 +26,18 @@ class LoginViewController: BaseViewController {
         self.hideKeyboardWhenTappedAround()
 
         setView()
+        self.logoImageView.layer.masksToBounds = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         loadingIndicator.stop()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.logoImageView.layer.cornerRadius = self.logoImageView.frame.width/4
     }
 
     // todo: confirm use it or not.

@@ -132,7 +132,6 @@ class SportsMenuViewController: BaseViewController {
     }
     
     @IBAction func playButtonDidTouchupInside(_ sender: Any) {
-//        self.toBasketballTabbarViewController()
         self.toChooseLevelViewController()
     }
 }
@@ -520,63 +519,22 @@ extension SportsMenuViewController {
 
     @objc func goToEditProfile() {
         let editProfileStorybard = UIStoryboard(name: Constant.Storyboard.editProfile, bundle: nil)
-        let editProfileViewController = editProfileStorybard.instantiateViewController(withIdentifier: Constant.Controller.editProfile) as? EditProfileViewController
+        guard let vc = editProfileStorybard.instantiateViewController(withIdentifier: Constant.Controller.editProfile) as? EditProfileViewController else { return }
+        let nav = UINavigationController(rootViewController: vc)
         
-        self.present(editProfileViewController!, animated: true, completion: {
-            editProfileViewController?.userImage.image = self.userImage.image
-            editProfileViewController?.nameTextField.text = self.userName.text
+        self.present(nav, animated: true, completion: {
+            vc.userImage.image = self.userImage.image
+            vc.nameTextField.text = self.userName.text
         })
-    }
-    
-    func goBasketball() {
-        
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        LevelManager.shared.getUserLevel(currentUserUID: uid) { (level, newUser, error) in
-            
-            if level != nil {
-                self.toBasketballTabbarViewController()
-            }
-            
-            if newUser != nil {
-                let values = [Constant.FirebaseLevel.basketball: "",
-                              Constant.FirebaseLevel.baseball: "",
-                              Constant.FirebaseLevel.jogging: ""]
-                
-                LevelManager.shared.updateUserLevel(currentUserUID: uid, values: values, completion: { (error) in
-                    
-                    if error != nil {
-                        self.errorHandle(errString: nil, error: error)
-                        return
-                    }
-                })
-                
-                self.toChooseLevelViewController()
-            }
-            
-            if error != nil {
-                self.errorHandle(errString: nil, error: error)
-            }
-        }
-    }
-    
-    func toBasketballTabbarViewController() {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            
-            let basketballStorybard = UIStoryboard(name: Constant.Storyboard.basketball, bundle: nil)
-            let basketballTabbarViewController = basketballStorybard.instantiateViewController(withIdentifier: Constant.Controller.basketballTabbar) as? BasketballTabbarViewController
-            
-            appDelegate.window?.rootViewController = basketballTabbarViewController
-        }
     }
     
     func toChooseLevelViewController() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             
             let chooseLevelStorybard = UIStoryboard(name: Constant.Storyboard.chooseLevel, bundle: nil)
-            let chooseLevelViewController = chooseLevelStorybard.instantiateViewController(withIdentifier: Constant.Controller.chooseLevel) as? ChooseLevelViewController
-            
-            appDelegate.window?.rootViewController = chooseLevelViewController
+            let vc = chooseLevelStorybard.instantiateViewController(withIdentifier: Constant.Controller.chooseLevel) as? ChooseLevelViewController
+            vc?.type = .pickGame
+            appDelegate.window?.rootViewController = vc
         }
     }
  

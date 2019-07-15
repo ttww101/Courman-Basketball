@@ -11,21 +11,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapTableViewCell" rowHeight="250" id="KGk-i7-Jjw" customClass="MapTableViewCell" customModule="SportBuddy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapTableViewCell" rowHeight="249" id="KGk-i7-Jjw" customClass="MapTableViewCell" customModule="SportBuddy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="249"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="370" height="248.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▶︎ 位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yro-CG-mWL">
-                        <rect key="frame" x="20" y="10" width="300" height="23.5"/>
+                        <rect key="frame" x="20" y="10" width="350" height="23.5"/>
                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jfe-Lg-8JI">
-                        <rect key="frame" x="0.0" y="40" width="320" height="209.5"/>
+                        <rect key="frame" x="0.0" y="39.5" width="370" height="209"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Jfe-Lg-8JI" secondAttribute="height" multiplier="370:209" id="okp-dV-7pP"/>
+                        </constraints>
                     </mapView>
                 </subviews>
                 <constraints>
@@ -33,7 +36,7 @@
                     <constraint firstAttribute="trailing" secondItem="Jfe-Lg-8JI" secondAttribute="trailing" id="9qW-lW-HAI"/>
                     <constraint firstAttribute="bottom" secondItem="Jfe-Lg-8JI" secondAttribute="bottom" id="Ab9-i3-NCm"/>
                     <constraint firstAttribute="trailing" secondItem="Yro-CG-mWL" secondAttribute="trailing" id="Hpb-th-zpN"/>
-                    <constraint firstItem="Jfe-Lg-8JI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="col-Uh-tny"/>
+                    <constraint firstItem="Jfe-Lg-8JI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="39.5" id="hVt-xB-SAT"/>
                     <constraint firstItem="Jfe-Lg-8JI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pa7-pj-ovv"/>
                     <constraint firstItem="Yro-CG-mWL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rnQ-nP-fZg"/>
                 </constraints>
@@ -42,7 +45,7 @@
                 <outlet property="mapCellTitle" destination="Yro-CG-mWL" id="SC7-Qc-9uh"/>
                 <outlet property="mapView" destination="Jfe-Lg-8JI" id="wGA-O1-e7a"/>
             </connections>
-            <point key="canvasLocation" x="6" y="149"/>
+            <point key="canvasLocation" x="44.799999999999997" y="147.07646176911544"/>
         </tableViewCell>
     </objects>
 </document>

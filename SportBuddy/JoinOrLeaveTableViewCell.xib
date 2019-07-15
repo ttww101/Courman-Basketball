@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,54 +15,46 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98S-Yo-UsP">
-                        <rect key="frame" x="110" y="30" width="100" height="39"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="98S-Yo-UsP" secondAttribute="height" multiplier="100:39" id="0Wl-dE-Yye"/>
-                        </constraints>
-                        <state key="normal" title="Button" image="Button_Joingame"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23D-Pf-EKv">
-                        <rect key="frame" x="110" y="30" width="100" height="39"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="23D-Pf-EKv" secondAttribute="height" multiplier="100:39" id="gQ3-2W-l4i"/>
-                        </constraints>
-                        <state key="normal" title="Button" image="Button_Leavegame"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-cg-QtJ">
-                        <rect key="frame" x="110" y="30" width="100" height="39"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Seb-cg-QtJ" secondAttribute="height" multiplier="100:39" id="VqO-2o-E72"/>
-                        </constraints>
-                        <state key="normal" image="Button_CancelTheGame"/>
-                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1v-2Z-beD" customClass="LGButton" customModule="LGButton">
+                        <rect key="frame" x="26.5" y="16.5" width="267" height="66.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Join"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="titleFontName" value="Menlo"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
+                                <real key="value" value="19"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                <color key="value" red="0.81568627450980391" green="0.42352941176470588" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                <color key="value" red="0.95686274509803915" green="0.77647058823529413" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="98S-Yo-UsP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="58q-jv-a52"/>
-                    <constraint firstItem="98S-Yo-UsP" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="100:99" id="6tj-tu-ihz"/>
-                    <constraint firstItem="Seb-cg-QtJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UPE-Bo-jwX"/>
-                    <constraint firstItem="98S-Yo-UsP" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="cuX-fH-bop"/>
-                    <constraint firstItem="23D-Pf-EKv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ipV-2z-9NX"/>
-                    <constraint firstItem="23D-Pf-EKv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="mtK-jm-Q1G"/>
-                    <constraint firstItem="Seb-cg-QtJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qw2-wb-oJv"/>
-                    <constraint firstItem="23D-Pf-EKv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="100:99" id="uhf-au-xOI"/>
-                    <constraint firstItem="Seb-cg-QtJ" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="100:99" id="wmy-X6-Wx3"/>
+                    <constraint firstItem="q1v-2Z-beD" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="25:30" id="Dg7-VD-o5T"/>
+                    <constraint firstItem="q1v-2Z-beD" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="2:3" id="Nyf-zW-cED"/>
+                    <constraint firstItem="q1v-2Z-beD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="hI1-gb-An1"/>
+                    <constraint firstItem="q1v-2Z-beD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zO4-1H-1AA"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="cancelGameButton" destination="Seb-cg-QtJ" id="ANn-PK-smi"/>
-                <outlet property="joinButton" destination="98S-Yo-UsP" id="sXT-My-SDR"/>
-                <outlet property="leaveButton" destination="23D-Pf-EKv" id="E0D-vv-j2I"/>
+                <outlet property="eventButton" destination="q1v-2Z-beD" id="MZe-yl-0bj"/>
             </connections>
             <point key="canvasLocation" x="36" y="34"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Button_CancelTheGame" width="220" height="66"/>
-        <image name="Button_Joingame" width="170" height="66"/>
-        <image name="Button_Leavegame" width="170" height="66"/>
-    </resources>
 </document>

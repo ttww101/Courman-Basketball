@@ -30,23 +30,14 @@ class BasketballCourtsViewController: BaseViewController {
     }
 
     func setView() {
-
         setBackground(imageName: Constant.BackgroundName.basketball)
-
         setNavigationBar()
         setTableView()
-//        setCourts()
     }
 
     func setTableView() {
-
-        self.automaticallyAdjustsScrollViewInsets = false
-
         let nib = UINib(nibName: Constant.Cell.court, bundle: nil)
         courtsTableView.register(nib, forCellReuseIdentifier: Constant.Cell.court)
-
-        // Separator
-//        courtsTableView.separatorStyle = .none
     }
 
     func setCourts() {
@@ -164,7 +155,6 @@ extension BasketballCourtsViewController: UITableViewDelegate, UITableViewDataSo
             else { return }
 
         basketballCourtDetailViewController.basketballCourt = basketballCourts[indexPath.row]
-
         self.navigationController?.pushViewController(basketballCourtDetailViewController, animated: true)
     }
 }

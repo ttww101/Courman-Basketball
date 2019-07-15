@@ -501,27 +501,27 @@ extension BasketballGameDetailViewController {
 
                 if isUserInMembers && isGameOwner {
                     // show cancel button
-                    cell.joinButton.isHidden = true
-                    cell.leaveButton.isHidden = true
-
-                    cell.cancelGameButton.isHidden = false
-                    cell.cancelGameButton.addTarget(self, action: #selector(leaveFromGame), for: .touchUpInside)
+                    cell.eventButton.gradientStartColor = .lightGray
+                    cell.eventButton.gradientEndColor = .lightGray
+                    cell.eventButton.titleString = "Cancel"
+                    cell.eventButton.removeTarget(nil, action: nil, for: .allEvents)
+                    cell.eventButton.addTarget(self, action: #selector(leaveFromGame), for: .touchUpInside)
 
                 } else if isUserInMembers && !isGameOwner {
                     // show leave button
-                    cell.joinButton.isHidden = true
-                    cell.cancelGameButton.isHidden = true
-
-                    cell.leaveButton.isHidden = false
-                    cell.leaveButton.addTarget(self, action: #selector(leaveFromGame), for: .touchUpInside)
+                    cell.eventButton.gradientStartColor = .lightGray
+                    cell.eventButton.gradientEndColor = .lightGray
+                    cell.eventButton.titleString = "Leave"
+                    cell.eventButton.removeTarget(nil, action: nil, for: .allEvents)
+                    cell.eventButton.addTarget(self, action: #selector(leaveFromGame), for: .touchUpInside)
 
                 } else {
                     // show join button
-                    cell.leaveButton.isHidden = true
-                    cell.cancelGameButton.isHidden = true
-
-                    cell.joinButton.isHidden = false
-                    cell.joinButton.addTarget(self, action: #selector(joinToGame), for: .touchUpInside)
+                    cell.eventButton.gradientStartColor = .init(red: 208/255, green: 108/255, blue: 120/255, alpha: 1.0)
+                    cell.eventButton.gradientEndColor = .init(red: 244/255, green: 198/255, blue: 120/255, alpha: 1.0)
+                    cell.eventButton.titleString = "Join"
+                    cell.eventButton.removeTarget(nil, action: nil, for: .allEvents)
+                    cell.eventButton.addTarget(self, action: #selector(joinToGame), for: .touchUpInside)
                 }
             }
         } else {

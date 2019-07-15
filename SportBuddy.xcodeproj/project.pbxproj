@@ -10,6 +10,7 @@
 		86B393D6D3C6D9E1CDF02680 /* Pods_SportBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */; };
 		940824D622D6F7190088BB07 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940824D522D6F7190088BB07 /* GameTableViewCell.xib */; };
 		9432473C22D5B9EF0082E52F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432473B22D5B9ED0082E52F /* UIColor+Hex.swift */; };
+		94691C7A22DC63BF001B4266 /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94691C7922DC63BF001B4266 /* GameSetup.swift */; };
 		946D952022D8BB4D00C9C93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946D951F22D8BB4C00C9C93A /* Assets.xcassets */; };
 		947343C622D8C36D00D21E64 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947343C522D8C36D00D21E64 /* Login.storyboard */; };
 		94EE141022D46C1E007DD462 /* iPlay.cer in Resources */ = {isa = PBXBuildFile; fileRef = 94EE140F22D46BA9007DD462 /* iPlay.cer */; };
@@ -94,6 +95,7 @@
 		88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		940824D522D6F7190088BB07 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		9432473B22D5B9ED0082E52F /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		94691C7922DC63BF001B4266 /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
 		946D951F22D8BB4C00C9C93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		947343C522D8C36D00D21E64 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		94EE140F22D46BA9007DD462 /* iPlay.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPlay.cer; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				B07315071EB1E18100BFB4CA /* Level.swift */,
 				B01437BC1EBB319100675239 /* GameComment.swift */,
 				B08ABE471EBDB80F00266BEF /* UserWithPhotoURL.swift */,
+				94691C7922DC63BF001B4266 /* GameSetup.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				B0754D681E8399FB006A5754 /* BaseTableViewController.swift in Sources */,
 				B0E881731E9FDBCF0093AA11 /* BasketballCourtDetailViewController.swift in Sources */,
 				B0754D751E83AF55006A5754 /* BasketballProfileViewController.swift in Sources */,
+				94691C7A22DC63BF001B4266 /* GameSetup.swift in Sources */,
 				B07315031EB1D8F100BFB4CA /* UserManager.swift in Sources */,
 				B07131FC1EAA0C5A00874DEF /* BasketballGameParser.swift in Sources */,
 				B0AD470E1E8E241B00876498 /* WeatherProvider.swift in Sources */,

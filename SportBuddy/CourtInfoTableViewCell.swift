@@ -14,7 +14,7 @@ class CourtInfoTableViewCell: UITableViewCell, Identifiable {
 
     class var identifier: String { return String(describing: self) }
 
-    static let height: CGFloat = 200.0
+    static let height: CGFloat = 180
 
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var courtName: UILabel!

@@ -27,7 +27,7 @@ class GameCommentTableViewCell: UITableViewCell {
     weak var commentDelegate: CommentCallDelegate?
 
     static let defaultHeight: CGFloat = 40.0
-    static let height: CGFloat = 240.0
+    static let height: CGFloat = 380
 
     let loadingIndicator = LoadingIndicator()
 
@@ -167,6 +167,10 @@ class GameCommentTableViewCell: UITableViewCell {
 
 // MARK: - TableView
 extension GameCommentTableViewCell: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 

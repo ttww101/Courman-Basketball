@@ -25,17 +25,15 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
 
     // MARK: Property
 
-    var components: [Component] = [ .weather, .map, .info, .empty]
+    var components: [Component] = [ .weather, .info, .map, .empty]
 
     var basketballCourt: BasketballCourt?
     var weather: Weather?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setView()
         getWeather()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -121,7 +119,7 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        return UITableView.automaticDimension
         switch components[indexPath.section] {
         case .weather:
 
@@ -131,13 +129,13 @@ class BasketballCourtDetailViewController: BaseViewController, UITableViewDelega
 
             let width = view.bounds.size.width
 
-            let height = width / MapTableViewCell.aspectRatio
+//            let height = width / MapTableViewCell.aspectRatio
 
-            return height
+//            return height
 
         case .info:
 
-            return CourtInfoTableViewCell.height
+            return UITableView.automaticDimension
 
         case .empty:
 

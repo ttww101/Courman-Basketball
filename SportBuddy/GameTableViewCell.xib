@@ -19,37 +19,37 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vhj-T5-hgV">
-                        <rect key="frame" x="13" y="32" width="83.5" height="83.5"/>
+                        <rect key="frame" x="16" y="32" width="83" height="83"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="vhj-T5-hgV" secondAttribute="height" id="aVu-v0-Yzg"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52S-Da-v2g">
-                        <rect key="frame" x="118.5" y="16" width="280.5" height="26"/>
+                        <rect key="frame" x="119" y="16" width="280" height="26"/>
                         <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3S-C3-ACp">
-                        <rect key="frame" x="118.5" y="50" width="280.5" height="21"/>
+                        <rect key="frame" x="119" y="50" width="280" height="21"/>
                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Memember Count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH2-yJ-4T3">
-                        <rect key="frame" x="118.5" y="79" width="280.5" height="19"/>
+                        <rect key="frame" x="119" y="79" width="280" height="19"/>
                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Time" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ6-FS-5ND">
-                        <rect key="frame" x="118.5" y="114" width="280.5" height="17.5"/>
+                        <rect key="frame" x="119" y="114" width="280" height="25.5"/>
                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSo-5W-mRv">
-                        <rect key="frame" x="0.0" y="136.5" width="415" height="1"/>
+                        <rect key="frame" x="0.0" y="144.5" width="415" height="1"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="23u-9b-fXb"/>
@@ -58,18 +58,18 @@
                 </subviews>
                 <color key="backgroundColor" white="0.76062178940000003" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="qJ6-FS-5ND" firstAttribute="bottom" secondItem="vhj-T5-hgV" secondAttribute="bottom" constant="16" id="5b7-25-6mg"/>
+                    <constraint firstItem="qJ6-FS-5ND" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vhj-T5-hgV" secondAttribute="bottom" constant="16" id="5b7-25-6mg"/>
                     <constraint firstItem="vhj-T5-hgV" firstAttribute="top" secondItem="52S-Da-v2g" secondAttribute="top" constant="16" id="6RH-L4-GV3"/>
                     <constraint firstItem="pH2-yJ-4T3" firstAttribute="trailing" secondItem="B3S-C3-ACp" secondAttribute="trailing" id="9L9-Ws-0GN"/>
                     <constraint firstItem="vhj-T5-hgV" firstAttribute="width" secondItem="xFw-uY-IRa" secondAttribute="width" multiplier="1:5" id="BDd-J5-iwX"/>
-                    <constraint firstItem="vhj-T5-hgV" firstAttribute="leading" secondItem="xFw-uY-IRa" secondAttribute="leading" constant="13" id="BHl-Vc-7MC"/>
+                    <constraint firstItem="vhj-T5-hgV" firstAttribute="leading" secondItem="xFw-uY-IRa" secondAttribute="leading" constant="16" id="BHl-Vc-7MC"/>
                     <constraint firstAttribute="trailing" secondItem="gSo-5W-mRv" secondAttribute="trailing" id="D9d-31-Shf"/>
                     <constraint firstAttribute="trailing" secondItem="52S-Da-v2g" secondAttribute="trailing" constant="16" id="JAc-l7-7Za"/>
                     <constraint firstItem="pH2-yJ-4T3" firstAttribute="leading" secondItem="B3S-C3-ACp" secondAttribute="leading" id="LXr-Xg-mYd"/>
                     <constraint firstItem="B3S-C3-ACp" firstAttribute="trailing" secondItem="52S-Da-v2g" secondAttribute="trailing" id="Vhf-Zt-rdk"/>
                     <constraint firstItem="pH2-yJ-4T3" firstAttribute="top" secondItem="B3S-C3-ACp" secondAttribute="bottom" constant="8" id="Ww5-md-oKm"/>
                     <constraint firstItem="qJ6-FS-5ND" firstAttribute="top" secondItem="pH2-yJ-4T3" secondAttribute="bottom" constant="16" id="YsD-wy-7wL"/>
-                    <constraint firstItem="52S-Da-v2g" firstAttribute="leading" secondItem="vhj-T5-hgV" secondAttribute="trailing" constant="22" id="ZgI-Hi-bec"/>
+                    <constraint firstItem="52S-Da-v2g" firstAttribute="leading" secondItem="vhj-T5-hgV" secondAttribute="trailing" constant="20" id="ZgI-Hi-bec"/>
                     <constraint firstItem="B3S-C3-ACp" firstAttribute="top" secondItem="52S-Da-v2g" secondAttribute="bottom" constant="8" id="cNt-1Q-4WR"/>
                     <constraint firstItem="52S-Da-v2g" firstAttribute="top" secondItem="xFw-uY-IRa" secondAttribute="top" constant="16" id="g5l-do-4wm"/>
                     <constraint firstAttribute="bottom" secondItem="gSo-5W-mRv" secondAttribute="bottom" id="lfV-Ai-Rgj"/>
