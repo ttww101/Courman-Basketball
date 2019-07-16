@@ -13,7 +13,6 @@
 		946D952022D8BB4D00C9C93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946D951F22D8BB4C00C9C93A /* Assets.xcassets */; };
 		947343C622D8C36D00D21E64 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947343C522D8C36D00D21E64 /* Login.storyboard */; };
 		94EE141022D46C1E007DD462 /* iPlay.cer in Resources */ = {isa = PBXBuildFile; fileRef = 94EE140F22D46BA9007DD462 /* iPlay.cer */; };
-		94EE141222D46D22007DD462 /* Blah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141122D46D22007DD462 /* Blah.swift */; };
 		94EE141622D46F7B007DD462 /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141422D46F7B007DD462 /* RequestToken.swift */; };
 		94EE141722D46F7B007DD462 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141522D46F7B007DD462 /* DataLoader.swift */; };
 		94EE141922D48A0E007DD462 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94EE141822D48A0E007DD462 /* GoogleService-Info.plist */; };
@@ -100,7 +99,6 @@
 		94A47DFF22DD71B500D4595F /* Courtman-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Courtman-Bridging-Header.h"; sourceTree = "<group>"; };
 		94A47E0022DD72CC00D4595F /* Courtman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Courtman.entitlements; sourceTree = "<group>"; };
 		94EE140F22D46BA9007DD462 /* iPlay.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPlay.cer; sourceTree = "<group>"; };
-		94EE141122D46D22007DD462 /* Blah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blah.swift; sourceTree = "<group>"; };
 		94EE141422D46F7B007DD462 /* RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
 		94EE141522D46F7B007DD462 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		94EE141822D48A0E007DD462 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -217,6 +215,21 @@
 			path = "UIColor+Ex";
 			sourceTree = "<group>";
 		};
+		94A47E5922DD7D8200D4595F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				94A47E5A22DD7D8200D4595F /* NewClass */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		94A47E5A22DD7D8200D4595F /* NewClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewClass;
+			sourceTree = "<group>";
+		};
 		94EE141322D46F7B007DD462 /* DataLoader */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				94A47E0022DD72CC00D4595F /* Courtman.entitlements */,
+				94A47E5922DD7D8200D4595F /* Extensions */,
 				9432473A22D5B9ED0082E52F /* UIColor+Ex */,
 				94EE141322D46F7B007DD462 /* DataLoader */,
 				B0A8F4321E8115A3006CBA96 /* Base */,
@@ -290,7 +304,6 @@
 				B06DB2AF1E7FB28000DCF016 /* AppDelegate.swift */,
 				946D951F22D8BB4C00C9C93A /* Assets.xcassets */,
 				B06DB2BB1E7FB28000DCF016 /* Info.plist */,
-				94EE141122D46D22007DD462 /* Blah.swift */,
 				94EE140F22D46BA9007DD462 /* iPlay.cer */,
 				94EE141822D48A0E007DD462 /* GoogleService-Info.plist */,
 				94A47DFF22DD71B500D4595F /* Courtman-Bridging-Header.h */,
@@ -770,7 +783,6 @@
 				B0754D7C1E83C5C6006A5754 /* BasketballProfileNavigationController.swift in Sources */,
 				B0BF606F1EA46E4500E37C73 /* LoadingIndicator.swift in Sources */,
 				9432473C22D5B9EF0082E52F /* UIColor+Hex.swift in Sources */,
-				94EE141222D46D22007DD462 /* Blah.swift in Sources */,
 				B0DC15B71EA747D500443F9D /* MemberCollectionViewCell.swift in Sources */,
 				B07315051EB1E13C00BFB4CA /* LevelManager.swift in Sources */,
 				B08ABE481EBDB80F00266BEF /* UserWithPhotoURL.swift in Sources */,

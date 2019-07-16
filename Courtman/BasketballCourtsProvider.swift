@@ -2,8 +2,8 @@
 //  BasketballCourtsProvider.swift
 //  Alamofire01
 //
-//  Created by steven.chou on 2017/3/28.
-//  Copyright © 2017年 stevenchou. All rights reserved.
+//  Created by dina on 2019/07/05.
+//  Copyright © 2019年 AGT. All rights reserved.
 //
 
 import Foundation
