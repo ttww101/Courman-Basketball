@@ -302,6 +302,7 @@
 		94A47E5B22DD826100D4595F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				94A47E6722DD826100D4595F /* Class */,
 				94A47E5C22DD826100D4595F /* BasketballGameParser+Extension.swift */,
 				94A47E5D22DD826100D4595F /* NewBasketballGameViewController+Extension.swift */,
 				94A47E5E22DD826100D4595F /* MemberCollectionViewCell+Extension.swift */,
@@ -313,7 +314,6 @@
 				94A47E6422DD826100D4595F /* BasketballCourtsNavigationController+Extension.swift */,
 				94A47E6522DD826100D4595F /* BasketballCourtDetailViewController+Extension.swift */,
 				94A47E6622DD826100D4595F /* GameCommentProvider+Extension.swift */,
-				94A47E6722DD826100D4595F /* NewClass */,
 				94A47E6922DD826100D4595F /* GameSetup+Extension.swift */,
 				94A47E6A22DD826100D4595F /* LoadingIndicator+Extension.swift */,
 				94A47E6B22DD826100D4595F /* BasketballCourtsProvider+Extension.swift */,
@@ -349,12 +349,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		94A47E6722DD826100D4595F /* NewClass */ = {
+		94A47E6722DD826100D4595F /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				94A47E6822DD826100D4595F /* NewClassCallHeader.h */,
 			);
-			path = NewClass;
+			path = Class;
 			sourceTree = "<group>";
 		};
 		94EE141322D46F7B007DD462 /* DataLoader */ = {
