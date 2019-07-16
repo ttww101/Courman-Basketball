@@ -114,7 +114,7 @@
 		B01437BF1EBB334A00675239 /* CommentDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDetailTableViewCell.xib; sourceTree = "<group>"; };
 		B0301DDF1EBC1D8D00A7001A /* GameCommentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCommentProvider.swift; sourceTree = "<group>"; };
 		B037B2911E826905007FD483 /* SportsMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SportsMenu.storyboard; sourceTree = "<group>"; };
-		B06DB2AC1E7FB28000DCF016 /* SportBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06DB2AC1E7FB28000DCF016 /* Courtman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Courtman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06DB2AF1E7FB28000DCF016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06DB2B91E7FB28000DCF016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06DB2BB1E7FB28000DCF016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 		B06DB2AD1E7FB28000DCF016 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B06DB2AC1E7FB28000DCF016 /* SportBuddy.app */,
+				B06DB2AC1E7FB28000DCF016 /* Courtman.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -533,9 +533,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B06DB2AB1E7FB28000DCF016 /* SportBuddy */ = {
+		B06DB2AB1E7FB28000DCF016 /* Courtman */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B06DB2BE1E7FB28000DCF016 /* Build configuration list for PBXNativeTarget "SportBuddy" */;
+			buildConfigurationList = B06DB2BE1E7FB28000DCF016 /* Build configuration list for PBXNativeTarget "Courtman" */;
 			buildPhases = (
 				9B269522B8D2C868286712F7 /* [CP] Check Pods Manifest.lock */,
 				B06DB2A81E7FB28000DCF016 /* Sources */,
@@ -549,9 +549,9 @@
 			);
 			dependencies = (
 			);
-			name = SportBuddy;
+			name = Courtman;
 			productName = SportBuddy;
-			productReference = B06DB2AC1E7FB28000DCF016 /* SportBuddy.app */;
+			productReference = B06DB2AC1E7FB28000DCF016 /* Courtman.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -576,7 +576,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B06DB2A71E7FB28000DCF016 /* Build configuration list for PBXProject "SportBuddy" */;
+			buildConfigurationList = B06DB2A71E7FB28000DCF016 /* Build configuration list for PBXProject "Courtman" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -590,7 +590,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B06DB2AB1E7FB28000DCF016 /* SportBuddy */,
+				B06DB2AB1E7FB28000DCF016 /* Courtman */,
 			);
 		};
 /* End PBXProject section */
@@ -955,7 +955,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B06DB2A71E7FB28000DCF016 /* Build configuration list for PBXProject "SportBuddy" */ = {
+		B06DB2A71E7FB28000DCF016 /* Build configuration list for PBXProject "Courtman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B06DB2BC1E7FB28000DCF016 /* Debug */,
@@ -964,7 +964,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B06DB2BE1E7FB28000DCF016 /* Build configuration list for PBXNativeTarget "SportBuddy" */ = {
+		B06DB2BE1E7FB28000DCF016 /* Build configuration list for PBXNativeTarget "Courtman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B06DB2BF1E7FB28000DCF016 /* Debug */,

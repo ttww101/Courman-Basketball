@@ -95,8 +95,8 @@ class BasketballProfileViewController: BaseViewController {
 
             let mailController = MFMailComposeViewController()
             mailController.mailComposeDelegate = self
-            mailController.setToRecipients(["sportbuddy.tw@gmail.com"])
-            mailController.setSubject("Sport Buddy 回報")
+            mailController.setToRecipients(["twcourtman@gmail.com"])
+            mailController.setSubject("Court Man 回報")
             mailController.setMessageBody("<p>如果您在使用上有遇到什麼問題，或是有什麼球場資訊可以跟我們分享，歡迎寫下您的訊息並寄送給我們</p>", isHTML: true)
 
             mailController.navigationController?.navigationBar.tintColor = .blue
