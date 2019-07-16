@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86B393D6D3C6D9E1CDF02680 /* Pods_SportBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */; };
 		940824D622D6F7190088BB07 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 940824D522D6F7190088BB07 /* GameTableViewCell.xib */; };
 		9432473C22D5B9EF0082E52F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9432473B22D5B9ED0082E52F /* UIColor+Hex.swift */; };
 		94691C7A22DC63BF001B4266 /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94691C7922DC63BF001B4266 /* GameSetup.swift */; };
@@ -18,6 +17,7 @@
 		94EE141622D46F7B007DD462 /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141422D46F7B007DD462 /* RequestToken.swift */; };
 		94EE141722D46F7B007DD462 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141522D46F7B007DD462 /* DataLoader.swift */; };
 		94EE141922D48A0E007DD462 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94EE141822D48A0E007DD462 /* GoogleService-Info.plist */; };
+		9F6E8FF8E01840C23D315E9E /* Pods_Courtman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7052EB4B12FB75D2EA0F6F /* Pods_Courtman.framework */; };
 		B0002A581E9E820700CD2241 /* BasketballGameDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0002A571E9E820700CD2241 /* BasketballGameDetail.storyboard */; };
 		B0072D071E9F54660056BC49 /* BasketballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0072D061E9F54660056BC49 /* BasketballGame.swift */; };
 		B01437BA1EBAFCA400675239 /* GameCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01437B81EBAFCA400675239 /* GameCommentTableViewCell.swift */; };
@@ -90,21 +90,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		35A3321B5699FCB2C74FFCC5 /* Pods-SportBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportBuddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy.debug.xcconfig"; sourceTree = "<group>"; };
-		6A1C3E8AC94014525C4957ED /* Pods-SportBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E7052EB4B12FB75D2EA0F6F /* Pods_Courtman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Courtman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		940824D522D6F7190088BB07 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		9432473B22D5B9ED0082E52F /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		94691C7922DC63BF001B4266 /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
 		946D951F22D8BB4C00C9C93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		947343C522D8C36D00D21E64 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		94A47DFF22DD71B500D4595F /* Courtman-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Courtman-Bridging-Header.h"; sourceTree = "<group>"; };
-		94A47E0022DD72CC00D4595F /* SportBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SportBuddy.entitlements; sourceTree = "<group>"; };
+		94A47E0022DD72CC00D4595F /* Courtman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Courtman.entitlements; sourceTree = "<group>"; };
 		94EE140F22D46BA9007DD462 /* iPlay.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPlay.cer; sourceTree = "<group>"; };
 		94EE141122D46D22007DD462 /* Blah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blah.swift; sourceTree = "<group>"; };
 		94EE141422D46F7B007DD462 /* RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
 		94EE141522D46F7B007DD462 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		94EE141822D48A0E007DD462 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AE8C6AA6207D8CF383857B22 /* Pods-Courtman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Courtman.release.xcconfig"; path = "Pods/Target Support Files/Pods-Courtman/Pods-Courtman.release.xcconfig"; sourceTree = "<group>"; };
 		B0002A571E9E820700CD2241 /* BasketballGameDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BasketballGameDetail.storyboard; sourceTree = "<group>"; };
 		B0072D061E9F54660056BC49 /* BasketballGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballGame.swift; sourceTree = "<group>"; };
 		B01437B81EBAFCA400675239 /* GameCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -176,6 +176,7 @@
 		B0E881701E9FD2AF0093AA11 /* BasketballCourtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballCourtsViewController.swift; sourceTree = "<group>"; };
 		B0E881721E9FDBCF0093AA11 /* BasketballCourtDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballCourtDetailViewController.swift; sourceTree = "<group>"; };
 		B0E881741E9FE3820093AA11 /* BasketballGameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketballGameDetailViewController.swift; sourceTree = "<group>"; };
+		E4F9D0E970C6C5CDC5A4B139 /* Pods-Courtman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Courtman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Courtman/Pods-Courtman.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86B393D6D3C6D9E1CDF02680 /* Pods_SportBuddy.framework in Frameworks */,
+				9F6E8FF8E01840C23D315E9E /* Pods_Courtman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +194,8 @@
 		564EA63B26C38CC6DC78E8F1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				35A3321B5699FCB2C74FFCC5 /* Pods-SportBuddy.debug.xcconfig */,
-				6A1C3E8AC94014525C4957ED /* Pods-SportBuddy.release.xcconfig */,
+				E4F9D0E970C6C5CDC5A4B139 /* Pods-Courtman.debug.xcconfig */,
+				AE8C6AA6207D8CF383857B22 /* Pods-Courtman.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -203,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				88D4B9B17EDC0172370C84CB /* Pods_SportBuddy.framework */,
+				8E7052EB4B12FB75D2EA0F6F /* Pods_Courtman.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,7 +253,7 @@
 		B06DB2A31E7FB28000DCF016 = {
 			isa = PBXGroup;
 			children = (
-				B06DB2AE1E7FB28000DCF016 /* SportBuddy */,
+				B06DB2AE1E7FB28000DCF016 /* Courtman */,
 				B06DB2AD1E7FB28000DCF016 /* Products */,
 				564EA63B26C38CC6DC78E8F1 /* Pods */,
 				899A308D82D5444D13834A1E /* Frameworks */,
@@ -266,10 +268,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B06DB2AE1E7FB28000DCF016 /* SportBuddy */ = {
+		B06DB2AE1E7FB28000DCF016 /* Courtman */ = {
 			isa = PBXGroup;
 			children = (
-				94A47E0022DD72CC00D4595F /* SportBuddy.entitlements */,
+				94A47E0022DD72CC00D4595F /* Courtman.entitlements */,
 				9432473A22D5B9ED0082E52F /* UIColor+Ex */,
 				94EE141322D46F7B007DD462 /* DataLoader */,
 				B0A8F4321E8115A3006CBA96 /* Base */,
@@ -293,7 +295,7 @@
 				94EE141822D48A0E007DD462 /* GoogleService-Info.plist */,
 				94A47DFF22DD71B500D4595F /* Courtman-Bridging-Header.h */,
 			);
-			path = SportBuddy;
+			path = Courtman;
 			sourceTree = "<group>";
 		};
 		B07315011EB1D84B00BFB4CA /* Manager */ = {
@@ -541,8 +543,6 @@
 				B06DB2A81E7FB28000DCF016 /* Sources */,
 				B06DB2A91E7FB28000DCF016 /* Frameworks */,
 				B06DB2AA1E7FB28000DCF016 /* Resources */,
-				B08F5D1B1E7FB77100F470F2 /* Swiftlint */,
-				B058029F1EAEE5AB00EA682A /* Crashlytics */,
 				85919C246AB50A6B1AD37CF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -637,7 +637,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Courtman/Pods-Courtman-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BTNavigationDropdownMenu/BTNavigationDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
@@ -692,7 +692,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportBuddy/Pods-SportBuddy-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Courtman/Pods-Courtman-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B269522B8D2C868286712F7 /* [CP] Check Pods Manifest.lock */ = {
@@ -706,40 +706,12 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SportBuddy-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Courtman-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		B058029F1EAEE5AB00EA682A /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Crashlytics;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" c1bc1d13cdfa604a9d420d3dc82d8aabb7034301 219032bcc581609cc1f99f2b3136f2dac2984a5ae8700c208363f1d62ff08923";
-		};
-		B08F5D1B1E7FB77100F470F2 /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -918,17 +890,17 @@
 		};
 		B06DB2BF1E7FB28000DCF016 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35A3321B5699FCB2C74FFCC5 /* Pods-SportBuddy.debug.xcconfig */;
+			baseConfigurationReference = E4F9D0E970C6C5CDC5A4B139 /* Pods-Courtman.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SportBuddy/SportBuddy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Courtman/Courtman.entitlements;
 				DEVELOPMENT_TEAM = RG55XLA874;
-				INFOPLIST_FILE = SportBuddy/Info.plist;
+				INFOPLIST_FILE = Courtman/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AGT.courtman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SportBuddy/Courtman-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Courtman/Courtman-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -936,17 +908,17 @@
 		};
 		B06DB2C01E7FB28000DCF016 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A1C3E8AC94014525C4957ED /* Pods-SportBuddy.release.xcconfig */;
+			baseConfigurationReference = AE8C6AA6207D8CF383857B22 /* Pods-Courtman.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SportBuddy/SportBuddy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Courtman/Courtman.entitlements;
 				DEVELOPMENT_TEAM = RG55XLA874;
-				INFOPLIST_FILE = SportBuddy/Info.plist;
+				INFOPLIST_FILE = Courtman/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AGT.courtman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SportBuddy/Courtman-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Courtman/Courtman-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
