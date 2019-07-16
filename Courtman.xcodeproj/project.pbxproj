@@ -12,6 +12,47 @@
 		94691C7A22DC63BF001B4266 /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94691C7922DC63BF001B4266 /* GameSetup.swift */; };
 		946D952022D8BB4D00C9C93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946D951F22D8BB4C00C9C93A /* Assets.xcassets */; };
 		947343C622D8C36D00D21E64 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947343C522D8C36D00D21E64 /* Login.storyboard */; };
+		94A47E8822DD826100D4595F /* BasketballGameParser+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E5C22DD826100D4595F /* BasketballGameParser+Extension.swift */; };
+		94A47E8922DD826100D4595F /* NewBasketballGameViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E5D22DD826100D4595F /* NewBasketballGameViewController+Extension.swift */; };
+		94A47E8A22DD826100D4595F /* MemberCollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E5E22DD826100D4595F /* MemberCollectionViewCell+Extension.swift */; };
+		94A47E8B22DD826100D4595F /* BasketballTabbarViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E5F22DD826100D4595F /* BasketballTabbarViewController+Extension.swift */; };
+		94A47E8C22DD826100D4595F /* GameTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6022DD826100D4595F /* GameTableViewCell+Extension.swift */; };
+		94A47E8D22DD826100D4595F /* BaseViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6122DD826100D4595F /* BaseViewController+Extension.swift */; };
+		94A47E8E22DD826100D4595F /* LoginViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6222DD826100D4595F /* LoginViewController+Extension.swift */; };
+		94A47E8F22DD826100D4595F /* ActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6322DD826100D4595F /* ActivityIndicator+Extension.swift */; };
+		94A47E9022DD826100D4595F /* BasketballCourtsNavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6422DD826100D4595F /* BasketballCourtsNavigationController+Extension.swift */; };
+		94A47E9122DD826100D4595F /* BasketballCourtDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6522DD826100D4595F /* BasketballCourtDetailViewController+Extension.swift */; };
+		94A47E9222DD826100D4595F /* GameCommentProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6622DD826100D4595F /* GameCommentProvider+Extension.swift */; };
+		94A47E9322DD826100D4595F /* GameSetup+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6922DD826100D4595F /* GameSetup+Extension.swift */; };
+		94A47E9422DD826100D4595F /* LoadingIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6A22DD826100D4595F /* LoadingIndicator+Extension.swift */; };
+		94A47E9522DD826100D4595F /* BasketballCourtsProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6B22DD826100D4595F /* BasketballCourtsProvider+Extension.swift */; };
+		94A47E9622DD826100D4595F /* GameCommentTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6C22DD826100D4595F /* GameCommentTableViewCell+Extension.swift */; };
+		94A47E9722DD826100D4595F /* BasketballGamesViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6D22DD826100D4595F /* BasketballGamesViewController+Extension.swift */; };
+		94A47E9822DD826100D4595F /* LevelManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E6E22DD826100D4595F /* LevelManager+Extension.swift */; };
+		94A47E9922DD826100D4595F /* SignUpViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7022DD826100D4595F /* SignUpViewController+Extension.swift */; };
+		94A47E9A22DD826100D4595F /* BasketballGameDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7122DD826100D4595F /* BasketballGameDetailViewController+Extension.swift */; };
+		94A47E9B22DD826100D4595F /* BasketballProfileViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7222DD826100D4595F /* BasketballProfileViewController+Extension.swift */; };
+		94A47E9C22DD826100D4595F /* MembersTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7322DD826100D4595F /* MembersTableViewCell+Extension.swift */; };
+		94A47E9D22DD826100D4595F /* CourtTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7422DD826100D4595F /* CourtTableViewCell+Extension.swift */; };
+		94A47E9E22DD826100D4595F /* SportsMenuViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7522DD826100D4595F /* SportsMenuViewController+Extension.swift */; };
+		94A47E9F22DD826100D4595F /* DataLoader+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7622DD826100D4595F /* DataLoader+Extension.swift */; };
+		94A47EA022DD826100D4595F /* CourtInfoTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7722DD826100D4595F /* CourtInfoTableViewCell+Extension.swift */; };
+		94A47EA122DD826100D4595F /* BasketballProfileNavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7822DD826100D4595F /* BasketballProfileNavigationController+Extension.swift */; };
+		94A47EA222DD826100D4595F /* ChooseLevelViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7922DD826100D4595F /* ChooseLevelViewController+Extension.swift */; };
+		94A47EA322DD826100D4595F /* BasketballGamesNavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7A22DD826100D4595F /* BasketballGamesNavigationController+Extension.swift */; };
+		94A47EA422DD826100D4595F /* ConverImageToBW+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7B22DD826100D4595F /* ConverImageToBW+Extension.swift */; };
+		94A47EA522DD826100D4595F /* WeatherTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7C22DD826100D4595F /* WeatherTableViewCell+Extension.swift */; };
+		94A47EA622DD826100D4595F /* WeatherProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7D22DD826100D4595F /* WeatherProvider+Extension.swift */; };
+		94A47EA722DD826100D4595F /* MapTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7E22DD826100D4595F /* MapTableViewCell+Extension.swift */; };
+		94A47EA822DD826100D4595F /* LTHRadioButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E7F22DD826100D4595F /* LTHRadioButton+Extension.swift */; };
+		94A47EA922DD826100D4595F /* MemebersProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8022DD826100D4595F /* MemebersProvider+Extension.swift */; };
+		94A47EAA22DD826100D4595F /* RequestToken+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8122DD826100D4595F /* RequestToken+Extension.swift */; };
+		94A47EAB22DD826100D4595F /* BasketballCourtsViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8222DD826100D4595F /* BasketballCourtsViewController+Extension.swift */; };
+		94A47EAC22DD826100D4595F /* CommentDetailTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8322DD826100D4595F /* CommentDetailTableViewCell+Extension.swift */; };
+		94A47EAD22DD826100D4595F /* EditProfileViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8422DD826100D4595F /* EditProfileViewController+Extension.swift */; };
+		94A47EAE22DD826100D4595F /* BaseTableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8522DD826100D4595F /* BaseTableViewController+Extension.swift */; };
+		94A47EAF22DD826100D4595F /* UserManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8622DD826100D4595F /* UserManager+Extension.swift */; };
+		94A47EB022DD826100D4595F /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A47E8722DD826100D4595F /* AppDelegate+Extension.swift */; };
 		94EE141022D46C1E007DD462 /* iPlay.cer in Resources */ = {isa = PBXBuildFile; fileRef = 94EE140F22D46BA9007DD462 /* iPlay.cer */; };
 		94EE141622D46F7B007DD462 /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141422D46F7B007DD462 /* RequestToken.swift */; };
 		94EE141722D46F7B007DD462 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EE141522D46F7B007DD462 /* DataLoader.swift */; };
@@ -98,6 +139,49 @@
 		947343C522D8C36D00D21E64 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		94A47DFF22DD71B500D4595F /* Courtman-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Courtman-Bridging-Header.h"; sourceTree = "<group>"; };
 		94A47E0022DD72CC00D4595F /* Courtman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Courtman.entitlements; sourceTree = "<group>"; };
+		94A47E5C22DD826100D4595F /* BasketballGameParser+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballGameParser+Extension.swift"; sourceTree = "<group>"; };
+		94A47E5D22DD826100D4595F /* NewBasketballGameViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewBasketballGameViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E5E22DD826100D4595F /* MemberCollectionViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MemberCollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E5F22DD826100D4595F /* BasketballTabbarViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballTabbarViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6022DD826100D4595F /* GameTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6122DD826100D4595F /* BaseViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6222DD826100D4595F /* LoginViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6322DD826100D4595F /* ActivityIndicator+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6422DD826100D4595F /* BasketballCourtsNavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballCourtsNavigationController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6522DD826100D4595F /* BasketballCourtDetailViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballCourtDetailViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6622DD826100D4595F /* GameCommentProvider+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameCommentProvider+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6822DD826100D4595F /* NewClassCallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewClassCallHeader.h; sourceTree = "<group>"; };
+		94A47E6922DD826100D4595F /* GameSetup+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameSetup+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6A22DD826100D4595F /* LoadingIndicator+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoadingIndicator+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6B22DD826100D4595F /* BasketballCourtsProvider+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballCourtsProvider+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6C22DD826100D4595F /* GameCommentTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameCommentTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6D22DD826100D4595F /* BasketballGamesViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballGamesViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6E22DD826100D4595F /* LevelManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LevelManager+Extension.swift"; sourceTree = "<group>"; };
+		94A47E6F22DD826100D4595F /* EatCallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatCallHeader.h; sourceTree = "<group>"; };
+		94A47E7022DD826100D4595F /* SignUpViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7122DD826100D4595F /* BasketballGameDetailViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballGameDetailViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7222DD826100D4595F /* BasketballProfileViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballProfileViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7322DD826100D4595F /* MembersTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MembersTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7422DD826100D4595F /* CourtTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CourtTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7522DD826100D4595F /* SportsMenuViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SportsMenuViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7622DD826100D4595F /* DataLoader+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataLoader+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7722DD826100D4595F /* CourtInfoTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CourtInfoTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7822DD826100D4595F /* BasketballProfileNavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballProfileNavigationController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7922DD826100D4595F /* ChooseLevelViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChooseLevelViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7A22DD826100D4595F /* BasketballGamesNavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballGamesNavigationController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7B22DD826100D4595F /* ConverImageToBW+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConverImageToBW+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7C22DD826100D4595F /* WeatherTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7D22DD826100D4595F /* WeatherProvider+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherProvider+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7E22DD826100D4595F /* MapTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E7F22DD826100D4595F /* LTHRadioButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTHRadioButton+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8022DD826100D4595F /* MemebersProvider+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MemebersProvider+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8122DD826100D4595F /* RequestToken+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestToken+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8222DD826100D4595F /* BasketballCourtsViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BasketballCourtsViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8322DD826100D4595F /* CommentDetailTableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommentDetailTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8422DD826100D4595F /* EditProfileViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditProfileViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8522DD826100D4595F /* BaseTableViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTableViewController+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8622DD826100D4595F /* UserManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserManager+Extension.swift"; sourceTree = "<group>"; };
+		94A47E8722DD826100D4595F /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		94EE140F22D46BA9007DD462 /* iPlay.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPlay.cer; sourceTree = "<group>"; };
 		94EE141422D46F7B007DD462 /* RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
 		94EE141522D46F7B007DD462 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
@@ -215,17 +299,60 @@
 			path = "UIColor+Ex";
 			sourceTree = "<group>";
 		};
-		94A47E5922DD7D8200D4595F /* Extensions */ = {
+		94A47E5B22DD826100D4595F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				94A47E5A22DD7D8200D4595F /* NewClass */,
+				94A47E5C22DD826100D4595F /* BasketballGameParser+Extension.swift */,
+				94A47E5D22DD826100D4595F /* NewBasketballGameViewController+Extension.swift */,
+				94A47E5E22DD826100D4595F /* MemberCollectionViewCell+Extension.swift */,
+				94A47E5F22DD826100D4595F /* BasketballTabbarViewController+Extension.swift */,
+				94A47E6022DD826100D4595F /* GameTableViewCell+Extension.swift */,
+				94A47E6122DD826100D4595F /* BaseViewController+Extension.swift */,
+				94A47E6222DD826100D4595F /* LoginViewController+Extension.swift */,
+				94A47E6322DD826100D4595F /* ActivityIndicator+Extension.swift */,
+				94A47E6422DD826100D4595F /* BasketballCourtsNavigationController+Extension.swift */,
+				94A47E6522DD826100D4595F /* BasketballCourtDetailViewController+Extension.swift */,
+				94A47E6622DD826100D4595F /* GameCommentProvider+Extension.swift */,
+				94A47E6722DD826100D4595F /* NewClass */,
+				94A47E6922DD826100D4595F /* GameSetup+Extension.swift */,
+				94A47E6A22DD826100D4595F /* LoadingIndicator+Extension.swift */,
+				94A47E6B22DD826100D4595F /* BasketballCourtsProvider+Extension.swift */,
+				94A47E6C22DD826100D4595F /* GameCommentTableViewCell+Extension.swift */,
+				94A47E6D22DD826100D4595F /* BasketballGamesViewController+Extension.swift */,
+				94A47E6E22DD826100D4595F /* LevelManager+Extension.swift */,
+				94A47E6F22DD826100D4595F /* EatCallHeader.h */,
+				94A47E7022DD826100D4595F /* SignUpViewController+Extension.swift */,
+				94A47E7122DD826100D4595F /* BasketballGameDetailViewController+Extension.swift */,
+				94A47E7222DD826100D4595F /* BasketballProfileViewController+Extension.swift */,
+				94A47E7322DD826100D4595F /* MembersTableViewCell+Extension.swift */,
+				94A47E7422DD826100D4595F /* CourtTableViewCell+Extension.swift */,
+				94A47E7522DD826100D4595F /* SportsMenuViewController+Extension.swift */,
+				94A47E7622DD826100D4595F /* DataLoader+Extension.swift */,
+				94A47E7722DD826100D4595F /* CourtInfoTableViewCell+Extension.swift */,
+				94A47E7822DD826100D4595F /* BasketballProfileNavigationController+Extension.swift */,
+				94A47E7922DD826100D4595F /* ChooseLevelViewController+Extension.swift */,
+				94A47E7A22DD826100D4595F /* BasketballGamesNavigationController+Extension.swift */,
+				94A47E7B22DD826100D4595F /* ConverImageToBW+Extension.swift */,
+				94A47E7C22DD826100D4595F /* WeatherTableViewCell+Extension.swift */,
+				94A47E7D22DD826100D4595F /* WeatherProvider+Extension.swift */,
+				94A47E7E22DD826100D4595F /* MapTableViewCell+Extension.swift */,
+				94A47E7F22DD826100D4595F /* LTHRadioButton+Extension.swift */,
+				94A47E8022DD826100D4595F /* MemebersProvider+Extension.swift */,
+				94A47E8122DD826100D4595F /* RequestToken+Extension.swift */,
+				94A47E8222DD826100D4595F /* BasketballCourtsViewController+Extension.swift */,
+				94A47E8322DD826100D4595F /* CommentDetailTableViewCell+Extension.swift */,
+				94A47E8422DD826100D4595F /* EditProfileViewController+Extension.swift */,
+				94A47E8522DD826100D4595F /* BaseTableViewController+Extension.swift */,
+				94A47E8622DD826100D4595F /* UserManager+Extension.swift */,
+				94A47E8722DD826100D4595F /* AppDelegate+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		94A47E5A22DD7D8200D4595F /* NewClass */ = {
+		94A47E6722DD826100D4595F /* NewClass */ = {
 			isa = PBXGroup;
 			children = (
+				94A47E6822DD826100D4595F /* NewClassCallHeader.h */,
 			);
 			path = NewClass;
 			sourceTree = "<group>";
@@ -284,8 +411,8 @@
 		B06DB2AE1E7FB28000DCF016 /* Courtman */ = {
 			isa = PBXGroup;
 			children = (
+				94A47E5B22DD826100D4595F /* Extensions */,
 				94A47E0022DD72CC00D4595F /* Courtman.entitlements */,
-				94A47E5922DD7D8200D4595F /* Extensions */,
 				9432473A22D5B9ED0082E52F /* UIColor+Ex */,
 				94EE141322D46F7B007DD462 /* DataLoader */,
 				B0A8F4321E8115A3006CBA96 /* Base */,
@@ -653,11 +780,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Courtman/Pods-Courtman-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BTNavigationDropdownMenu/BTNavigationDropdownMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/DKCamera/DKCamera.framework",
-				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/DKPhotoGallery/DKPhotoGallery.framework",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -666,8 +788,6 @@
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
@@ -681,11 +801,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTNavigationDropdownMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKCamera.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKPhotoGallery.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -694,8 +809,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
@@ -733,60 +846,101 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A47E9A22DD826100D4595F /* BasketballGameDetailViewController+Extension.swift in Sources */,
 				94EE141722D46F7B007DD462 /* DataLoader.swift in Sources */,
 				B06DB2C21E7FB36700DCF016 /* LoginViewController.swift in Sources */,
+				94A47E9222DD826100D4595F /* GameCommentProvider+Extension.swift in Sources */,
+				94A47EA122DD826100D4595F /* BasketballProfileNavigationController+Extension.swift in Sources */,
 				B0754D781E83C4F1006A5754 /* BasketballGamesNavigationController.swift in Sources */,
+				94A47E8822DD826100D4595F /* BasketballGameParser+Extension.swift in Sources */,
+				94A47EA522DD826100D4595F /* WeatherTableViewCell+Extension.swift in Sources */,
+				94A47E9522DD826100D4595F /* BasketballCourtsProvider+Extension.swift in Sources */,
 				B0E8816F1E9FCAFE0093AA11 /* BasketballGamesViewController.swift in Sources */,
 				B07315081EB1E18100BFB4CA /* Level.swift in Sources */,
+				94A47E9F22DD826100D4595F /* DataLoader+Extension.swift in Sources */,
+				94A47EAD22DD826100D4595F /* EditProfileViewController+Extension.swift in Sources */,
+				94A47E9C22DD826100D4595F /* MembersTableViewCell+Extension.swift in Sources */,
 				B099C6A91E89634D00C0B142 /* NewBasketballGameViewController.swift in Sources */,
 				B0DBB7E41EAB417200BCAD08 /* MemebersProvider.swift in Sources */,
 				B084BD341E7FDD3900DC48B2 /* Palette.swift in Sources */,
 				B0971BC51E850EB10037E26D /* CourtTableViewCell.swift in Sources */,
 				B01437C01EBB334A00675239 /* CommentDetailTableViewCell.swift in Sources */,
+				94A47EAC22DD826100D4595F /* CommentDetailTableViewCell+Extension.swift in Sources */,
 				B0301DE01EBC1D8D00A7001A /* GameCommentProvider.swift in Sources */,
+				94A47E8A22DD826100D4595F /* MemberCollectionViewCell+Extension.swift in Sources */,
 				B0754D5F1E83927A006A5754 /* ChooseLevelViewController.swift in Sources */,
 				B01437BA1EBAFCA400675239 /* GameCommentTableViewCell.swift in Sources */,
+				94A47E9922DD826100D4595F /* SignUpViewController+Extension.swift in Sources */,
+				94A47EA022DD826100D4595F /* CourtInfoTableViewCell+Extension.swift in Sources */,
 				B0072D071E9F54660056BC49 /* BasketballGame.swift in Sources */,
+				94A47EAB22DD826100D4595F /* BasketballCourtsViewController+Extension.swift in Sources */,
 				B0D443CE1EA36F79008EF375 /* EditProfileViewController.swift in Sources */,
 				B06DB2B01E7FB28000DCF016 /* AppDelegate.swift in Sources */,
 				B01437BD1EBB319100675239 /* GameComment.swift in Sources */,
+				94A47E9622DD826100D4595F /* GameCommentTableViewCell+Extension.swift in Sources */,
 				B0754D581E837284006A5754 /* LTHRadioButton.swift in Sources */,
+				94A47E8B22DD826100D4595F /* BasketballTabbarViewController+Extension.swift in Sources */,
 				B0AD47101E8E242E00876498 /* Weather.swift in Sources */,
 				B0AB6FFB1E88C5210060D80E /* BasketballCourt.swift in Sources */,
+				94A47E8D22DD826100D4595F /* BaseViewController+Extension.swift in Sources */,
 				B0AB6FF71E88C4590060D80E /* BasketballCourtsProvider.swift in Sources */,
+				94A47EA422DD826100D4595F /* ConverImageToBW+Extension.swift in Sources */,
 				B084BD2E1E7FCE7900DC48B2 /* Constant.swift in Sources */,
+				94A47E8922DD826100D4595F /* NewBasketballGameViewController+Extension.swift in Sources */,
+				94A47EA222DD826100D4595F /* ChooseLevelViewController+Extension.swift in Sources */,
 				B0A8F4311E80B9C4006CBA96 /* SignUpViewController.swift in Sources */,
 				B0CE8AE71E8B6330003F0F12 /* WeatherTableViewCell.swift in Sources */,
+				94A47E8F22DD826100D4595F /* ActivityIndicator+Extension.swift in Sources */,
 				B0C59FD81E9CC9D600214A1F /* GameTableViewCell.swift in Sources */,
+				94A47EA322DD826100D4595F /* BasketballGamesNavigationController+Extension.swift in Sources */,
 				B0A8F4341E8115D9006CBA96 /* BaseViewController.swift in Sources */,
+				94A47E9022DD826100D4595F /* BasketballCourtsNavigationController+Extension.swift in Sources */,
+				94A47EA722DD826100D4595F /* MapTableViewCell+Extension.swift in Sources */,
 				B0754D681E8399FB006A5754 /* BaseTableViewController.swift in Sources */,
 				B0E881731E9FDBCF0093AA11 /* BasketballCourtDetailViewController.swift in Sources */,
 				B0754D751E83AF55006A5754 /* BasketballProfileViewController.swift in Sources */,
+				94A47E9E22DD826100D4595F /* SportsMenuViewController+Extension.swift in Sources */,
+				94A47E8E22DD826100D4595F /* LoginViewController+Extension.swift in Sources */,
 				94691C7A22DC63BF001B4266 /* GameSetup.swift in Sources */,
 				B07315031EB1D8F100BFB4CA /* UserManager.swift in Sources */,
 				B07131FC1EAA0C5A00874DEF /* BasketballGameParser.swift in Sources */,
+				94A47EB022DD826100D4595F /* AppDelegate+Extension.swift in Sources */,
 				B0AD470E1E8E241B00876498 /* WeatherProvider.swift in Sources */,
 				94EE141622D46F7B007DD462 /* RequestToken.swift in Sources */,
+				94A47E9D22DD826100D4595F /* CourtTableViewCell+Extension.swift in Sources */,
 				B08BD7221EB30BC5007385F1 /* ConvertImageToBW.swift in Sources */,
 				B07CF4A31E82D7C600E91F7E /* SportsMenuViewController.swift in Sources */,
 				B0754D7A1E83C5AF006A5754 /* BasketballCourtsNavigationController.swift in Sources */,
 				B0E881751E9FE3820093AA11 /* BasketballGameDetailViewController.swift in Sources */,
 				B0DC15BC1EA75BA600443F9D /* JoinOrLeaveTableViewCell.swift in Sources */,
+				94A47E9822DD826100D4595F /* LevelManager+Extension.swift in Sources */,
 				B076C5601E89F5CF00F06390 /* User.swift in Sources */,
 				B0DC15AF1EA7437C00443F9D /* MembersTableViewCell.swift in Sources */,
 				B0CE8AF11E8B640C003F0F12 /* CourtInfoTableViewCell.swift in Sources */,
+				94A47EA922DD826100D4595F /* MemebersProvider+Extension.swift in Sources */,
 				B0CE8AEC1E8B63BD003F0F12 /* MapTableViewCell.swift in Sources */,
+				94A47EA822DD826100D4595F /* LTHRadioButton+Extension.swift in Sources */,
 				B0AD470C1E8E23F000876498 /* Towns.swift in Sources */,
+				94A47EAE22DD826100D4595F /* BaseTableViewController+Extension.swift in Sources */,
 				B0754D6F1E83A2C3006A5754 /* BasketballTabbarViewController.swift in Sources */,
+				94A47EA622DD826100D4595F /* WeatherProvider+Extension.swift in Sources */,
 				B0C59FD21E9C925B00214A1F /* ActivityIndicator.swift in Sources */,
 				B0CE8AF91E8B69F2003F0F12 /* Identifiable.swift in Sources */,
+				94A47E9722DD826100D4595F /* BasketballGamesViewController+Extension.swift in Sources */,
+				94A47E9422DD826100D4595F /* LoadingIndicator+Extension.swift in Sources */,
+				94A47E9122DD826100D4595F /* BasketballCourtDetailViewController+Extension.swift in Sources */,
+				94A47EAF22DD826100D4595F /* UserManager+Extension.swift in Sources */,
+				94A47E8C22DD826100D4595F /* GameTableViewCell+Extension.swift in Sources */,
 				B0754D7C1E83C5C6006A5754 /* BasketballProfileNavigationController.swift in Sources */,
 				B0BF606F1EA46E4500E37C73 /* LoadingIndicator.swift in Sources */,
+				94A47EAA22DD826100D4595F /* RequestToken+Extension.swift in Sources */,
 				9432473C22D5B9EF0082E52F /* UIColor+Hex.swift in Sources */,
 				B0DC15B71EA747D500443F9D /* MemberCollectionViewCell.swift in Sources */,
 				B07315051EB1E13C00BFB4CA /* LevelManager.swift in Sources */,
+				94A47E9322DD826100D4595F /* GameSetup+Extension.swift in Sources */,
 				B08ABE481EBDB80F00266BEF /* UserWithPhotoURL.swift in Sources */,
 				B0AB6FFD1E88C5900060D80E /* BasketballCourtModel.swift in Sources */,
+				94A47E9B22DD826100D4595F /* BasketballProfileViewController+Extension.swift in Sources */,
 				B0E881711E9FD2AF0093AA11 /* BasketballCourtsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,56 +3,6 @@ PODS:
   - BTNavigationDropdownMenu (0.5)
   - Crashlytics (3.13.2):
     - Fabric (~> 1.10.2)
-  - CropViewController (2.5.1)
-  - DKCamera (1.6.4)
-  - DKImagePickerController (4.1.5):
-    - DKImagePickerController/Camera (= 4.1.5)
-    - DKImagePickerController/Core (= 4.1.5)
-    - DKImagePickerController/ImageDataManager (= 4.1.5)
-    - DKImagePickerController/InlineCamera (= 4.1.5)
-    - DKImagePickerController/PhotoEditor (= 4.1.5)
-    - DKImagePickerController/PhotoGallery (= 4.1.5)
-    - DKImagePickerController/Resource (= 4.1.5)
-  - DKImagePickerController/Camera (4.1.5):
-    - DKCamera
-    - DKImagePickerController/Core
-  - DKImagePickerController/Core (4.1.5):
-    - DKImagePickerController/ImageDataManager
-    - DKImagePickerController/Resource
-  - DKImagePickerController/ImageDataManager (4.1.5)
-  - DKImagePickerController/InlineCamera (4.1.5):
-    - DKCamera
-    - DKImagePickerController/Core
-  - DKImagePickerController/PhotoEditor (4.1.5):
-    - CropViewController (~> 2.4)
-    - DKImagePickerController/Core
-  - DKImagePickerController/PhotoGallery (4.1.5):
-    - DKImagePickerController/Core
-    - DKPhotoGallery
-  - DKImagePickerController/Resource (4.1.5)
-  - DKPhotoGallery (0.0.13):
-    - DKPhotoGallery/Core (= 0.0.13)
-    - DKPhotoGallery/Model (= 0.0.13)
-    - DKPhotoGallery/Preview (= 0.0.13)
-    - DKPhotoGallery/Resource (= 0.0.13)
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Core (0.0.13):
-    - DKPhotoGallery/Model
-    - DKPhotoGallery/Preview
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Model (0.0.13):
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Preview (0.0.13):
-    - DKPhotoGallery/Model
-    - DKPhotoGallery/Resource
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Resource (0.0.13):
-    - SDWebImage
-    - SDWebImageFLPlugin
   - Fabric (1.10.2)
   - Firebase/Auth (6.3.0):
     - Firebase/CoreOnly
@@ -99,7 +49,6 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FLAnimatedImage (1.0.12)
   - FSPagerView (0.8.2)
   - GoogleAppMeasurement (6.0.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
@@ -144,12 +93,6 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
   - PryntTrimmerView (3.0.0)
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
-  - SDWebImageFLPlugin (0.3.0):
-    - FLAnimatedImage (>= 1.0.11)
-    - SDWebImage/Core (~> 5.0)
   - SkyFloatingLabelTextField (3.7.0)
   - SnapKit (5.0.0)
   - SteviaLayout (4.4.4)
@@ -161,7 +104,6 @@ DEPENDENCIES:
   - Alamofire
   - BTNavigationDropdownMenu
   - Crashlytics
-  - DKImagePickerController
   - Fabric
   - Firebase/Auth
   - Firebase/Core
@@ -183,10 +125,6 @@ SPEC REPOS:
     - Alamofire
     - BTNavigationDropdownMenu
     - Crashlytics
-    - CropViewController
-    - DKCamera
-    - DKImagePickerController
-    - DKPhotoGallery
     - Fabric
     - Firebase
     - FirebaseAnalytics
@@ -196,7 +134,6 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
-    - FLAnimatedImage
     - FSPagerView
     - GoogleAppMeasurement
     - GoogleUtilities
@@ -211,8 +148,6 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - PryntTrimmerView
-    - SDWebImage
-    - SDWebImageFLPlugin
     - SkyFloatingLabelTextField
     - SnapKit
     - SteviaLayout
@@ -222,10 +157,6 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   BTNavigationDropdownMenu: ba3a26fdb6a56c4721c31df8a0875106c259663a
   Crashlytics: 611738c7847f8291a1a51084e35987b86ba6b3ee
-  CropViewController: 10ba7af75e302f2db7eb913f8aa1156f95cfe88e
-  DKCamera: 61fa47629a39354e5111bca1fe96695de020dcb9
-  DKImagePickerController: 58d6c4b316ac9bfcf6f7259866ef36cc3d985352
-  DKPhotoGallery: ce7c1f629450dd07048aa30310319953785857a7
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
   FirebaseAnalytics: 470ddab7253b21ad5a40bebd4a9903d7ae19386a
@@ -235,7 +166,6 @@ SPEC CHECKSUMS:
   FirebaseDatabase: f48e067716864be2b855cf716b927ef375d6cfa0
   FirebaseInstanceID: f20243a1d828e0e9a3798b995174dedc16f1b32a
   FirebaseStorage: 926d41552072b9fee67aa645760f05f87b7ce604
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FSPagerView: 816a18842306973cc7cc6df8a5332272f7815c30
   GoogleAppMeasurement: a35a645835bae31b6bdc0576396bc23908f12a22
   GoogleUtilities: c7a0b08bda3bf808be823ed151f0e28ac6866e71
@@ -250,13 +180,11 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
-  SDWebImageFLPlugin: cf3f4ae49f249dd785129346fd61bbc8433a88cf
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: e15ca83c319496acbb45e39f39149ad98f2f806c
+PODFILE CHECKSUM: e40a2bfb8cfd3a3beb71f41fe7fded6b0ee9d011
 
 COCOAPODS: 1.5.3

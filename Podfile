@@ -10,7 +10,6 @@ target 'Courtman' do
   pod 'Alamofire'
   pod 'IQKeyboardManagerSwift'
   pod 'NVActivityIndicatorView'
-  pod 'DKImagePickerController'
   pod 'YPImagePicker'
   pod 'BTNavigationDropdownMenu'
   pod 'Firebase/Core'
