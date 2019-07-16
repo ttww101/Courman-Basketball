@@ -42,23 +42,8 @@
                                     <action selector="editButtonDidTouchupInside:" destination="uSd-Qx-17U" eventType="touchUpInside" id="fwa-7V-mjN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-RS-rCK" userLabel="Log Out Button">
-                                <rect key="frame" x="256" y="30" width="103" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="tZx-RS-rCK" secondAttribute="height" multiplier="85:33" id="H8j-aO-CBU"/>
-                                </constraints>
-                                <state key="normal" image="Button_Logout"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="logout:" destination="uSd-Qx-17U" eventType="touchUpInside" id="hvB-yA-Nlj"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-YV-mfV">
-                                <rect key="frame" x="96" y="30" width="152" height="60"/>
+                                <rect key="frame" x="96" y="30" width="166" height="60"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -229,11 +214,52 @@
                                     <action selector="upgradeDidTouchUpInside:" destination="uSd-Qx-17U" eventType="touchUpInside" id="aT0-9Z-G3g"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51u-FA-mF8" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="270" y="28" width="97" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4Vj-RP-4r5"/>
+                                    <constraint firstAttribute="width" secondItem="51u-FA-mF8" secondAttribute="height" multiplier="83:30" id="tF7-04-aT5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Log Out"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleFontName" value="Menlo"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fullyRoundedCorners" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" white="0.76062178940000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logout:" destination="uSd-Qx-17U" eventType="touchUpInside" id="xR5-1D-QjN"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gzf-YV-mfV" firstAttribute="height" secondItem="nDv-tt-dH8" secondAttribute="height" id="28h-2X-fZ5"/>
                             <constraint firstItem="gzf-YV-mfV" firstAttribute="leading" secondItem="nDv-tt-dH8" secondAttribute="trailing" constant="16" id="2Y5-Sx-rED"/>
+                            <constraint firstAttribute="trailing" secondItem="51u-FA-mF8" secondAttribute="trailing" constant="8" id="4jD-K2-vrS"/>
                             <constraint firstItem="qCQ-of-Yph" firstAttribute="top" secondItem="Ns3-5O-GrY" secondAttribute="bottom" constant="16" id="4p2-Tb-sAp"/>
                             <constraint firstItem="5rI-cF-PEj" firstAttribute="trailing" secondItem="nDv-tt-dH8" secondAttribute="trailing" id="7uz-lV-hK9"/>
                             <constraint firstAttribute="trailing" secondItem="fpZ-h9-U4B" secondAttribute="trailing" constant="20" id="B5M-v7-CX7"/>
@@ -244,7 +270,6 @@
                             <constraint firstItem="nPX-Ob-bw5" firstAttribute="top" secondItem="QyX-Va-FVo" secondAttribute="bottom" constant="16" id="Ib3-jO-mcr"/>
                             <constraint firstItem="Jxr-fF-ocC" firstAttribute="centerY" secondItem="qCQ-of-Yph" secondAttribute="centerY" id="IhM-qc-Z6z"/>
                             <constraint firstItem="cJj-dc-5Jw" firstAttribute="top" secondItem="fpZ-h9-U4B" secondAttribute="bottom" constant="32" id="NQc-Sa-6gW"/>
-                            <constraint firstItem="tZx-RS-rCK" firstAttribute="leading" secondItem="gzf-YV-mfV" secondAttribute="trailing" constant="8" id="Nq9-qw-fKk"/>
                             <constraint firstItem="SSj-ze-6Ax" firstAttribute="leading" secondItem="QyX-Va-FVo" secondAttribute="trailing" constant="8" id="Q20-R0-jDm"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="top" secondItem="nDv-tt-dH8" secondAttribute="bottom" constant="8" id="QPZ-Dw-Mh4"/>
                             <constraint firstItem="qCQ-of-Yph" firstAttribute="leading" secondItem="Ns3-5O-GrY" secondAttribute="leading" id="Qyv-gh-phM"/>
@@ -265,17 +290,16 @@
                             <constraint firstItem="SSj-ze-6Ax" firstAttribute="trailing" secondItem="Jxr-fF-ocC" secondAttribute="trailing" id="fTW-sS-6MT"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="leading" secondItem="nDv-tt-dH8" secondAttribute="leading" id="h4D-eq-6rc"/>
                             <constraint firstItem="GDh-uf-8SB" firstAttribute="centerY" secondItem="be2-7z-fnI" secondAttribute="centerY" id="hDe-1w-jWe"/>
+                            <constraint firstItem="51u-FA-mF8" firstAttribute="leading" secondItem="gzf-YV-mfV" secondAttribute="trailing" constant="8" id="hmN-29-ges"/>
                             <constraint firstItem="cAu-Ve-es3" firstAttribute="leading" secondItem="be2-7z-fnI" secondAttribute="trailing" constant="16" id="iPa-Bi-UOy"/>
                             <constraint firstItem="Mnf-Kw-g2H" firstAttribute="trailing" secondItem="55F-Rb-UHC" secondAttribute="trailing" id="l8F-6v-b1t"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="width" secondItem="fDH-Mx-lLD" secondAttribute="height" multiplier="60:667" id="lie-Bd-ZVx"/>
-                            <constraint firstAttribute="trailing" secondItem="tZx-RS-rCK" secondAttribute="trailing" constant="16" id="m12-9O-fC6"/>
                             <constraint firstItem="cJE-Lz-eOa" firstAttribute="leading" secondItem="nPX-Ob-bw5" secondAttribute="trailing" constant="8" id="nJF-6S-drd"/>
                             <constraint firstItem="nDv-tt-dH8" firstAttribute="leading" secondItem="fDH-Mx-lLD" secondAttribute="leading" constant="20" id="neR-4u-joE"/>
                             <constraint firstItem="be2-7z-fnI" firstAttribute="centerX" secondItem="Mnf-Kw-g2H" secondAttribute="centerX" id="so1-BL-qJS"/>
-                            <constraint firstItem="tZx-RS-rCK" firstAttribute="height" secondItem="nDv-tt-dH8" secondAttribute="height" multiplier="2:3" id="t9w-IO-4r4"/>
+                            <constraint firstItem="51u-FA-mF8" firstAttribute="top" secondItem="q60-ZR-LEs" secondAttribute="bottom" constant="8" id="tSJ-eH-00j"/>
                             <constraint firstItem="cJE-Lz-eOa" firstAttribute="centerY" secondItem="nPX-Ob-bw5" secondAttribute="centerY" id="toG-vm-64m"/>
                             <constraint firstItem="55F-Rb-UHC" firstAttribute="leading" secondItem="Ns3-5O-GrY" secondAttribute="trailing" constant="8" id="uEn-Y7-zOl"/>
-                            <constraint firstItem="tZx-RS-rCK" firstAttribute="top" secondItem="nDv-tt-dH8" secondAttribute="top" id="vXe-UN-Rda"/>
                         </constraints>
                     </view>
                     <connections>
@@ -295,7 +319,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button_Logout" width="170" height="66"/>
         <image name="Edit_Menu" width="48" height="48"/>
     </resources>
 </document>

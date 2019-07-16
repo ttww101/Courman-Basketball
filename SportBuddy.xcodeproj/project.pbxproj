@@ -98,6 +98,8 @@
 		94691C7922DC63BF001B4266 /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
 		946D951F22D8BB4C00C9C93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		947343C522D8C36D00D21E64 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		94A47DFF22DD71B500D4595F /* Courtman-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Courtman-Bridging-Header.h"; sourceTree = "<group>"; };
+		94A47E0022DD72CC00D4595F /* SportBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SportBuddy.entitlements; sourceTree = "<group>"; };
 		94EE140F22D46BA9007DD462 /* iPlay.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPlay.cer; sourceTree = "<group>"; };
 		94EE141122D46D22007DD462 /* Blah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blah.swift; sourceTree = "<group>"; };
 		94EE141422D46F7B007DD462 /* RequestToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		B06DB2AE1E7FB28000DCF016 /* SportBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				94A47E0022DD72CC00D4595F /* SportBuddy.entitlements */,
 				9432473A22D5B9ED0082E52F /* UIColor+Ex */,
 				94EE141322D46F7B007DD462 /* DataLoader */,
 				B0A8F4321E8115A3006CBA96 /* Base */,
@@ -288,6 +291,7 @@
 				94EE141122D46D22007DD462 /* Blah.swift */,
 				94EE140F22D46BA9007DD462 /* iPlay.cer */,
 				94EE141822D48A0E007DD462 /* GoogleService-Info.plist */,
+				94A47DFF22DD71B500D4595F /* Courtman-Bridging-Header.h */,
 			);
 			path = SportBuddy;
 			sourceTree = "<group>";
@@ -564,6 +568,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = RG55XLA874;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -912,12 +921,14 @@
 			baseConfigurationReference = 35A3321B5699FCB2C74FFCC5 /* Pods-SportBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SportBuddy/SportBuddy.entitlements;
 				DEVELOPMENT_TEAM = RG55XLA874;
 				INFOPLIST_FILE = SportBuddy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AGT.courtman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportBuddy/Courtman-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -928,12 +939,14 @@
 			baseConfigurationReference = 6A1C3E8AC94014525C4957ED /* Pods-SportBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SportBuddy/SportBuddy.entitlements;
 				DEVELOPMENT_TEAM = RG55XLA874;
 				INFOPLIST_FILE = SportBuddy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AGT.courtman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportBuddy/Courtman-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

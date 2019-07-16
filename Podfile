@@ -24,5 +24,7 @@ target 'SportBuddy' do
   pod 'LTMorphingLabel'
   pod 'LGButton'
   pod 'SkyFloatingLabelTextField'
+  pod 'JPush'
+  pod 'JAnalytics'
 
 end

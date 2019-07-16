@@ -14,7 +14,7 @@ class CourtInfoTableViewCell: UITableViewCell, Identifiable {
 
     class var identifier: String { return String(describing: self) }
 
-    static let height: CGFloat = 180
+    static let height: CGFloat = 220.0
 
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var courtName: UILabel!
@@ -30,11 +30,4 @@ class CourtInfoTableViewCell: UITableViewCell, Identifiable {
 
         cellView.backgroundColor = .clear
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
