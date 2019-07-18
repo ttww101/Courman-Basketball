@@ -40,7 +40,7 @@ class SportsMenuViewController: BaseViewController {
     var originStarFrame: CGRect?
     
     let loadingIndicator = LoadingIndicator()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -201,7 +201,7 @@ extension SportsMenuViewController {
                         else { return }
                     
                     let totalGames = (snapshot.value as AnyObject).allKeys.count
-                    
+//                    print((snapshot.value as AnyObject).allKeys)
                     self.getUserHasDoneGamesInfo(gameIDString, totalGames)
                 }
             } else {
@@ -255,6 +255,7 @@ extension SportsMenuViewController {
                 
                 //finish count
                 if self.totalGameCount == totalGameNum {
+                    
                     DispatchQueue.main.async {
                         self.joinedGamesCountLabel.text = String(self.joinedGamesNum)
                         self.pendingGamesCountLabel.text = String(totalGameNum - self.joinedGamesNum)
@@ -268,6 +269,7 @@ extension SportsMenuViewController {
                 }
             } else {
                 print("=== Can't find the game: \(snap.key) in BasketballProfileViewController")
+                print(self.currentUserUID)
             }
         })
     }

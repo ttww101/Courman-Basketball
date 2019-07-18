@@ -45,6 +45,9 @@ class NewBasketballGameViewController: BaseViewController, LTMorphingLabelDelega
         }
         
         setView()
+//        for i in 1...100 {
+//            testFakeGame(i)
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -302,5 +305,39 @@ extension NewBasketballGameViewController: UIPickerViewDelegate, UIPickerViewDat
             }
         }
     }
-
+    func testFakeGame(_ i: Int) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let ref = Database.database().reference().child(Constant.FirebaseGame.nodeName)
+        
+        let gameID = UUID().uuidString
+        
+        let selectedCourtInfo: [String: Any] = [
+            Constant.CourtInfo.courtID: 1068,
+            Constant.CourtInfo.name: "百齡高中活動中心",
+            Constant.CourtInfo.tel: "02-28831568",
+            Constant.CourtInfo.address: "臺北市士林區義信里承德路4段177號",
+            Constant.CourtInfo.rate: 0,
+            Constant.CourtInfo.rateCount: 0,
+            Constant.CourtInfo.gymFuncList: "籃球場,排球場(館),羽球場(館)",
+            Constant.CourtInfo.latitude: "25.0864539762441",
+            Constant.CourtInfo.longitude: "121.523551940918"
+        ]
+        
+        let game: [String : Any] = [
+            Constant.FirebaseGame.gameID: gameID,
+            Constant.FirebaseGame.owner: uid,
+            Constant.FirebaseGame.item: Constant.Sports.basketball,
+            Constant.FirebaseGame.name: "test\(i)",
+            Constant.FirebaseGame.time: "2019/07/17 17:17",
+            Constant.FirebaseGame.court: selectedCourtInfo,
+            Constant.FirebaseGame.level: "F",
+            Constant.FirebaseGame.members: [uid]
+        ]
+        
+        ref.child(gameID).setValue(game)
+        self.setUserGameList(uid, gameID)
+        
+    }
+    
 }
