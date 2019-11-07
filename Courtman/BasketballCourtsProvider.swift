@@ -112,6 +112,7 @@ class BasketballCourtsProvider {
                 
             case .error(let error): break
                 
+                
 //                completionHandler(nil, error)
             }
         })

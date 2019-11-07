@@ -158,6 +158,7 @@ class NewBasketballGameViewController: BaseViewController, LTMorphingLabelDelega
             } else {
 
                 // todo: error handling
+                self.showErrorAlert(error: error, myErrorMsg: nil)
 
             }
 

@@ -5,11 +5,11 @@ enum NetworkError: Error {
     
     case dataTaskError
     
-    case parseError
+    case parseError //101
     
-    case formURLFail
+    case formURLFail//102
     
-    case other
+    case other//-1
 
 }
 
